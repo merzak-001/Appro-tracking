@@ -1,0 +1,599 @@
+import { Router } from "express";
+import { isSqlServerConnected } from "../../src/db/connection";
+import {
+  dbGetStockItems,
+  dbCreateStockItem,
+  dbUpdateStockItem,
+  dbDeleteStockItem,
+  dbToggleTracking,
+  dbToggleImportant,
+  dbBulkUpdateImportance,
+  dbGetWatchlist,
+  dbBulkSetTrackingOrImportant,
+  dbBulkImportStock,
+  dbGetProduitsFinis,
+} from "../../src/db/stockDb";
+import { getStore, saveStore } from "../config/store";
+import { StockItem, ProduitFini } from "../../src/types";
+
+export const stockRoutes = Router();
+
+/* =========================================================================
+   STOCK ITEMS ENDPOINTS
+   ========================================================================= */
+
+// GET /api/stock
+stockRoutes.get("/stock", async (req, res) => {
+  try {
+    let items: StockItem[] = [];
+
+    if (isSqlServerConnected()) {
+      items = await dbGetStockItems();
+    }
+
+    if (!items || items.length === 0) {
+      const store = getStore();
+      items = store.stockItems || [];
+    }
+
+    res.json(items);
+  } catch (error) {
+    console.error("Error fetching stock items:", error);
+    res.status(500).json({ error: "Failed to fetch stock items" });
+  }
+});
+
+// GET /api/stock/stats (Calcul des KPIs et distributions directement depuis la base de données)
+stockRoutes.get("/stock/stats", async (req, res) => {
+  try {
+    let items: StockItem[] = [];
+    if (isSqlServerConnected()) {
+      items = await dbGetStockItems();
+    }
+    if (!items || items.length === 0) {
+      const store = getStore();
+      items = store.stockItems || [];
+    }
+
+    const total_items_in_db = items.length;
+    let total_tracked = 0;
+    let total_dormant = 0;
+    let total_libre_qty = 0;
+    let total_qc_qty = 0;
+    let total_non_libre_qty = 0;
+    let total_transit_qty = 0;
+    let zero_count = 0;
+    let positive_count = 0;
+    let critique_count = 0;
+
+    const categories_breakdown: Record<string, { count: number; qty: number }> = {
+      MP: { count: 0, qty: 0 },
+      PF: { count: 0, qty: 0 },
+      PD: { count: 0, qty: 0 },
+      AUX: { count: 0, qty: 0 },
+    };
+
+    const magasins_breakdown: Record<string, { count: number; qty: number }> = {};
+    const types_breakdown: Record<string, { count: number; qty: number }> = {};
+
+    items.forEach((item) => {
+      const libre = Number(item.stock_actuel !== undefined ? item.stock_actuel : item.stock_utilisation_libre) || 0;
+      const isTracked = item.is_tracked !== false;
+
+      if (isTracked) total_tracked++;
+      else total_dormant++;
+
+      total_libre_qty += libre;
+      total_qc_qty += Number(item.stock_controle_qualite || 0);
+      total_non_libre_qty += Number(item.stock_non_libre || 0);
+      total_transit_qty += Number(item.stock_transit || 0);
+
+      if (libre <= 0) zero_count++;
+      else {
+        positive_count++;
+        if (libre < 100) critique_count++;
+      }
+
+      // Category
+      const cat = (item.categorie || 'MP').toUpperCase();
+      if (!categories_breakdown[cat]) categories_breakdown[cat] = { count: 0, qty: 0 };
+      categories_breakdown[cat].count++;
+      categories_breakdown[cat].qty += libre;
+
+      // Magasin
+      const mag = item.magasin ? `Magasin ${item.magasin}` : 'Magasin Central';
+      if (!magasins_breakdown[mag]) magasins_breakdown[mag] = { count: 0, qty: 0 };
+      magasins_breakdown[mag].count++;
+      magasins_breakdown[mag].qty += libre;
+
+      // Type
+      const typ = (item.type_article || 'AUTRE').toUpperCase();
+      if (!types_breakdown[typ]) types_breakdown[typ] = { count: 0, qty: 0 };
+      types_breakdown[typ].count++;
+      types_breakdown[typ].qty += libre;
+    });
+
+    const top_stocked_items = [...items]
+      .sort((a, b) => (Number(b.stock_actuel) || 0) - (Number(a.stock_actuel) || 0))
+      .slice(0, 10)
+      .map((i) => ({
+        id: i.id,
+        code_article: i.code_article,
+        designation: i.designation,
+        stock_actuel: i.stock_actuel,
+        unite: i.unite,
+        magasin: i.magasin,
+        categorie: i.categorie,
+      }));
+
+    res.json({
+      total_items_in_db,
+      total_tracked,
+      total_dormant,
+      total_libre_qty,
+      total_qc_qty,
+      total_non_libre_qty,
+      total_transit_qty,
+      zero_count,
+      positive_count,
+      critique_count,
+      categories_breakdown,
+      magasins_breakdown,
+      types_breakdown,
+      top_stocked_items,
+      last_updated: items[0]?.updated_at || new Date().toISOString(),
+    });
+  } catch (error) {
+    console.error("Error generating stock stats:", error);
+    res.status(500).json({ error: "Failed to generate stock stats" });
+  }
+});
+
+// POST /api/stock
+stockRoutes.post("/stock", async (req, res) => {
+  try {
+    let createdItem: StockItem | null = null;
+    if (isSqlServerConnected()) {
+      createdItem = await dbCreateStockItem(req.body);
+    }
+
+    const store = getStore();
+    if (!store.stockItems) store.stockItems = [];
+
+    const newId = createdItem?.id || (store.stockItems.length > 0 
+      ? Math.max(...store.stockItems.map((i) => Number(i.id) || 0)) + 1 
+      : 1);
+
+    const newItem: StockItem = {
+      ...req.body,
+      id: newId,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+
+    store.stockItems.unshift(newItem);
+    saveStore(store);
+
+    res.status(201).json(createdItem || newItem);
+  } catch (error) {
+    console.error("Error creating stock item:", error);
+    res.status(500).json({ error: "Failed to create stock item" });
+  }
+});
+
+// PUT /api/stock/:id
+stockRoutes.put("/stock/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (isSqlServerConnected()) {
+      await dbUpdateStockItem(id, req.body);
+    }
+
+    const store = getStore();
+    if (!store.stockItems) store.stockItems = [];
+
+    const idx = store.stockItems.findIndex((item) => String(item.id) === String(id) || item.code_article === id);
+    if (idx === -1) {
+      return res.status(404).json({ error: "Stock item not found" });
+    }
+
+    const updatedItem: StockItem = {
+      ...store.stockItems[idx],
+      ...req.body,
+      updated_at: new Date().toISOString(),
+    };
+
+    store.stockItems[idx] = updatedItem;
+    saveStore(store);
+
+    res.json(updatedItem);
+  } catch (error) {
+    console.error("Error updating stock item:", error);
+    res.status(500).json({ error: "Failed to update stock item" });
+  }
+});
+
+// PATCH /api/stock/:id/toggle-important (Marquer / Démarquer comme important ⭐)
+stockRoutes.patch("/stock/:id/toggle-important", async (req, res) => {
+  try {
+    const id = req.params.id;
+    let nextVal: boolean | null = null;
+    if (isSqlServerConnected()) {
+      nextVal = await dbToggleImportant(id);
+    }
+
+    const store = getStore();
+    if (!store.stockItems) store.stockItems = [];
+
+    const idx = store.stockItems.findIndex(
+      (item) => String(item.id) === String(id) || item.code_article.trim().toUpperCase() === String(id).trim().toUpperCase()
+    );
+
+    if (nextVal === null) {
+      if (idx === -1) {
+        return res.status(404).json({ error: "Stock item not found" });
+      }
+      nextVal = !store.stockItems[idx].is_important;
+    }
+
+    if (idx !== -1) {
+      const code = store.stockItems[idx].code_article.trim().toUpperCase();
+      store.stockItems.forEach((i) => {
+        if (i.code_article.trim().toUpperCase() === code) {
+          i.is_important = nextVal!;
+          i.updated_at = new Date().toISOString();
+        }
+      });
+      saveStore(store);
+      return res.json({ success: true, is_important: nextVal, item: store.stockItems[idx] });
+    }
+
+    res.json({ success: true, is_important: nextVal });
+  } catch (error) {
+    console.error("Error toggling important status:", error);
+    res.status(500).json({ error: "Failed to toggle important status" });
+  }
+});
+
+// POST /api/stock/bulk-update-importance (Enregistrement groupé des articles importants ⭐)
+stockRoutes.post("/stock/bulk-update-importance", async (req, res) => {
+  try {
+    const { updates } = req.body; // updates: { code_article: string, is_important: boolean }[]
+    if (!Array.isArray(updates) || updates.length === 0) {
+      return res.status(400).json({ error: "Updates array is required" });
+    }
+
+    if (isSqlServerConnected()) {
+      await dbBulkUpdateImportance(updates);
+    }
+
+    const store = getStore();
+    if (!store.stockItems) store.stockItems = [];
+
+    const updateMap = new Map<string, boolean>();
+    updates.forEach((u) => {
+      if (u.code_article) {
+        updateMap.set(u.code_article.trim().toUpperCase(), !!u.is_important);
+      }
+    });
+
+    store.stockItems.forEach((item) => {
+      const code = item.code_article.trim().toUpperCase();
+      if (updateMap.has(code)) {
+        item.is_important = updateMap.get(code)!;
+        item.updated_at = new Date().toISOString();
+      }
+    });
+
+    saveStore(store);
+    res.json({ success: true, count: updates.length, items: store.stockItems });
+  } catch (error) {
+    console.error("Error bulk updating importance:", error);
+    res.status(500).json({ error: "Failed to bulk update importance" });
+  }
+});
+
+// PATCH /api/stock/:id/toggle-tracking (Activer / Désactiver du suivi tableau de bord)
+stockRoutes.patch("/stock/:id/toggle-tracking", async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (isSqlServerConnected()) {
+      await dbToggleTracking(id);
+    }
+
+    const store = getStore();
+    if (!store.stockItems) store.stockItems = [];
+
+    const idx = store.stockItems.findIndex((item) => String(item.id) === String(id) || item.code_article === id);
+    if (idx === -1) {
+      return res.status(404).json({ error: "Stock item not found" });
+    }
+
+    const current = store.stockItems[idx].is_tracked ?? true;
+    store.stockItems[idx].is_tracked = !current;
+    store.stockItems[idx].updated_at = new Date().toISOString();
+    saveStore(store);
+
+    res.json({ success: true, is_tracked: store.stockItems[idx].is_tracked, item: store.stockItems[idx] });
+  } catch (error) {
+    console.error("Error toggling tracking status:", error);
+    res.status(500).json({ error: "Failed to toggle tracking status" });
+  }
+});
+
+// POST /api/stock/bulk-tracking (Activer / Désactiver en masse)
+stockRoutes.post("/stock/bulk-tracking", async (req, res) => {
+  try {
+    const { action, ids, is_tracked } = req.body;
+    const store = getStore();
+    if (!store.stockItems) store.stockItems = [];
+
+    if (isSqlServerConnected()) {
+      await dbBulkSetTrackingOrImportant(action, ids, is_tracked);
+    }
+
+    if (action === 'track_all_positive') {
+      store.stockItems.forEach((item) => {
+        item.is_tracked = Number(item.stock_actuel) > 0;
+        item.updated_at = new Date().toISOString();
+      });
+    } else if (action === 'mark_positive_important') {
+      store.stockItems.forEach((item) => {
+        item.is_important = Number(item.stock_actuel) > 0;
+        item.is_tracked = true;
+        item.updated_at = new Date().toISOString();
+      });
+    } else if (action === 'track_all') {
+      store.stockItems.forEach((item) => {
+        item.is_tracked = true;
+        item.updated_at = new Date().toISOString();
+      });
+    } else if (action === 'untrack_all') {
+      store.stockItems.forEach((item) => {
+        item.is_tracked = false;
+        item.updated_at = new Date().toISOString();
+      });
+    } else if (action === 'mark_all_important') {
+      store.stockItems.forEach((item) => {
+        item.is_important = true;
+        item.updated_at = new Date().toISOString();
+      });
+    } else if (action === 'unmark_all_important') {
+      store.stockItems.forEach((item) => {
+        item.is_important = false;
+        item.updated_at = new Date().toISOString();
+      });
+    } else if (Array.isArray(ids)) {
+      const idSet = new Set(ids.map(String));
+      store.stockItems.forEach((item) => {
+        if (idSet.has(String(item.id)) || idSet.has(String(item.code_article))) {
+          item.is_tracked = !!is_tracked;
+          item.updated_at = new Date().toISOString();
+        }
+      });
+    }
+
+    saveStore(store);
+    res.json({ success: true, items: store.stockItems });
+  } catch (error) {
+    console.error("Error updating bulk tracking:", error);
+    res.status(500).json({ error: "Failed to update bulk tracking" });
+  }
+});
+
+// DELETE /api/stock/:id
+stockRoutes.delete("/stock/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    if (isSqlServerConnected()) {
+      await dbDeleteStockItem(id);
+    }
+
+    const store = getStore();
+    if (!store.stockItems) store.stockItems = [];
+
+    store.stockItems = store.stockItems.filter((item) => String(item.id) !== String(id) && item.code_article !== id);
+    saveStore(store);
+
+    res.json({ success: true, message: "Stock item deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting stock item:", error);
+    res.status(500).json({ error: "Failed to delete stock item" });
+  }
+});
+
+// GET /api/stock/watchlist (Liste des codes articles marqués importants)
+stockRoutes.get("/stock/watchlist", async (req, res) => {
+  try {
+    if (isSqlServerConnected()) {
+      const list = await dbGetWatchlist();
+      return res.json({ success: true, watchlist: list });
+    }
+
+    const store = getStore();
+    const list = (store.stockItems || [])
+      .filter((i) => i.is_important)
+      .map((i) => ({ code_article: i.code_article, is_important: true }));
+
+    res.json({ success: true, watchlist: list });
+  } catch (error) {
+    console.error("Error fetching watchlist:", error);
+    res.status(500).json({ error: "Failed to fetch watchlist" });
+  }
+});
+
+// POST /api/stock/bulk-import (Upload / Replace / Upsert from Excel)
+stockRoutes.post("/stock/bulk-import", async (req, res) => {
+  try {
+    const { items, mode } = req.body; // mode: 'replace' | 'upsert'
+    if (!Array.isArray(items) || items.length === 0) {
+      return res.status(400).json({ error: "Items array is required" });
+    }
+
+    // Save to SQL Server database if connected
+    if (isSqlServerConnected()) {
+      await dbBulkImportStock(items, mode || 'replace');
+    }
+
+    // Also update JSON Store mirror
+    const store = getStore();
+    if (!store.stockItems) store.stockItems = [];
+
+    // Map of existing items to preserve tracking preferences by (code_article, magasin)
+    const existingTrackingMap = new Map<string, { is_tracked?: boolean; is_important?: boolean }>();
+    store.stockItems.forEach((s) => {
+      const key = `${s.code_article.trim().toUpperCase()}__${(s.magasin || '').trim()}`;
+      existingTrackingMap.set(key, {
+        is_tracked: s.is_tracked,
+        is_important: s.is_important,
+      });
+      // Also map by code_article alone
+      if (s.is_important) {
+        existingTrackingMap.set(s.code_article.trim().toUpperCase(), {
+          is_tracked: s.is_tracked,
+          is_important: true,
+        });
+      }
+    });
+
+    if (mode === 'replace') {
+      store.stockItems = items.map((item, idx) => {
+        const key = `${item.code_article?.trim().toUpperCase()}__${(item.magasin || '').trim()}`;
+        const existing = existingTrackingMap.get(key) || existingTrackingMap.get(item.code_article?.trim().toUpperCase());
+        const defaultTracked = Number(item.stock_actuel) > 0;
+        const isImp = item.is_important !== undefined ? !!item.is_important : (existing?.is_important ?? false);
+        return {
+          ...item,
+          id: item.id || idx + 1,
+          is_tracked: existing?.is_tracked !== undefined ? existing.is_tracked : (item.is_tracked !== undefined ? item.is_tracked : defaultTracked),
+          is_important: isImp,
+          created_at: item.created_at || new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+        };
+      });
+    } else {
+      items.forEach((incoming, idx) => {
+        const existingIdx = store.stockItems!.findIndex(
+          (s) => s.code_article.trim().toUpperCase() === incoming.code_article?.trim().toUpperCase() &&
+                 (s.magasin || '').trim() === (incoming.magasin || '').trim()
+        );
+        if (existingIdx >= 0) {
+          store.stockItems![existingIdx] = {
+            ...store.stockItems![existingIdx],
+            ...incoming,
+            is_tracked: incoming.is_tracked !== undefined ? incoming.is_tracked : store.stockItems![existingIdx].is_tracked,
+            is_important: incoming.is_important !== undefined ? incoming.is_important : store.stockItems![existingIdx].is_important,
+            updated_at: new Date().toISOString(),
+          };
+        } else {
+          const newId = store.stockItems!.length > 0 
+            ? Math.max(...store.stockItems!.map((i) => Number(i.id) || 0)) + 1 
+            : idx + 1;
+          store.stockItems!.push({
+            ...incoming,
+            id: newId,
+            is_tracked: incoming.is_tracked !== undefined ? incoming.is_tracked : (Number(incoming.stock_actuel) > 0),
+            is_important: incoming.is_important ?? false,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+          });
+        }
+      });
+    }
+
+    saveStore(store);
+    res.json({ success: true, count: store.stockItems.length, items: store.stockItems });
+  } catch (error) {
+    console.error("Error in bulk stock import:", error);
+    res.status(500).json({ error: "Failed to process bulk import" });
+  }
+});
+
+
+/* =========================================================================
+   PRODUITS FINIS & BOM (NOMENCLATURE) ENDPOINTS
+   ========================================================================= */
+
+// GET /api/produits-finis
+stockRoutes.get("/produits-finis", (req, res) => {
+  try {
+    const store = getStore();
+    const items = store.produitsFinis || [];
+    res.json(items);
+  } catch (error) {
+    console.error("Error fetching finished products:", error);
+    res.status(500).json({ error: "Failed to fetch finished products" });
+  }
+});
+
+// POST /api/produits-finis
+stockRoutes.post("/produits-finis", (req, res) => {
+  try {
+    const store = getStore();
+    if (!store.produitsFinis) store.produitsFinis = [];
+
+    const newId = store.produitsFinis.length > 0 
+      ? Math.max(...store.produitsFinis.map((i) => Number(i.id) || 0)) + 1 
+      : 1;
+
+    const newItem: ProduitFini = {
+      ...req.body,
+      id: newId,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+
+    store.produitsFinis.push(newItem);
+    saveStore(store);
+
+    res.status(201).json(newItem);
+  } catch (error) {
+    console.error("Error creating finished product:", error);
+    res.status(500).json({ error: "Failed to create finished product" });
+  }
+});
+
+// PUT /api/produits-finis/:id
+stockRoutes.put("/produits-finis/:id", (req, res) => {
+  try {
+    const id = req.params.id;
+    const store = getStore();
+    if (!store.produitsFinis) store.produitsFinis = [];
+
+    const idx = store.produitsFinis.findIndex((item) => String(item.id) === String(id));
+    if (idx === -1) {
+      return res.status(404).json({ error: "Finished product not found" });
+    }
+
+    const updatedItem: ProduitFini = {
+      ...store.produitsFinis[idx],
+      ...req.body,
+      updated_at: new Date().toISOString(),
+    };
+
+    store.produitsFinis[idx] = updatedItem;
+    saveStore(store);
+
+    res.json(updatedItem);
+  } catch (error) {
+    console.error("Error updating finished product:", error);
+    res.status(500).json({ error: "Failed to update finished product" });
+  }
+});
+
+// DELETE /api/produits-finis/:id
+stockRoutes.delete("/produits-finis/:id", (req, res) => {
+  try {
+    const id = req.params.id;
+    const store = getStore();
+    if (!store.produitsFinis) store.produitsFinis = [];
+
+    store.produitsFinis = store.produitsFinis.filter((item) => String(item.id) !== String(id));
+    saveStore(store);
+
+    res.json({ success: true, message: "Finished product deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting finished product:", error);
+    res.status(500).json({ error: "Failed to delete finished product" });
+  }
+});

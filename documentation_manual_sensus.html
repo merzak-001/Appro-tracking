@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Procurement Order Tracker (SENSUS) - Manuel Utilisateur & Architecture Technique</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm 10mm 12mm 10mm;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0f172a;
+      background-color: #ffffff;
+      line-height: 1.45;
+      font-size: 12px;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 265mm;
+      padding: 10px 5px;
+      page-break-after: always;
+      position: relative;
+    }
+
+    .page:last-child {
+      page-break-after: avoid;
+    }
+
+    /* Cover Page - SENSUS Theme */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #082f49 0%, #0c4a6e 40%, #0284c7 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      min-height: 260mm;
+    }
+
+    .cover-logo-box {
+      background: #ffffff;
+      padding: 16px 28px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px auto;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .cover-title {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .cover-subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: #bae6fd;
+      max-width: 540px;
+      margin: 0 auto 30px auto;
+    }
+
+    .cover-badge {
+      display: inline-block;
+      padding: 6px 18px;
+      background: rgba(56, 189, 248, 0.2);
+      border: 1px solid rgba(186, 230, 253, 0.4);
+      color: #7dd3fc;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .company-card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      text-align: left;
+      font-size: 11px;
+    }
+
+    .cover-meta {
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-around;
+      text-align: left;
+    }
+
+    .cover-meta-item {
+      font-size: 11px;
+    }
+
+    .cover-meta-label {
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .cover-meta-val {
+      font-weight: 600;
+      color: #f8fafc;
+    }
+
+    /* Section Headers */
+    .section-header {
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-num {
+      background: #0284c7;
+      color: white;
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* Grid & Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .card-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-desc {
+      font-size: 11px;
+      color: #475569;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-sky { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
+    .badge-amber { background: #fef3c7; color: #b45309; border: 1px solid #fcd34d; }
+    .badge-purple { background: #f3e8ff; color: #6b21a8; border: 1px solid #d8b4fe; }
+    .badge-emerald { background: #d1fae5; color: #047857; border: 1px solid #6ee7b7; }
+    .badge-rose { background: #ffe4e6; color: #be123c; border: 1px solid #fca5a5; }
+    .badge-slate { background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 18px;
+      font-size: 11px;
+    }
+
+    th {
+      background-color: #0f172a;
+      color: #ffffff;
+      font-weight: 700;
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 2px solid #0284c7;
+    }
+
+    td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #334155;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    /* SVG UI Containers */
+    .svg-container {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: COVER PAGE -->
+  <div class="page">
+    <div class="cover">
+      <div>
+        <div class="cover-badge">Manuel Officiel de Gestion & Support v1.0</div>
+        
+        <div class="cover-logo-box">
+          <svg width="220" height="42" viewBox="0 0 220 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="8" fill="#0284c7"/>
+            <path d="M12 12 L28 12 L28 20 L12 20 L12 28 L28 28" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="50" y="28" fill="#0f172a" font-size="22" font-weight="900" font-family="sans-serif" letter-spacing="-0.5">SENSUS</text>
+            <text x="145" y="28" fill="#0284c7" font-size="14" font-weight="700" font-family="sans-serif">SPA</text>
+          </svg>
+        </div>
+
+        <h1 class="cover-title">Procurement Order Tracker</h1>
+        <p class="cover-subtitle">Suivi Intégré des Commandes Locales, Importations Étrangères, Livraisons BL et Documents Financiers</p>
+      </div>
+
+      <div class="company-card" style="width: 100%; max-width: 520px; margin: 0 auto;">
+        <div style="font-weight: 700; color: #38bdf8; font-size: 12px; margin-bottom: 6px;">🏢 SENSUS SPA - Fiche Entreprise & Identifiants Officiels</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; color: #cbd5e1; font-size: 10px;">
+          <div><strong>Adresse:</strong> BP 02 route de Batna, El-Eulma</div>
+          <div><strong>N° RC:</strong> 05B0086023</div>
+          <div><strong>N° Article (ART):</strong> 19208603930</div>
+          <div><strong>N° NIF:</strong> 000519008602385</div>
+          <div><strong>N° NIS:</strong> 00519200158942</div>
+          <div><strong>Système:</strong> SQL Server Backend Engine</div>
+        </div>
+      </div>
+
+      <div style="width: 100%; max-width: 520px; margin: 0 auto;">
+        <svg width="100%" height="150" viewBox="0 0 520 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="520" height="150" rx="12" fill="#0f172a" stroke="#1e293b"/>
+          
+          <!-- Local Flow -->
+          <rect x="20" y="25" width="140" height="45" rx="8" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8"/>
+          <text x="90" y="45" fill="#38bdf8" font-size="10" font-weight="bold" text-anchor="middle">COMMANDES LOCALES</text>
+          <text x="90" y="58" fill="#7dd3fc" font-size="8" text-anchor="middle">S26-[NUM]L | HT + TVA + TTC</text>
+
+          <path d="M 160 47 L 195 47" stroke="#38bdf8" stroke-width="2"/>
+
+          <rect x="200" y="25" width="140" height="45" rx="8" fill="#10b981" fill-opacity="0.2" stroke="#34d399"/>
+          <text x="270" y="45" fill="#34d399" font-size="10" font-weight="bold" text-anchor="middle">BONS DE LIVRAISON (BL)</text>
+          <text x="270" y="58" fill="#a7f3d0" font-size="8" text-anchor="middle">Pointage Qté & Solde</text>
+
+          <!-- Foreign Flow -->
+          <rect x="20" y="85" width="140" height="45" rx="8" fill="#8b5cf6" fill-opacity="0.2" stroke="#c084fc"/>
+          <text x="90" y="105" fill="#c084fc" font-size="10" font-weight="bold" text-anchor="middle">COMMANDES ÉTRANGÈRES</text>
+          <text x="90" y="118" fill="#e9d5ff" font-size="8" text-anchor="middle">S26-[NUM]E | EUR / USD / Devise</text>
+
+          <path d="M 160 107 L 195 107" stroke="#c084fc" stroke-width="2"/>
+
+          <rect x="200" y="85" width="140" height="45" rx="8" fill="#f59e0b" fill-opacity="0.2" stroke="#fbbf24"/>
+          <text x="270" y="105" fill="#fbbf24" font-size="10" font-weight="bold" text-anchor="middle">EXPÉDITIONS & DOUANE</text>
+          <text x="270" y="118" fill="#fde68a" font-size="8" text-anchor="middle">S26-20E-1ere | Incoterm & BL/LTA</text>
+
+          <!-- Shared Financial -->
+          <path d="M 340 47 L 375 47 L 375 77 L 390 77" stroke="#34d399" stroke-width="2"/>
+          <path d="M 340 107 L 375 107 L 375 77 L 390 77" stroke="#fbbf24" stroke-width="2"/>
+
+          <rect x="390" y="55" width="110" height="45" rx="8" fill="#059669" fill-opacity="0.3" stroke="#6ee7b7"/>
+          <text x="445" y="75" fill="#6ee7b7" font-size="10" font-weight="bold" text-anchor="middle">DOCS FINANCIERS</text>
+          <text x="445" y="88" fill="#a7f3d0" font-size="8" text-anchor="middle">Chèques & Apurement</text>
+        </svg>
+      </div>
+
+      <div class="cover-meta">
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">APPLICATION</div>
+          <div class="cover-meta-val">Procurement Order Tracker</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">ENTREPRISE</div>
+          <div class="cover-meta-val">SENSUS SPA (El-Eulma)</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">BASE DE DONNÉES</div>
+          <div class="cover-meta-val">Microsoft SQL Server</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">VERSION</div>
+          <div class="cover-meta-val">v1.0 Production</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: ARCHITECTURE & ROLES RBAC -->
+  <div class="page">
+    <div class="section-header">
+      <div class="section-title">
+        <div class="section-num">1</div>
+        <span>Présentation de la Plateforme & Matrice RBAC</span>
+      </div>
+      <span class="badge badge-sky">Aperçu Général</span>
+    </div>
+
+    <p style="margin-bottom: 14px; color: #334155;">
+      Le système <strong>Procurement Order Tracker (SENSUS)</strong> orchestre la gestion centralisée des achats locaux, des importations internationales et de l'apurement financier. Conçu spécifiquement pour <strong>SENSUS SPA</strong>, l'application assure le suivi rigoureux des bons de commande, du pointage physique des livraisons, des dossiers de douane et des règlements bancaires.
+    </p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span>Périmètre Fonctionnel Locaux & Import</span>
+        </div>
+        <ul style="padding-left: 16px; font-size: 11px; color: #475569;">
+          <li>Gestion des commandes locales au format strict <code>S[AA]-[NUM]L</code>.</li>
+          <li>Enregistrement des Bons de Livraison (BL) et suivi du solde restant.</li>
+          <li>Suivi des commandes étrangères <code>S[AA]-[NUM]E</code> multi-devises (EUR, USD, GBP, DZD).</li>
+          <li>Expéditions maritimes/aériennes (Incoterms, BL/LTA, suivi douanier).</li>
+          <li>Émission et impression des demandes de chèques, virements et apurements.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          <span>Architecture & Technologies</span>
+        </div>
+        <ul style="padding-left: 16px; font-size: 11px; color: #475569;">
+          <li><strong>Interface Utilisateur:</strong> React 18, TypeScript, Tailwind CSS.</li>
+          <li><strong>Composants Visuels:</strong> Lucide Icons, Modal Script SQL T-SQL.</li>
+          <li><strong>Backend API:</strong> Node.js / Express avec driver SQL Server.</li>
+          <li><strong>Base de Données:</strong> Microsoft SQL Server (T-SQL Scripts).</li>
+          <li><strong>Moteur d'Impression:</strong> Générateur PDF natif & impression A4.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-size: 14px; font-weight: 700; margin: 16px 0 10px 0; color: #0f172a;">Matrice des Rôles & Droits d'Accès (RBAC)</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Module / Action</th>
+          <th style="text-align: center;">🛡️ Admin</th>
+          <th style="text-align: center;">🛒 SAI (Achats)</th>
+          <th style="text-align: center;">👔 Chef Service</th>
+          <th style="text-align: center;">👁️ Visiteur</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Créer / Éditer Commande Locale (S26-150L)</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Total</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Opérationnel</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Opérationnel</td>
+          <td style="text-align: center; color: #94a3b8;">Lecture Seule</td>
+        </tr>
+        <tr>
+          <td>Enregistrer un Bon de Livraison (BL)</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Total</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Opérationnel</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Opérationnel</td>
+          <td style="text-align: center; color: #94a3b8;">Lecture Seule</td>
+        </tr>
+        <tr>
+          <td>Gérer Commandes Étrangères & Expéditions</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Total</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Opérationnel</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Opérationnel</td>
+          <td style="text-align: center; color: #94a3b8;">Lecture Seule</td>
+        </tr>
+        <tr>
+          <td>Créer Documents Financiers & Apurements</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Total</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Opérationnel</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Opérationnel</td>
+          <td style="text-align: center; color: #94a3b8;">Lecture Seule</td>
+        </tr>
+        <tr>
+          <td>Gérer le Répertoire Fournisseurs</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Total</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Opérationnel</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Opérationnel</td>
+          <td style="text-align: center; color: #94a3b8;">Lecture Seule</td>
+        </tr>
+        <tr>
+          <td>Gestion des Utilisateurs & Mot de Passe</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Exclusif</td>
+          <td style="text-align: center; color: #cbd5e1;">✘ Accès Refusé</td>
+          <td style="text-align: center; color: #cbd5e1;">✘ Accès Refusé</td>
+          <td style="text-align: center; color: #cbd5e1;">✘ Accès Refusé</td>
+        </tr>
+        <tr>
+          <td>Générateur de Script SQL Server T-SQL</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Oui</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Consultation</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Consultation</td>
+          <td style="text-align: center; color: #059669; font-weight: bold;">✔ Consultation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="card" style="background: #e0f2fe; border-color: #7dd3fc;">
+      <div class="card-title" style="color: #0369a1;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0369a1" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        <span>Barre de Navigation & Thème SENSUS</span>
+      </div>
+      <p class="card-desc" style="color: #075985;">
+        La barre latérale fixe arbore le bleu profond SENSUS (<code>bg-sky-950</code>). Elle intègre la sélection de la langue (Français, English, العربية), le commutateur de rôle rapide et le statut d'authentification connecté.
+      </p>
+    </div>
+  </div>
+
+  <!-- PAGE 3: COMMANDES LOCALES & LIVRAISONS BL -->
+  <div class="page">
+    <div class="section-header">
+      <div class="section-title">
+        <div class="section-num">2</div>
+        <span>Commandes Locales & Bons de Livraison (BL)</span>
+      </div>
+      <span class="badge badge-sky">Registre Local</span>
+    </div>
+
+    <!-- UI Mockup: Commandes Locales Table & Details -->
+    <div class="svg-container">
+      <svg width="100%" height="220" viewBox="0 0 650 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="650" height="220" rx="8" fill="#082f49"/>
+        <!-- Window Top Bar -->
+        <rect width="650" height="30" rx="8" fill="#0c4a6e"/>
+        <text x="20" y="20" fill="#38bdf8" font-size="11" font-weight="bold">Registre des Commandes Locales - Format S[AA]-[NUM]L</text>
+        <rect x="520" y="5" width="110" height="20" rx="10" fill="#0284c7"/>
+        <text x="575" y="19" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">+ Créer Commande</text>
+
+        <!-- Table Header -->
+        <rect x="15" y="42" width="620" height="24" rx="4" fill="#0f172a"/>
+        <text x="25" y="58" fill="#94a3b8" font-size="9" font-weight="bold">N° Commande</text>
+        <text x="120" y="58" fill="#94a3b8" font-size="9" font-weight="bold">Date</text>
+        <text x="190" y="58" fill="#94a3b8" font-size="9" font-weight="bold">Fournisseur</text>
+        <text x="320" y="58" fill="#94a3b8" font-size="9" font-weight="bold">Objet</text>
+        <text x="440" y="58" fill="#94a3b8" font-size="9" font-weight="bold">Total TTC (DA)</text>
+        <text x="560" y="58" fill="#94a3b8" font-size="9" font-weight="bold">Statut</text>
+
+        <!-- Row 1 -->
+        <rect x="15" y="70" width="620" height="35" rx="4" fill="#0c4a6e" stroke="#0284c7"/>
+        <text x="25" y="91" fill="#38bdf8" font-size="10" font-weight="bold">S26-150L</text>
+        <text x="120" y="91" fill="#ffffff" font-size="9">12/08/2026</text>
+        <text x="190" y="91" fill="#ffffff" font-size="9">SARL Electro-Industrie</text>
+        <text x="320" y="91" fill="#cbd5e1" font-size="9">Fourniture transformateurs</text>
+        <text x="440" y="91" fill="#34d399" font-size="10" font-weight="bold">1 450 000,00 DA</text>
+        <rect x="550" y="78" width="70" height="18" rx="4" fill="#065f46"/>
+        <text x="585" y="90" fill="#a7f3d0" font-size="8" font-weight="bold" text-anchor="middle">ACTIVE</text>
+
+        <!-- Row 2 -->
+        <rect x="15" y="110" width="620" height="35" rx="4" fill="#0369a1" fill-opacity="0.3"/>
+        <text x="25" y="131" fill="#38bdf8" font-size="10" font-weight="bold">S26-151L</text>
+        <text x="120" y="131" fill="#ffffff" font-size="9">13/08/2026</text>
+        <text x="190" y="131" fill="#ffffff" font-size="9">EURL Outillage Est</text>
+        <text x="320" y="131" fill="#cbd5e1" font-size="9">Outillage atelier maintenance</text>
+        <text x="440" y="131" fill="#34d399" font-size="10" font-weight="bold">380 500,00 DA</text>
+        <rect x="550" y="118" width="70" height="18" rx="4" fill="#92400e"/>
+        <text x="585" y="130" fill="#fde68a" font-size="8" font-weight="bold" text-anchor="middle">EN COURS</text>
+
+        <!-- Delivery Warning Box -->
+        <rect x="15" y="155" width="620" height="55" rx="6" fill="#450a0a" stroke="#ef4444"/>
+        <text x="30" y="175" fill="#fca5a5" font-size="10" font-weight="bold">⚠️ Alerte Pointage Bon de Livraison - Modification de Prix Unitaire</text>
+        <text x="30" y="195" fill="#fee2e2" font-size="9">Si le prix unitaire est modifié lors du pointage d'un BL (ex: 5 000 DA ➔ 5 500 DA), le système déclenche un dialogue de confirmation pour valider la mise à jour.</text>
+      </svg>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">1. Calcul Automatique HT / TVA / TTC</div>
+        <p class="card-desc">Chaque ligne d'article enregistre la Désignation, la Quantité, l'Unité (kg, litre, pièce, boîte, rouleau, fût...), le Prix Unitaire HT et le Taux TVA. Le système calcule en temps réel le Total HT, le Montant TVA et le Total TTC.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">2. Pointage BL & Solde Restant</div>
+        <p class="card-desc">Le module <strong>Bons de Livraison</strong> permet le pointage partiel ou total des arrivages physiques via le N° BL. Le solde restant à livrer est récalculé automatiquement par ligne de commande.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 4: COMMANDES ÉTRANGÈRES & EXPÉDITIONS -->
+  <div class="page">
+    <div class="section-header">
+      <div class="section-title">
+        <div class="section-num">3</div>
+        <span>Commandes Étrangères & Expéditions Maritimes/Aériennes</span>
+      </div>
+      <span class="badge badge-purple">Registre Importation</span>
+    </div>
+
+    <!-- UI Mockup: Foreign Import & Expeditions -->
+    <div class="svg-container">
+      <svg width="100%" height="220" viewBox="0 0 650 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="650" height="220" rx="8" fill="#1e1b4b"/>
+        <!-- Window Top Bar -->
+        <rect width="650" height="30" rx="8" fill="#312e81"/>
+        <text x="20" y="20" fill="#c7d2fe" font-size="11" font-weight="bold">Registre des Commandes Étrangères (Format S[AA]-[NUM]E - 01 à 99)</text>
+
+        <!-- Foreign Order Details Card -->
+        <rect x="15" y="42" width="620" height="75" rx="6" fill="#2e1065" stroke="#6d28d9"/>
+        <text x="30" y="62" fill="#c084fc" font-size="11" font-weight="bold">Commande N° S26-20E | Fournisseur: SIMONFOND (Italie)</text>
+        <text x="30" y="80" fill="#e9d5ff" font-size="9">Réf. Proforma: PF-2026/8890 | Date Proforma: 10/01/2026 | Pays: Italie</text>
+        <text x="30" y="98" fill="#e9d5ff" font-size="9">Montant Contrat: 125 000,00 EUR | Mode Paiement: Crédit Documentaire (L/C) | ETD: 28/08/2026</text>
+
+        <!-- Expedition Attached Row -->
+        <rect x="15" y="125" width="620" height="80" rx="6" fill="#0f172a" stroke="#f59e0b"/>
+        <text x="30" y="145" fill="#fbbf24" font-size="10" font-weight="bold">🚢 Expédition Rattachée: S26-20E-1ere (1ère Expédition)</text>
+        <text x="30" y="163" fill="#cbd5e1" font-size="9">N° Facture: EXP-9901 | N° BL / LTA: MEDU12984920 | Incoterm: FOB Genoa</text>
+        <text x="30" y="181" fill="#cbd5e1" font-size="9">Port Destination: Port d'Alger | Statut Douane:</text>
+        <rect x="250" y="170" width="80" height="16" rx="4" fill="#78350f"/>
+        <text x="290" y="182" fill="#fde68a" font-size="8" font-weight="bold" text-anchor="middle">EN DOUANE</text>
+      </svg>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">1. Commandes Étrangères (S26-20E)</div>
+        <p class="card-desc">Prise en charge des contrats d'importation en devises (EUR, USD, GBP, CHF, CAD, CNY). Enregistrement de la référence proforma, du mode de paiement bancaire et de la date estimée d'expédition (ETD).</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">2. Expéditions & Suivi Douanier</div>
+        <p class="card-desc">Génération automatique des codes d'expédition rattachés (ex: <code>S26-20E-1ere</code>, <code>S26-20E-2eme</code>). Suivi du N° de Connaissement (BL/LTA), des Incoterms (FOB, CIF, CFR, EXW...) et des étapes douanières.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 5: DOCUMENTS FINANCIERS LOCAUX & ÉTRANGERS -->
+  <div class="page">
+    <div class="section-header">
+      <div class="section-title">
+        <div class="section-num">4</div>
+        <span>Documents Financiers Locaux & Apurements Importation</span>
+      </div>
+      <span class="badge badge-emerald">Règlements & Apurements</span>
+    </div>
+
+    <!-- UI Mockup: Financial Documents -->
+    <div class="svg-container">
+      <svg width="100%" height="220" viewBox="0 0 650 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="650" height="220" rx="8" fill="#064e3b"/>
+        <!-- Window Top Bar -->
+        <rect width="650" height="30" rx="8" fill="#047857"/>
+        <text x="20" y="20" fill="#a7f3d0" font-size="11" font-weight="bold">Registre des Documents Financiers - SENSUS SPA (Ref: 0011/SENSUS/DP/2026)</text>
+
+        <!-- Document Item 1 -->
+        <rect x="15" y="42" width="620" height="70" rx="6" fill="#0f172a" stroke="#10b981"/>
+        <text x="30" y="62" fill="#34d399" font-size="10" font-weight="bold">RÉGLEMENT FACTURE - Ref: 0011/SENSUS/DP/2026</text>
+        <text x="30" y="78" fill="#cbd5e1" font-size="9">Bénéficiaire: EURL Outillage Est | Montant: 380 500,00 DA (Trois cent quatre-vingts mille cinq cents DA)</text>
+        <text x="30" y="94" fill="#cbd5e1" font-size="9">Mode: Chèque N° 0098213 | Commande Locale Réf: S26-151L | Statut: VALIDÉ</text>
+
+        <!-- Document Item 2 (Foreign Apurement) -->
+        <rect x="15" y="122" width="620" height="80" rx="6" fill="#0f172a" stroke="#f59e0b"/>
+        <text x="30" y="142" fill="#fbbf24" font-size="10" font-weight="bold">APUREMENT D'IMPORTATION - Ref: 0937/SENSUS/DP/2026</text>
+        <text x="30" y="158" fill="#cbd5e1" font-size="9">Fournisseur Étranger: SIMONFOND (Italie) | Commande: S26-20E | Expédition: S26-20E-1ere</text>
+        <text x="30" y="174" fill="#cbd5e1" font-size="9">Bénéficiaire: RECEVEUR PRINCIPAL DES DOUANES ALGER PORT | Montant: 125 000,00 EUR</text>
+        <text x="30" y="190" fill="#93c5fd" font-size="8">📁 Pièces Jointes: [✔] D10  [✔] Facture Proforma  [✔] BL / LTA  [✔] Engagement d'Apurement</text>
+      </svg>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">1. Documents Financiers Locaux</div>
+        <p class="card-desc">Émission des pièces officielles : Demande de Chèque, Demande de Chèque Certifié, Demande de Virement et Règlement Facture (avec tableau multi-factures, montant en lettres automatique et impression officielle).</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">2. Dossiers d'Apurement Importation</div>
+        <p class="card-desc">Gestion des règlements douaniers et apurements d'importation. Rattachement des pièces obligatoires (D10, Facture définitive, BL/LTA) et impression conforme aux exigences bancaires.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 6: SCHÉMA BASE DE DONNÉES & SCRIPT T-SQL -->
+  <div class="page">
+    <div class="section-header">
+      <div class="section-title">
+        <div class="section-num">5</div>
+        <span>Architecture Base de Données MS SQL Server & Script T-SQL</span>
+      </div>
+      <span class="badge badge-slate">Modèle Relationnel</span>
+    </div>
+
+    <!-- UI Mockup: ERD SQL Server -->
+    <div class="svg-container">
+      <svg width="100%" height="240" viewBox="0 0 650 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="650" height="240" rx="8" fill="#0f172a"/>
+        
+        <!-- Table Suppliers -->
+        <rect x="15" y="15" width="130" height="90" rx="6" fill="#1e293b" stroke="#38bdf8"/>
+        <rect x="15" y="15" width="130" height="20" rx="6" fill="#0284c7"/>
+        <text x="80" y="29" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">Suppliers</text>
+        <text x="23" y="46" fill="#94a3b8" font-size="8">🔑 id (PK)</text>
+        <text x="23" y="58" fill="#94a3b8" font-size="8">name, address</text>
+        <text x="23" y="70" fill="#94a3b8" font-size="8">country, rc, nif</text>
+
+        <!-- Connection -->
+        <path d="M 145 60 L 175 60" stroke="#38bdf8" stroke-width="1.5"/>
+
+        <!-- Table LocalOrders -->
+        <rect x="175" y="15" width="145" height="100" rx="6" fill="#1e293b" stroke="#10b981"/>
+        <rect x="175" y="15" width="145" height="20" rx="6" fill="#059669"/>
+        <text x="247" y="29" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">LocalOrders</text>
+        <text x="183" y="46" fill="#94a3b8" font-size="8">🔑 id (PK)</text>
+        <text x="183" y="58" fill="#94a3b8" font-size="8">n_order (S26-150L)</text>
+        <text x="183" y="70" fill="#94a3b8" font-size="8">fournisseur_id (FK)</text>
+        <text x="183" y="82" fill="#94a3b8" font-size="8">total_ht, total_ttc</text>
+        <text x="183" y="94" fill="#94a3b8" font-size="8">status</text>
+
+        <!-- Connection down -->
+        <path d="M 247 115 L 247 140" stroke="#10b981" stroke-width="1.5"/>
+
+        <!-- Table LocalDeliveries -->
+        <rect x="175" y="140" width="145" height="85" rx="6" fill="#1e293b" stroke="#f59e0b"/>
+        <rect x="175" y="140" width="145" height="20" rx="6" fill="#d97706"/>
+        <text x="247" y="154" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">LocalDeliveries</text>
+        <text x="183" y="171" fill="#94a3b8" font-size="8">🔑 id (PK)</text>
+        <text x="183" y="183" fill="#94a3b8" font-size="8">order_id (FK)</text>
+        <text x="183" y="195" fill="#94a3b8" font-size="8">delivered_qty, unit_price</text>
+        <text x="183" y="207" fill="#94a3b8" font-size="8">delivery_note_number</text>
+
+        <!-- Table ForeignOrders -->
+        <rect x="345" y="15" width="145" height="100" rx="6" fill="#1e293b" stroke="#8b5cf6"/>
+        <rect x="345" y="15" width="145" height="20" rx="6" fill="#6d28d9"/>
+        <text x="417" y="29" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">ForeignOrders</text>
+        <text x="353" y="46" fill="#94a3b8" font-size="8">🔑 id (PK)</text>
+        <text x="353" y="58" fill="#94a3b8" font-size="8">code (S26-20E)</text>
+        <text x="353" y="70" fill="#94a3b8" font-size="8">proforma_ref, currency</text>
+        <text x="353" y="82" fill="#94a3b8" font-size="8">amount, country, etd</text>
+        <text x="353" y="94" fill="#94a3b8" font-size="8">fournisseur_id (FK)</text>
+
+        <!-- Connection -->
+        <path d="M 490 60 L 515 60" stroke="#8b5cf6" stroke-width="1.5"/>
+
+        <!-- Table ForeignExpeditions -->
+        <rect x="515" y="15" width="120" height="100" rx="6" fill="#1e293b" stroke="#ec4899"/>
+        <rect x="515" y="15" width="120" height="20" rx="6" fill="#be185d"/>
+        <text x="575" y="29" fill="#ffffff" font-size="9" font-weight="bold" text-anchor="middle">ForeignExpeditions</text>
+        <text x="523" y="46" fill="#94a3b8" font-size="8">🔑 id (PK)</text>
+        <text x="523" y="58" fill="#94a3b8" font-size="8">foreign_order_id</text>
+        <text x="523" y="70" fill="#94a3b8" font-size="8">expedition_code</text>
+        <text x="523" y="82" fill="#94a3b8" font-size="8">n_facture, n_bl_lta</text>
+        <text x="523" y="94" fill="#94a3b8" font-size="8">incoterm, status</text>
+      </svg>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Modal Script T-SQL Intégré</div>
+        <p class="card-desc">L'application inclut un modal dédié permettant de consulter et de copier à tout moment le script complet de création de tables SQL Server (<code>schema_sqlserver.sql</code>), garantissant une déploiement rapide sur le serveur entreprise SENSUS.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Intégrité Relationnelle Parent-Enfant</div>
+        <p class="card-desc">Le sous-système contrôle les liaisons en cascade entre les commandes parentes, leurs lignes d'articles, les expéditions associées, le pointage des réceptions et l'émission des documents financiers.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿ParticipantsNomPALe pilote du processusMr BRAHIMIx Le Co- piloteMr HADJADJxLe Co- pilote Mr SAIxLe directeur de production Mr FERDJALLAHxLe responsable commercial  Mr ABDERREZAK xLe Responsable qualité Mr BENLOUCIFxLe Responsable de la Réalisation des compteurs Mr AMRANExLe Responsable de la Fabrication des pièces Plastique Mr KRAOUCHIxLe Responsable de la Maintenance  Mr MENNOURxAutres : Magasiner xP : Présent ; A : AbsentPrésentation des objectifsAssurer la disponibilité des stocks ;Réduction des délais de passation des marchés, Commandes, lettres de commandes et achats ;Augmentation du taux de conformité des livraisons fournisseurs ;Coût d’investissement par rapport au budget ;Optimisation des coûts d’approvisionnement ;Taux de traitement produit non conforme dans les délais ;Assurer la couverture des besoins ;Suivre la fiabilité d’inventaire.Suivi des actions décidées lors des revues précédentes RASExamen des résultats du processus	IndicateurRésultat mesuréCibleÉcartAnalyse / CommentaireTaux de disponibilité des stocks selon délais convenus90 %100%-10%Écart dû au retard de livraison du fournisseur SARL SLR au cours du mois de juin, causé par un manque de matières premières et une panne de machine.Délai moyen de traitement des achats (< 200 000 DA TTC)7 jours ouvrables≤ 7 joursConformeObjectif atteint. Délai moyen de traitement des lettres de commande (200 000 – 1 000 000 DA TTC)Aucune lettre de commande placée en juin 2026.≤ 20 jours -Délai moyen de traitement des commandes (1 000 000 – 12 000 000 DA TTC)6 JOURS ≤ 30 jours-24 jours Objectif atteint. Délai moyen de traitement des marchés nationaux (> 12 000 000 DA TTC)Aucun marché national placé en juin 2026.≤ 80 joursDélai moyen de traitement des marchés nationaux et internationaux (> 12 000 000 DA TTC)22 JOURS ≤ 90 jours-68 JOURS Objectif atteint.Taux de conformité des livraisons100 %≥ 98 %+2 %Objectif atteint.Taux de traitement des produits non conformes dans les délaisAucune non-conformité n’a été signalée au cours du mois d’avril 2026.≥ 95 %Écart entre le coût réel et le budget alloué (investissement)Aucun investissement n’a été réalisé durant le mois de mai 2026.≤ 10 %Évolution du coût unitaire moyen des matières clésAucun changement du coût unitaire par rapport au mois précédent.≤ +10 % Taux de couverture du stock                 93 % ≤ 150 %57 %Objectif atteint.                            Écart d’inventaire (annuel)≤ 1 %Examen des évolutions du processus et de son environnementRASExamen des caractéristiques du processus RASEvaluation du processus (Enregistrement sur grille d’évaluation)MoyenneEvaluation (Selon grille E-PCS-O1-SMS-05)3Définition des actions d'amélioration du processusRAS-Définition des données à soumettre à la revue de directiona/ Objectif du processus :Assurer la disponibilité des stocks ;Réduction des délais de passation des marchés, Commandes, lettres de commandes et achats ;Augmentation du taux de conformité des livraisons fournisseurs ;Coût d’investissement par rapport au budget ;Optimisation des coûts d’approvisionnement ;Taux de traitement produit non conforme dans les délais ;Assurer la couverture des besoins ;Suivre la fiabilité d’inventaire.g/ évaluation des prestataire externe (achat) :Critères d'évaluation    Responsabilités  Fournisseurs clésSIMONFOND SRL S26/05ESARL SLR S25/394LSARL SLR S24/219L COPRS SAIEGALBIS Note attribuéeQualité des produits ou services offerts Technique 30/3025/3020/3025/3030/30Respect des échéances de livraison Achat15/157/155/1512/1514/15Service et prix  Achat12/1512/1512/1514/1512/15Absence de non-conformités (Produits endommagés, erreur de produits, de quantités, etc.)Achat 09/10 10/10 8/10 9/10 10/10 Service à la clientèle et disponibilité Achat10/1008/1008/1008/1010/10Respect des lois et règlements applicables Achat8/1010/1010/1010/1010/10Rapidité de réponse aux messages téléphoniquesAchat5/53/53/54/55/5Qualité de l'information et des documents techniques fournisAchat5/53/53/54/55/5TOTAL94/10078/100 69/10086/10096/100ClassementABBAACotation A: Exellent  note 81%-100%B: Satisfaisant Note 61%-80 % E: inacceptable 0%-20% Note C: Acceptable Note 41%-60%D: Insuffisant Note 21%-40%h/ les proposition d’amélioration et besoins en ressources :RAS
+
+=== TABLES (5) ===
+
+--- TABLE 1 (Rows: 11, Cols: 4) ---
+Participants | Nom | P | A | 
+Le pilote du processus | Mr BRAHIMI | x  |  | 
+Le Co- pilote | Mr HADJADJ | x |  | 
+Le Co- pilote  | Mr SAI | x |  | 
+Le directeur de production  | Mr FERDJALLAH | x |  | 
+Le responsable commercial   | Mr ABDERREZAK  | x |  | 
+Le Responsable qualité  | Mr BENLOUCIF | x |  | 
+Le Responsable de la Réalisation des compteurs  | Mr AMRANE | x |  | 
+Le Responsable de la Fabrication des pièces Plastique  | Mr KRAOUCHI | x |  | 
+Le Responsable de la Maintenance   | Mr MENNOUR | x |  | 
+Autres : Magasiner  |  | x |  | 
+
+--- TABLE 2 (Rows: 13, Cols: 5) ---
+Indicateur | Résultat mesuré | Cible | Écart | Analyse / Commentaire | 
+Taux de disponibilité des stocks selon délais convenus | 90 % | 100% | -10% | Écart dû au retard de livraison du fournisseur SARL SLR au cours du mois de juin, causé par un manque de matières premières et une panne de machine. | 
+Délai moyen de traitement des achats (< 200 000 DA TTC) | 7 jours ouvrables | ≤ 7 jours | Conforme | Objectif atteint.  | 
+Délai moyen de traitement des lettres de commande (200 000 – 1 000 000 DA TTC) | Aucune lettre de commande placée en juin 2026. | ≤ 20 jours |   | - | 
+Délai moyen de traitement des commandes (1 000 000 – 12 000 000 DA TTC) | 6 JOURS  | ≤ 30 jours | -24 jours  | Objectif atteint.  | 
+Délai moyen de traitement des marchés nationaux (> 12 000 000 DA TTC) | Aucun marché national placé en juin 2026. | ≤ 80 jours |  |  | 
+Délai moyen de traitement des marchés nationaux et internationaux (> 12 000 000 DA TTC) | 22 JOURS  | ≤ 90 jours | -68 JOURS  | Objectif atteint. | 
+Taux de conformité des livraisons | 100 % | ≥ 98 % | +2 % | Objectif atteint. | 
+Taux de traitement des produits non conformes dans les délais | Aucune non-conformité n’a été signalée au cours du mois d’avril 2026. | ≥ 95 % |  |  | 
+Écart entre le coût réel et le budget alloué (investissement) | Aucun investissement n’a été réalisé durant le mois de mai 2026. | ≤ 10 % |  |  | 
+Évolution du coût unitaire moyen des matières clés | Aucun changement du coût unitaire par rapport au mois précédent. | ≤ +10 % |   |  | 
+Taux de couverture du stock |                  93 %  | ≤ 150 % | 57 % | Objectif atteint.                             | 
+Écart d’inventaire (annuel) |  | ≤ 1 % |  |  | 
+
+--- TABLE 3 (Rows: 2, Cols: 2) ---
+ | Moyenne | 
+Evaluation (Selon grille E-PCS-O1-SMS-05) | 3 | 
+
+--- TABLE 4 (Rows: 13, Cols: 7) ---
+Critères d'évaluation     | Responsabilités   | Fournisseurs clés | [Merged] | [Merged] | [Merged] | [Merged] | 
+[Merged] | [Merged] | SIMONFOND SRL S26/05E | SARL SLR S25/394L | SARL SLR S24/219L COPRS  | SAIEG | ALBIS  | 
+ |  | Note attribuée | [Merged] | [Merged] | [Merged] | [Merged] | 
+Qualité des produits ou services offerts  | Technique  | 30/30 | 25/30 | 20/30 | 25/30 | 30/30 | 
+Respect des échéances de livraison  | Achat | 15/15 | 7/15 | 5/15 | 12/15 | 14/15 | 
+Service et prix   | Achat | 12/15 | 12/15 | 12/15 | 14/15 | 12/15 | 
+Absence de non-conformités (Produits endommagés, erreur de produits, de quantités, etc.) | Achat  | 09/10  | 10/10  | 8/10  | 9/10  | 10/10  | 
+Service à la clientèle et disponibilité  | Achat | 10/10 | 08/10 | 08/10 | 08/10 | 10/10 | 
+Respect des lois et règlements applicables  | Achat | 8/10 | 10/10 | 10/10 | 10/10 | 10/10 | 
+Rapidité de réponse aux messages téléphoniques | Achat | 5/5 | 3/5 | 3/5 | 4/5 | 5/5 | 
+Qualité de l'information et des documents techniques fournis | Achat | 5/5 | 3/5 | 3/5 | 4/5 | 5/5 | 
+TOTAL | 94/100 | 78/100  | 69/100 | 86/100 | 96/100 | [Merged] | 
+Classement | A | B | B | A | A | [Merged] | 
+
+--- TABLE 5 (Rows: 2, Cols: 4) ---
+Cotation |   | A: Exellent  note 81%-100% | B: Satisfaisant Note 61%-80 % | 
+  | E: inacceptable 0%-20% Note  | C: Acceptable Note 41%-60% | D: Insuffisant Note 21%-40% | 

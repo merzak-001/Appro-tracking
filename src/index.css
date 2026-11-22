@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* Sleek custom scrollbars for desktop & 14" laptop screens */
+@media screen {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 12mm 10mm 12mm;
+  }
+
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 100% !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    font-size: 14px !important;
+    font-family: Cambria, Georgia, serif !important;
+  }
+
+  /* Hide scrollbars without breaking print content rendering */
+  ::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  /* Hide navigation sidebars, top bar headers, search inputs & non-print controls */
+  aside,
+  header,
+  nav,
+  .print\:hidden,
+  .print\:hidden * {
+    display: none !important;
+  }
+
+  /* Hide main content siblings when modal is open */
+  main > div > div:not(:has(.printable-document)) {
+    display: none !important;
+  }
+
+  /* Reset fixed backdrop positioning for print */
+  .fixed.inset-0 {
+    position: static !important;
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Printable documents fill A4 page height and use Cambria font */
+  .printable-document,
+  .printable-document * {
+    font-family: Cambria, Georgia, serif !important;
+  }
+
+  .printable-document {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 94vh !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    overflow: visible !important;
+  }
+
+  .printable-body {
+    flex: 1 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .printable-footer {
+    margin-top: auto !important;
+    padding-top: 1rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+}
