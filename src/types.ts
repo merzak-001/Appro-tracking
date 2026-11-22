@@ -704,6 +704,20 @@ export interface StockItem {
   fournisseur_principal?: string;
   dernier_arrivage?: string;
   statut?: StockStatusType;
+  
+  // MB51 movement analysis & MCBA monthly stock sync
+  latest_month?: string;
+  avg_monthly_sortie?: number;
+  coverage_months?: number;
+  alert_reason?: string;
+  health_status?: 'RUPTURE' | 'CRITIQUE' | 'BAS' | 'DISPONIBLE' | 'SURSTOCK';
+  mb51_frequency?: number;
+  mb51_total_entrees?: number;
+  mb51_total_sorties?: number;
+  mb51_net_flow?: number;
+  mb51_trend?: 'ENTREE_PLUS' | 'SORTIE_PLUS' | 'EQUILIBRE';
+  history_records?: { mois: string; stock: number; sortie: number; entree: number }[];
+  
   created_at?: string;
   updated_at?: string;
 }

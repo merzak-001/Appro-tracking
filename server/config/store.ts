@@ -30,6 +30,18 @@ export interface DataStore {
   consultations?: ConsultationItem[];
   appelsOffres?: AppelOffreItem[];
   stockItems?: StockItem[];
+  mb51_whitelist?: string[];
+  stock_last_sync?: {
+    timestamp: string;
+    latest_month: string;
+    source_mb51?: string;
+    source_mcba?: string;
+    total_tracked: number;
+    ruptures: number;
+    critiques: number;
+    bas: number;
+    disponibles: number;
+  };
   produitsFinis?: ProduitFini[];
   supplierEvaluations?: SupplierEvaluation[];
 }

@@ -509,6 +509,214 @@ stockRoutes.post("/stock/bulk-import", async (req, res) => {
   }
 });
 
+/* =========================================================================
+   MB51 MOVEMENT & MCBA STOCK SITUATION ENDPOINTS
+   ========================================================================= */
+
+// Helper to parse 'MM.YYYY' into comparable number
+function parseMonthKey(mStr: string): number {
+  if (!mStr) return 0;
+  const parts = String(mStr).trim().split('.');
+  if (parts.length === 2) {
+    return parseInt(parts[1], 10) * 100 + parseInt(parts[0], 10);
+  }
+  return 0;
+}
+
+// GET /api/stock/situation (Returns MB51-whitelisted items with latest MCBA stock & alerts)
+stockRoutes.get("/stock/situation", (req, res) => {
+  try {
+    const store = getStore();
+    const items = store.stockItems || [];
+    const whitelist = new Set((store.mb51_whitelist || []).map(c => c.trim().toUpperCase()));
+
+    // Filter to only MB51 articles if whitelist exists
+    const trackedItems = whitelist.size > 0
+      ? items.filter(i => {
+          const c = i.code_article.trim().toUpperCase();
+          return whitelist.has(c) || whitelist.has(c.padStart(8, '0')) || whitelist.has(c.replace(/^0+/, ''));
+        })
+      : items;
+
+    let ruptures = 0;
+    let critiques = 0;
+    let bas = 0;
+    let disponibles = 0;
+    let totalStock = 0;
+
+    trackedItems.forEach(i => {
+      const st = i.health_status || i.statut;
+      const s = Number(i.stock_actuel) || 0;
+      totalStock += s;
+      if (st === 'RUPTURE' || s <= 0) ruptures++;
+      else if (st === 'CRITIQUE') critiques++;
+      else if (st === 'BAS') bas++;
+      else disponibles++;
+    });
+
+    const latestMonth = store.stock_last_sync?.latest_month || trackedItems[0]?.latest_month || '11.2026';
+
+    res.json({
+      success: true,
+      items: trackedItems,
+      kpis: {
+        total_tracked: trackedItems.length,
+        ruptures,
+        critiques,
+        bas,
+        disponibles,
+        total_problems: ruptures + critiques,
+        total_stock_units: totalStock,
+        latest_month: latestMonth,
+        last_sync: store.stock_last_sync?.timestamp || new Date().toISOString(),
+      },
+      syncInfo: store.stock_last_sync || null,
+    });
+  } catch (error) {
+    console.error("Error fetching stock situation:", error);
+    res.status(500).json({ error: "Failed to fetch stock situation" });
+  }
+});
+
+// POST /api/stock/upload-mcba (Process uploaded MCBA data: latest month only, replace existing)
+stockRoutes.post("/stock/upload-mcba", (req, res) => {
+  try {
+    const { rows, fileName } = req.body;
+    if (!Array.isArray(rows) || rows.length === 0) {
+      return res.status(400).json({ error: "Rows array is required" });
+    }
+
+    const store = getStore();
+    if (!store.stockItems) store.stockItems = [];
+    const whitelist = new Set((store.mb51_whitelist || []).map(c => c.trim().toUpperCase()));
+
+    // Group rows by article code
+    const byArticle = new Map<string, any[]>();
+    let ignoredCount = 0;
+
+    rows.forEach(r => {
+      const artStr = String(r['Article'] || r['article'] || r['Code'] || r['code'] || '').trim();
+      const match = artStr.match(/^(\d+)\s+(.*)$/);
+      const code = (match ? match[1] : artStr.split(' ')[0]).trim().toUpperCase();
+
+      if (!code) return;
+
+      // Filter against MB51 whitelist if available
+      const isWhitelisted = whitelist.size === 0 ||
+        whitelist.has(code) ||
+        whitelist.has(code.padStart(8, '0')) ||
+        whitelist.has(code.replace(/^0+/, ''));
+
+      if (!isWhitelisted) {
+        ignoredCount++;
+        return;
+      }
+
+      if (!byArticle.has(code)) {
+        byArticle.set(code, []);
+      }
+
+      const mois = String(r['Mois'] || r['mois'] || '');
+      const sortie = Number(r['Sortie'] || r['sortie'] || 0);
+      const entree = Number(r['QtéEnt.SV'] || r['entree'] || 0);
+      const stock = Number(r['Stock'] !== undefined ? r['Stock'] : (r['stock'] || 0));
+
+      byArticle.get(code)!.push({ mois, sortie, entree, stock, raw: r });
+    });
+
+    let updatedCount = 0;
+    let globalLatestMonth = '';
+
+    // Map existing stock items by code
+    const stockMap = new Map<string, StockItem>();
+    store.stockItems.forEach(i => {
+      stockMap.set(i.code_article.trim().toUpperCase(), i);
+      stockMap.set(i.code_article.replace(/^0+/, '').trim().toUpperCase(), i);
+    });
+
+    for (const [code, records] of byArticle.entries()) {
+      records.sort((a, b) => parseMonthKey(a.mois) - parseMonthKey(b.mois));
+      const latest = records[records.length - 1];
+
+      if (latest && parseMonthKey(latest.mois) > parseMonthKey(globalLatestMonth)) {
+        globalLatestMonth = latest.mois;
+      }
+
+      const totalSorties = records.reduce((sum, rec) => sum + rec.sortie, 0);
+      const avgMonthlySortie = records.length > 0 ? totalSorties / records.length : 0;
+      const currentStock = latest ? latest.stock : 0;
+      const latestMonth = latest ? latest.mois : 'N/A';
+      const coverageMonths = avgMonthlySortie > 0 ? (currentStock / avgMonthlySortie) : (currentStock > 0 ? 999 : 0);
+
+      let status: 'RUPTURE' | 'CRITIQUE' | 'BAS' | 'DISPONIBLE' | 'SURSTOCK' = 'DISPONIBLE';
+      let alertReason = 'Stock suffisant';
+
+      if (currentStock <= 0) {
+        status = 'RUPTURE';
+        alertReason = 'Stock épuisé (0 en stock)';
+      } else if (avgMonthlySortie > 0 && coverageMonths < 1.0) {
+        status = 'CRITIQUE';
+        alertReason = `Critique: couverture < 1 mois (${coverageMonths.toFixed(1)} m)`;
+      } else if (currentStock < 100 && avgMonthlySortie > 50) {
+        status = 'CRITIQUE';
+        alertReason = `Stock faible (${currentStock} unités)`;
+      } else if (avgMonthlySortie > 0 && coverageMonths < 2.0) {
+        status = 'BAS';
+        alertReason = `Stock bas: couverture ${coverageMonths.toFixed(1)} mois`;
+      } else {
+        status = 'DISPONIBLE';
+        alertReason = `Normal: couverture ${coverageMonths > 99 ? '> 24' : coverageMonths.toFixed(1)} mois`;
+      }
+
+      const existing = stockMap.get(code) || stockMap.get(code.padStart(8, '0')) || stockMap.get(code.replace(/^0+/, ''));
+      if (existing) {
+        // REPLACE existing stock
+        existing.stock_actuel = currentStock;
+        existing.stock_utilisation_libre = currentStock;
+        existing.latest_month = latestMonth;
+        existing.avg_monthly_sortie = Math.round(avgMonthlySortie * 10) / 10;
+        existing.coverage_months = Math.round(coverageMonths * 10) / 10;
+        existing.health_status = status;
+        existing.statut = status;
+        existing.alert_reason = alertReason;
+        existing.history_records = records;
+        existing.updated_at = new Date().toISOString();
+        updatedCount++;
+      }
+    }
+
+    store.stock_last_sync = {
+      timestamp: new Date().toISOString(),
+      latest_month: globalLatestMonth || store.stock_last_sync?.latest_month || '11.2026',
+      source_mcba: fileName || "Upload MCBA",
+      total_tracked: store.stockItems.length,
+      ruptures: store.stockItems.filter(i => i.health_status === 'RUPTURE').length,
+      critiques: store.stockItems.filter(i => i.health_status === 'CRITIQUE').length,
+      bas: store.stockItems.filter(i => i.health_status === 'BAS').length,
+      disponibles: store.stockItems.filter(i => i.health_status === 'DISPONIBLE').length,
+    };
+
+    saveStore(store);
+
+    res.json({
+      success: true,
+      updatedCount,
+      ignoredCount,
+      latestMonth: globalLatestMonth,
+      alerts: {
+        ruptures: store.stock_last_sync.ruptures,
+        critiques: store.stock_last_sync.critiques,
+        bas: store.stock_last_sync.bas,
+        disponibles: store.stock_last_sync.disponibles,
+      },
+      message: `✅ ${updatedCount} articles MB51 mis à jour avec le dernier mois (${globalLatestMonth}). ${ignoredCount} entrées hors liste ignorées.`,
+    });
+  } catch (error) {
+    console.error("Error processing MCBA upload:", error);
+    res.status(500).json({ error: "Failed to process MCBA upload" });
+  }
+});
+
 
 /* =========================================================================
    PRODUITS FINIS & BOM (NOMENCLATURE) ENDPOINTS

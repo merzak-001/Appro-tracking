@@ -51,8 +51,8 @@ export async function initSqlServer(): Promise<boolean> {
 
     pool = await new sql.ConnectionPool({
       connectionString,
-      connectionTimeout: 15000,
-      requestTimeout: 20000,
+      connectionTimeout: 3000,
+      requestTimeout: 5000,
     } as any).connect();
 
     isConnected = true;
