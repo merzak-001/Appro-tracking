@@ -279,7 +279,17 @@ function AppContent() {
       )}
 
       {activeTab === 'stock-situation' && (
-        <StockSituation onNavigateToAppro={() => setActiveTab('situation-appro')} />
+        <StockSituation 
+          mode="components" 
+          onNavigateToAppro={() => setActiveTab('situation-appro')} 
+        />
+      )}
+
+      {activeTab === 'stock-produits-finis' && (
+        <StockSituation 
+          mode="finished_goods" 
+          onNavigateToAppro={() => setActiveTab('situation-appro')} 
+        />
       )}
 
       {activeTab === 'situation-appro' && (

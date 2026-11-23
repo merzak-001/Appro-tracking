@@ -63,6 +63,7 @@ export const Layout: React.FC<LayoutProps> = ({
     }
   });
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [stockMenuOpen, setStockMenuOpen] = useState(true);
   const [companyLogoUrl, setCompanyLogoUrl] = useState<string>('');
   const { language, setLanguage, t, isRtl } = useLanguage();
 
@@ -108,7 +109,16 @@ export const Layout: React.FC<LayoutProps> = ({
 
   const navItems = [
     { id: 'dashboard', label: t.dashboard, icon: LayoutDashboard, roles: ['Admin', 'Appro', 'Chef Service', 'Visitor'] },
-    { id: 'stock-situation', label: 'Situation Stock', icon: Boxes, roles: ['Admin', 'Appro', 'Chef Service', 'Visitor'] },
+    { 
+      id: 'stock-menu', 
+      label: 'Situation Stock', 
+      icon: Boxes, 
+      roles: ['Admin', 'Appro', 'Chef Service', 'Visitor'],
+      subItems: [
+        { id: 'stock-situation', label: 'Stock Matières & Pièces (MP / PD)' },
+        { id: 'stock-produits-finis', label: 'Stock Produits Finis (PF)' },
+      ]
+    },
     { id: 'situation-appro', label: 'Situation Appro (MRP)', icon: Calculator, roles: ['Admin', 'Appro', 'Chef Service', 'Visitor'] },
     { id: 'suivi-production', label: 'Suivi Production', icon: Factory, roles: ['Admin', 'Appro', 'Chef Service', 'Visitor'] },
     { id: 'local-orders', label: t.localOrders, icon: FileText, roles: ['Admin', 'Appro', 'Chef Service', 'Visitor'] },
@@ -249,10 +259,20 @@ export const Layout: React.FC<LayoutProps> = ({
         return (
           <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-teal-50 text-teal-900 border border-teal-300 text-xs font-bold shadow-2xs shrink-0">
             <Boxes size={13} className="text-teal-600 shrink-0" />
-            <span>Situation des Stocks</span>
+            <span>Stock Matières & Pièces (MP / PD)</span>
             <span className="text-teal-300 font-normal">|</span>
             <Clock size={12} className="text-teal-600 shrink-0" />
             <span className="font-semibold text-teal-950">{currentDateTimeStr}</span>
+          </div>
+        );
+      case 'stock-produits-finis':
+        return (
+          <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 border border-indigo-300 text-xs font-bold shadow-2xs shrink-0">
+            <Boxes size={13} className="text-indigo-600 shrink-0" />
+            <span>Stock Produits Finis (PF)</span>
+            <span className="text-indigo-300 font-normal">|</span>
+            <Clock size={12} className="text-indigo-600 shrink-0" />
+            <span className="font-semibold text-indigo-950">{currentDateTimeStr}</span>
           </div>
         );
       case 'situation-appro':
@@ -376,7 +396,65 @@ export const Layout: React.FC<LayoutProps> = ({
         <nav className="flex-1 px-2.5 py-3 space-y-1 overflow-y-auto">
           {filteredNavItems.map((item) => {
             const Icon = item.icon;
-            const isActive = activeTab === item.id;
+            const subItems = (item as any).subItems as { id: string; label: string }[] | undefined;
+            const isSubActive = subItems ? subItems.some((s) => s.id === activeTab) : false;
+            const isActive = activeTab === item.id || isSubActive;
+
+            if (subItems) {
+              return (
+                <div key={item.id} className="space-y-1">
+                  <button
+                    onClick={() => {
+                      if (collapsed && !mobileMenuOpen) {
+                        setCollapsed(false);
+                      }
+                      setStockMenuOpen(!stockMenuOpen);
+                    }}
+                    className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 ${
+                      isActive
+                        ? 'bg-sky-900/60 text-white border border-sky-600/40 font-bold'
+                        : 'text-sky-200 hover:text-white hover:bg-sky-800/40'
+                    }`}
+                    title={collapsed && !mobileMenuOpen ? item.label : undefined}
+                  >
+                    <Icon size={18} className={`shrink-0 ${isActive ? 'text-sky-300' : 'text-sky-400'}`} />
+                    {(!collapsed || mobileMenuOpen) && (
+                      <div className="flex items-center justify-between flex-1 min-w-0">
+                        <span className="truncate">{item.label}</span>
+                        <ChevronDown 
+                          size={15} 
+                          className={`text-sky-400 transition-transform duration-200 ${stockMenuOpen ? 'rotate-180' : ''}`} 
+                        />
+                      </div>
+                    )}
+                  </button>
+
+                  {/* Submenu Dropdown */}
+                  {(!collapsed || mobileMenuOpen) && stockMenuOpen && (
+                    <div className="pl-6 pr-1 space-y-1 pt-0.5 border-l-2 border-sky-700/60 ml-4">
+                      {subItems.map((sub) => {
+                        const isCurrent = activeTab === sub.id;
+                        return (
+                          <button
+                            key={sub.id}
+                            onClick={() => handleNavClick(sub.id)}
+                            className={`w-full text-left px-2 py-1.5 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 ${
+                              isCurrent
+                                ? 'bg-sky-600 text-white font-bold shadow-2xs'
+                                : 'text-sky-300 hover:text-white hover:bg-sky-800/30'
+                            }`}
+                          >
+                            <span className={`w-1.5 h-1.5 rounded-full ${isCurrent ? 'bg-white' : 'bg-sky-400'}`}></span>
+                            <span className="truncate">{sub.label}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
             return (
               <button
                 key={item.id}
@@ -402,7 +480,6 @@ export const Layout: React.FC<LayoutProps> = ({
               </button>
             );
           })}
-
         </nav>
 
         {/* Current User & Quick Role Switcher Footer */}

@@ -23,22 +23,34 @@ import {
   ShieldAlert,
   BarChart2,
   ChevronRight,
+  ChevronDown,
   ChevronLeft
 } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import { StockItem, StockStatusType, StockCategory } from '../types';
 
 interface StockSituationProps {
+  mode?: 'components' | 'finished_goods' | 'all';
   onNavigateToAppro?: () => void;
 }
 
-export const StockSituation: React.FC<StockSituationProps> = ({ onNavigateToAppro }) => {
+export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'components', onNavigateToAppro }) => {
   const [stockItems, setStockItems] = useState<StockItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   
   // Active Filter Tab: 'ALL' | 'PROBLEMS' | 'RUPTURE' | 'CRITIQUE' | 'BAS' | 'DISPONIBLE'
-  const [activeTabFilter, setActiveTabFilter] = useState<'PROBLEMS' | 'ALL' | 'RUPTURE' | 'CRITIQUE' | 'BAS' | 'DISPONIBLE'>('PROBLEMS');
+  // Collapsible sections state
+  const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
+    ruptures: true,
+    critiques: true,
+    bas: true,
+    disponibles: false,
+  });
+
+  const toggleSection = (key: string) => {
+    setOpenSections((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL'); // 'ALL' | 'MP' | 'PF' | 'PD' | 'AUX'
   const [selectedTrend, setSelectedTrend] = useState<string>('ALL'); // 'ALL' | 'SORTIE_PLUS' | 'ENTREE_PLUS'
   const [selectedMagasin, setSelectedMagasin] = useState<string>('ALL');
@@ -138,9 +150,18 @@ export const StockSituation: React.FC<StockSituationProps> = ({ onNavigateToAppr
     };
   }, [stockItems]);
 
-  // Filtered & Sorted items
+  // Filtered & Sorted items based on Mode (Components vs Finished Goods) and Velocity
+  const scopedItems = useMemo(() => {
+    if (mode === 'components') {
+      return stockItems.filter(i => (i.categorie || '').toUpperCase() !== 'PF');
+    } else if (mode === 'finished_goods') {
+      return stockItems.filter(i => (i.categorie || '').toUpperCase() === 'PF');
+    }
+    return stockItems;
+  }, [stockItems, mode]);
+
   const filteredItems = useMemo(() => {
-    return stockItems
+    return scopedItems
       .filter((item) => {
         const q = searchQuery.toLowerCase().trim();
         const matchesSearch =
@@ -150,28 +171,11 @@ export const StockSituation: React.FC<StockSituationProps> = ({ onNavigateToAppr
           (item.magasin && String(item.magasin).toLowerCase().includes(q)) ||
           (item.alert_reason && item.alert_reason.toLowerCase().includes(q));
 
-        // Tab Filter
-        const status = item.health_status || item.statut || (Number(item.stock_actuel) <= 0 ? 'RUPTURE' : 'DISPONIBLE');
-        let matchesTab = true;
-        if (activeTabFilter === 'PROBLEMS') {
-          matchesTab = status === 'RUPTURE' || status === 'CRITIQUE' || Number(item.stock_actuel) <= 0;
-        } else if (activeTabFilter === 'RUPTURE') {
-          matchesTab = status === 'RUPTURE' || Number(item.stock_actuel) <= 0;
-        } else if (activeTabFilter === 'CRITIQUE') {
-          matchesTab = status === 'CRITIQUE';
-        } else if (activeTabFilter === 'BAS') {
-          matchesTab = status === 'BAS';
-        } else if (activeTabFilter === 'DISPONIBLE') {
-          matchesTab = status === 'DISPONIBLE' && Number(item.stock_actuel) > 0;
-        }
-
-        // Category Filter
         let matchesCategory = true;
         if (selectedCategory !== 'ALL') {
           matchesCategory = item.categorie === selectedCategory;
         }
 
-        // Trend Filter
         let matchesTrend = true;
         if (selectedTrend === 'SORTIE_PLUS') {
           matchesTrend = item.mb51_trend === 'SORTIE_PLUS' || (Number(item.mb51_total_sorties) > Number(item.mb51_total_entrees));
@@ -179,10 +183,9 @@ export const StockSituation: React.FC<StockSituationProps> = ({ onNavigateToAppr
           matchesTrend = item.mb51_trend === 'ENTREE_PLUS' || (Number(item.mb51_total_entrees) >= Number(item.mb51_total_sorties));
         }
 
-        // Magasin Filter
         const matchesMagasin = selectedMagasin === 'ALL' || String(item.magasin) === selectedMagasin;
 
-        return matchesSearch && matchesTab && matchesCategory && matchesTrend && matchesMagasin;
+        return matchesSearch && matchesCategory && matchesTrend && matchesMagasin;
       })
       .sort((a, b) => {
         let valA: any = a[sortField];
@@ -201,12 +204,47 @@ export const StockSituation: React.FC<StockSituationProps> = ({ onNavigateToAppr
           ? String(valA ?? '').localeCompare(String(valB ?? ''))
           : String(valB ?? '').localeCompare(String(valA ?? ''));
       });
-  }, [stockItems, searchQuery, activeTabFilter, selectedCategory, selectedTrend, selectedMagasin, sortField, sortDirection]);
+  }, [scopedItems, searchQuery, selectedCategory, selectedTrend, selectedMagasin, sortField, sortDirection]);
+
+  // Grouped sections with intelligent velocity differentiation
+  const groupedSections = useMemo(() => {
+    // 1. High-Volume Real Production Ruptures (Stock = 0 & annual demand > 500 or active series)
+    const rupturesHigh = filteredItems.filter((i) => {
+      const stock = Number(i.stock_actuel) || 0;
+      const history = i.history_records || [];
+      const totalOut = history.reduce((s, h) => s + (Number(h.sortie) || 0), 0);
+      const isRupture = stock <= 0 || i.health_status === 'RUPTURE';
+      // In finished goods mode, all stock=0 are shown; in components mode, prioritize active consumption
+      if (mode === 'finished_goods') return isRupture;
+      return isRupture && totalOut >= 500;
+    });
+
+    // 2. Low-Volume / Occasional / Maintenance Ruptures (e.g. 25kg, < 500/year, or special parts)
+    const rupturesLow = filteredItems.filter((i) => {
+      if (mode === 'finished_goods') return false;
+      const stock = Number(i.stock_actuel) || 0;
+      const history = i.history_records || [];
+      const totalOut = history.reduce((s, h) => s + (Number(h.sortie) || 0), 0);
+      const isRupture = stock <= 0 || i.health_status === 'RUPTURE';
+      return isRupture && totalOut < 500;
+    });
+
+    // 3. Critiques (< 1 month coverage)
+    const critiques = filteredItems.filter((i) => Number(i.stock_actuel) > 0 && i.health_status === 'CRITIQUE');
+
+    // 4. Stocks Bas (1-2 months coverage)
+    const bas = filteredItems.filter((i) => Number(i.stock_actuel) > 0 && i.health_status === 'BAS');
+
+    // 5. Disponibles (> 2 months coverage)
+    const disponibles = filteredItems.filter((i) => Number(i.stock_actuel) > 0 && (i.health_status === 'DISPONIBLE' || !i.health_status));
+
+    return { rupturesHigh, rupturesLow, critiques, bas, disponibles };
+  }, [filteredItems, mode]);
 
   // Reset page when filters change
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchQuery, activeTabFilter, selectedCategory, selectedTrend, selectedMagasin, pageSize]);
+  }, [searchQuery, selectedCategory, selectedTrend, selectedMagasin, pageSize]);
 
   // Paginated Items
   const paginatedItems = useMemo(() => {
@@ -376,6 +414,143 @@ export const StockSituation: React.FC<StockSituationProps> = ({ onNavigateToAppr
     }
   };
 
+  // Reusable Section Table Component
+  const renderSectionTable = (items: StockItem[], emptyMsg: string, emptyIcon: React.ReactNode) => {
+    if (items.length === 0) {
+      return (
+        <div className="py-7 text-center text-slate-400 bg-slate-50/60 rounded-xl border border-slate-100 my-1">
+          <div className="flex flex-col items-center justify-center gap-1.5">
+            {emptyIcon}
+            <span className="text-xs font-semibold text-slate-600">{emptyMsg}</span>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="overflow-x-auto rounded-xl border border-slate-200/90 bg-white shadow-2xs">
+        <table className="w-full text-left border-collapse min-w-[800px]">
+          <thead>
+            <tr className="bg-slate-50/90 border-b border-slate-200 text-[10px] font-black uppercase text-slate-600 tracking-wider">
+              <th className="py-2.5 px-3.5 w-[120px]">Code SAP</th>
+              <th className="py-2.5 px-3.5 min-w-[270px]">Désignation Article</th>
+              <th className="py-2.5 px-2 text-center w-[90px]">Cat. / Mag</th>
+              <th className="py-2.5 px-3.5 text-right w-[120px]">Stock Actuel</th>
+              <th className="py-2.5 px-3 text-right w-[110px]">Conso / An</th>
+              <th className="py-2.5 px-3.5 text-center w-[110px]">Couverture</th>
+              <th className="py-2.5 px-3.5 text-right w-[120px]">Point Commande</th>
+              <th className="py-2.5 px-3.5 min-w-[190px]">Diagnostic</th>
+              <th className="py-2.5 px-2 text-center w-[50px]">Fiche</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100 text-xs">
+            {items.map((item) => {
+              const isZero = Number(item.stock_actuel) <= 0;
+              return (
+                <tr
+                  key={item.code_article}
+                  onClick={() => setSelectedArticle(item)}
+                  className="hover:bg-sky-50/70 transition-colors cursor-pointer group"
+                >
+                  <td className="py-2.5 px-3.5 font-mono font-bold text-slate-900 whitespace-nowrap">
+                    <span className="bg-slate-100 group-hover:bg-white px-2 py-0.5 rounded text-[11px] border border-slate-200 shadow-2xs">
+                      {item.code_article}
+                    </span>
+                  </td>
+
+                  <td className="py-2.5 px-3.5">
+                    <div className="font-bold text-slate-900 line-clamp-1 group-hover:text-sky-700 transition-colors" title={item.designation}>
+                      {item.designation}
+                    </div>
+                    <div className="text-[10px] text-slate-400 flex items-center gap-1.5 mt-0.5">
+                      <span>{item.type_article || 'ROH'}</span>
+                      <span>•</span>
+                      <span>{item.unite || 'PCE'}</span>
+                      {item.emplacement && (
+                        <>
+                          <span>•</span>
+                          <span>{item.emplacement}</span>
+                        </>
+                      )}
+                    </div>
+                  </td>
+
+                  <td className="py-2.5 px-2 text-center whitespace-nowrap">
+                    <div className="flex flex-col items-center gap-0.5">
+                      {renderCategoryBadge(item.categorie as string)}
+                      <span className="text-[10px] text-slate-500 font-medium">Mag {item.magasin || '33'}</span>
+                    </div>
+                  </td>
+
+                  <td className="py-2.5 px-3.5 text-right whitespace-nowrap font-mono font-black">
+                    <span className={isZero ? 'text-rose-600' : 'text-slate-900'}>
+                      {Number(item.stock_actuel || 0).toLocaleString()}
+                    </span>
+                    <span className="text-[10px] text-slate-400 font-semibold ml-1">{item.unite || 'PCE'}</span>
+                  </td>
+
+                  <td className="py-2.5 px-3 text-right whitespace-nowrap font-mono">
+                    <span className="font-semibold text-slate-700">
+                      {Math.round((item.avg_monthly_sortie || 0) * 12).toLocaleString()}
+                    </span>
+                    <span className="text-[10px] text-slate-400 ml-1">{item.unite || 'PCE'}</span>
+                  </td>
+
+                  <td className="py-2.5 px-3.5 text-center whitespace-nowrap font-mono">
+                    {item.coverage_months !== undefined ? (
+                      item.coverage_months > 99 ? (
+                        <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-600">
+                          &gt; 24 m
+                        </span>
+                      ) : (
+                        <span className={`px-2 py-0.5 rounded text-[10px] font-black ${
+                          item.coverage_months <= 0
+                            ? 'bg-rose-100 text-rose-800'
+                            : item.coverage_months < 1
+                              ? 'bg-orange-100 text-orange-800'
+                              : item.coverage_months < 2
+                                ? 'bg-amber-100 text-amber-800'
+                                : 'bg-emerald-100 text-emerald-800'
+                        }`}>
+                          {item.coverage_months.toFixed(1)} m
+                        </span>
+                      )
+                    ) : (
+                      <span className="text-slate-400">-</span>
+                    )}
+                  </td>
+
+                  <td className="py-2.5 px-3.5 text-right whitespace-nowrap font-mono font-bold text-indigo-700">
+                    <span className="bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded text-[11px]">
+                      {item.point_reorder !== undefined ? Number(item.point_reorder).toLocaleString() : '-'}
+                    </span>
+                  </td>
+
+                  <td className="py-2.5 px-3.5 whitespace-nowrap">
+                    {renderHealthBadge(item.health_status || item.statut, item.alert_reason)}
+                  </td>
+
+                  <td className="py-2.5 px-2 text-center whitespace-nowrap">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedArticle(item);
+                      }}
+                      className="p-1 rounded text-slate-400 hover:text-sky-600 hover:bg-sky-100 transition-colors inline-flex items-center justify-center"
+                      title="Ouvrir la fiche complète"
+                    >
+                      <ChevronRight size={16} />
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    );
+  };
+
   return (
     <div className="w-full max-w-none space-y-4">
       {/* HIDDEN FILE INPUT FOR MCBA UPLOAD */}
@@ -392,7 +567,7 @@ export const StockSituation: React.FC<StockSituationProps> = ({ onNavigateToAppr
         <div className="space-y-1">
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-sky-500/20 text-sky-300 border border-sky-400/30 uppercase tracking-wider">
-              Périmètre Strict MB51
+              {mode === 'finished_goods' ? 'Produits Finis (PF)' : 'Matières Premières & Pièces (MP / PD)'}
             </span>
             <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 flex items-center gap-1.5">
               <Calendar size={12} />
@@ -401,7 +576,7 @@ export const StockSituation: React.FC<StockSituationProps> = ({ onNavigateToAppr
           </div>
           <h1 className="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-2.5">
             <Boxes className="text-sky-400" size={26} />
-            <span>Situation de Stock & Alertes d'Approvisionnement</span>
+            <span>{mode === 'finished_goods' ? 'Situation des Stocks : Produits Finis (Compteurs & Appareils)' : 'Situation des Stocks : Matières Premières & Pièces Détachées'}</span>
           </h1>
           <p className="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
             Seuls les <strong>{kpis.total} articles avec historique de mouvements récents (MB51 sur 2 ans)</strong> sont affichés. À chaque nouvel import du fichier <strong>MCBA</strong>, seul le dernier mois de stock est extrait et remplace automatiquement les données existantes pour alerter immédiatement sur les risques de rupture.
@@ -480,627 +655,349 @@ export const StockSituation: React.FC<StockSituationProps> = ({ onNavigateToAppr
         </div>
       )}
 
-      {/* 5 MOST NEEDED KPI CARDS */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-        {/* KPI 1: Total MB51 Articles */}
+      {/* SECTION OVERVIEW SUMMARY BAR */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         <div 
-          onClick={() => setActiveTabFilter('ALL')}
-          className={`p-3.5 sm:p-4 rounded-2xl border transition-all cursor-pointer ${
-            activeTabFilter === 'ALL' 
-              ? 'bg-blue-50/80 border-blue-400 ring-2 ring-blue-400/20 shadow-xs' 
-              : 'bg-white border-slate-200 hover:border-slate-300 hover:shadow-xs'
-          }`}
+          onClick={() => toggleSection('ruptures')}
+          className="p-3.5 bg-rose-50/80 rounded-2xl border border-rose-200 cursor-pointer hover:shadow-xs transition-all flex items-center justify-between"
         >
-          <div className="flex items-center justify-between text-slate-500 mb-1.5">
-            <span className="text-[11px] font-bold uppercase tracking-wider">Articles MB51</span>
-            <div className="p-1.5 rounded-lg bg-blue-100 text-blue-700">
-              <Boxes size={16} />
+          <div>
+            <div className="text-[10px] font-black uppercase tracking-wider text-rose-700 flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-rose-600 animate-pulse"></span>
+              {mode === 'finished_goods' ? 'Ruptures Produits Finis' : 'Ruptures Série (Impact Ligne)'}
             </div>
+            <div className="text-2xl font-black text-rose-700 mt-0.5">{groupedSections.rupturesHigh.length}</div>
+            <div className="text-[11px] text-rose-600 font-medium">Stock = 0 & Forte conso</div>
           </div>
-          <div className="text-2xl font-black text-slate-900">{kpis.total}</div>
-          <div className="text-[11px] text-slate-500 font-medium mt-0.5">Actifs ces 2 ans</div>
+          <div className="p-2 bg-rose-100 text-rose-700 rounded-xl">
+            <AlertTriangle size={18} />
+          </div>
         </div>
 
-        {/* KPI 2: Tous les Problèmes (Ruptures + Critiques) */}
         <div 
-          onClick={() => setActiveTabFilter('PROBLEMS')}
-          className={`p-3.5 sm:p-4 rounded-2xl border transition-all cursor-pointer ${
-            activeTabFilter === 'PROBLEMS' 
-              ? 'bg-rose-50/90 border-rose-400 ring-2 ring-rose-400/20 shadow-xs' 
-              : 'bg-white border-slate-200 hover:border-rose-200 hover:shadow-xs'
-          }`}
+          onClick={() => toggleSection('critiques')}
+          className="p-3.5 bg-orange-50/80 rounded-2xl border border-orange-200 cursor-pointer hover:shadow-xs transition-all flex items-center justify-between"
         >
-          <div className="flex items-center justify-between text-rose-600 mb-1.5">
-            <span className="text-[11px] font-black uppercase tracking-wider flex items-center gap-1">
-              <ShieldAlert size={14} />
-              Total Alertes
-            </span>
-            <div className="p-1.5 rounded-lg bg-rose-100 text-rose-700">
-              <AlertTriangle size={16} />
+          <div>
+            <div className="text-[10px] font-black uppercase tracking-wider text-orange-700 flex items-center gap-1.5">
+              <Clock size={12} />
+              Stocks Critiques
             </div>
+            <div className="text-2xl font-black text-orange-700 mt-0.5">{groupedSections.critiques.length}</div>
+            <div className="text-[11px] text-orange-600 font-medium">&lt; 1 mois de couverture</div>
           </div>
-          <div className="text-2xl font-black text-rose-700">{kpis.problems}</div>
-          <div className="text-[11px] text-rose-600 font-semibold mt-0.5">Ruptures & Critiques</div>
+          <div className="p-2 bg-orange-100 text-orange-700 rounded-xl">
+            <TrendingDown size={18} />
+          </div>
         </div>
 
-        {/* KPI 3: Ruptures Immédiates */}
         <div 
-          onClick={() => setActiveTabFilter('RUPTURE')}
-          className={`p-3.5 sm:p-4 rounded-2xl border transition-all cursor-pointer ${
-            activeTabFilter === 'RUPTURE' 
-              ? 'bg-rose-100/80 border-rose-500 ring-2 ring-rose-500/20 shadow-xs' 
-              : 'bg-white border-slate-200 hover:border-rose-300 hover:shadow-xs'
-          }`}
+          onClick={() => toggleSection('bas')}
+          className="p-3.5 bg-amber-50/80 rounded-2xl border border-amber-200 cursor-pointer hover:shadow-xs transition-all flex items-center justify-between"
         >
-          <div className="flex items-center justify-between text-rose-700 mb-1.5">
-            <span className="text-[11px] font-bold uppercase tracking-wider">Ruptures</span>
-            <span className="w-2.5 h-2.5 rounded-full bg-rose-600 animate-ping"></span>
+          <div>
+            <div className="text-[10px] font-black uppercase tracking-wider text-amber-700 flex items-center gap-1.5">
+              <ShieldAlert size={12} />
+              Stocks Bas
+            </div>
+            <div className="text-2xl font-black text-amber-700 mt-0.5">{groupedSections.bas.length}</div>
+            <div className="text-[11px] text-amber-600 font-medium">1 à 2 mois (sous ROP)</div>
           </div>
-          <div className="text-2xl font-black text-rose-700">{kpis.ruptures}</div>
-          <div className="text-[11px] text-rose-600 font-medium mt-0.5">Stock = 0 unités</div>
+          <div className="p-2 bg-amber-100 text-amber-700 rounded-xl">
+            <AlertCircle size={18} />
+          </div>
         </div>
 
-        {/* KPI 4: Stock Critique (< 1 mois de couverture) */}
         <div 
-          onClick={() => setActiveTabFilter('CRITIQUE')}
-          className={`p-3.5 sm:p-4 rounded-2xl border transition-all cursor-pointer ${
-            activeTabFilter === 'CRITIQUE' 
-              ? 'bg-orange-50 border-orange-400 ring-2 ring-orange-400/20 shadow-xs' 
-              : 'bg-white border-slate-200 hover:border-orange-200 hover:shadow-xs'
-          }`}
+          onClick={() => toggleSection('disponibles')}
+          className="p-3.5 bg-emerald-50/80 rounded-2xl border border-emerald-200 cursor-pointer hover:shadow-xs transition-all flex items-center justify-between"
         >
-          <div className="flex items-center justify-between text-orange-700 mb-1.5">
-            <span className="text-[11px] font-bold uppercase tracking-wider">Critiques</span>
-            <div className="p-1.5 rounded-lg bg-orange-100 text-orange-700">
-              <Clock size={16} />
+          <div>
+            <div className="text-[10px] font-black uppercase tracking-wider text-emerald-700 flex items-center gap-1.5">
+              <CheckCircle2 size={12} />
+              Stocks Sains (&gt; 2 mois)
             </div>
+            <div className="text-2xl font-black text-emerald-700 mt-0.5">{groupedSections.disponibles.length}</div>
+            <div className="text-[11px] text-emerald-600 font-medium">Couverture assurée</div>
           </div>
-          <div className="text-2xl font-black text-orange-700">{kpis.critiques}</div>
-          <div className="text-[11px] text-orange-600 font-medium mt-0.5">&lt; 1 mois de couverture</div>
-        </div>
-
-        {/* KPI 5: Stock Bas (< 2 mois de couverture) */}
-        <div 
-          onClick={() => setActiveTabFilter('BAS')}
-          className={`p-3.5 sm:p-4 rounded-2xl border transition-all cursor-pointer ${
-            activeTabFilter === 'BAS' 
-              ? 'bg-amber-50 border-amber-400 ring-2 ring-amber-400/20 shadow-xs' 
-              : 'bg-white border-slate-200 hover:border-amber-200 hover:shadow-xs'
-          }`}
-        >
-          <div className="flex items-center justify-between text-amber-700 mb-1.5">
-            <span className="text-[11px] font-bold uppercase tracking-wider">Stock Bas</span>
-            <div className="p-1.5 rounded-lg bg-amber-100 text-amber-700">
-              <TrendingDown size={16} />
-            </div>
+          <div className="p-2 bg-emerald-100 text-emerald-700 rounded-xl">
+            <Boxes size={18} />
           </div>
-          <div className="text-2xl font-black text-amber-700">{kpis.bas}</div>
-          <div className="text-[11px] text-amber-600 font-medium mt-0.5">1 à 2 mois couverture</div>
-        </div>
-
-        {/* KPI 6: Disponibles / Bons */}
-        <div 
-          onClick={() => setActiveTabFilter('DISPONIBLE')}
-          className={`p-3.5 sm:p-4 rounded-2xl border transition-all cursor-pointer ${
-            activeTabFilter === 'DISPONIBLE' 
-              ? 'bg-emerald-50 border-emerald-400 ring-2 ring-emerald-400/20 shadow-xs' 
-              : 'bg-white border-slate-200 hover:border-emerald-200 hover:shadow-xs'
-          }`}
-        >
-          <div className="flex items-center justify-between text-emerald-700 mb-1.5">
-            <span className="text-[11px] font-bold uppercase tracking-wider">Disponibles</span>
-            <div className="p-1.5 rounded-lg bg-emerald-100 text-emerald-700">
-              <CheckCircle2 size={16} />
-            </div>
-          </div>
-          <div className="text-2xl font-black text-emerald-700">{kpis.disponibles}</div>
-          <div className="text-[11px] text-emerald-600 font-medium mt-0.5">Stock sain &gt; 2 mois</div>
         </div>
       </div>
 
-      {/* FILTER & SEARCH CONTROL TOOLBAR */}
-      <div className="bg-white p-3.5 rounded-2xl border border-slate-200 shadow-xs space-y-3">
-        {/* ROW 1: Search & Dropdown Filters */}
-        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
-          {/* Search Box */}
-          <div className="relative flex-1 min-w-[240px]">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" size={17} />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Rechercher par code article, désignation, magasin, motif d'alerte..."
-              className="w-full pl-10 pr-9 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium transition-all"
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
-              >
-                <X size={15} />
-              </button>
-            )}
-          </div>
+      {/* SEARCH & FILTERS BAR (CLEAN, NO TABS) */}
+      <div className="bg-white p-3.5 rounded-2xl border border-slate-200 shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+        <div className="relative flex-1 min-w-[260px]">
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Filtrer en direct par code SAP, désignation, magasin..."
+            className="w-full pl-9 pr-9 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 font-medium"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+            >
+              <X size={14} />
+            </button>
+          )}
+        </div>
 
-          {/* Quick Selectors */}
-          <div className="flex items-center gap-2 flex-wrap">
-            {/* Category Filter */}
-            <div className="flex items-center gap-1 text-xs">
-              <span className="text-slate-500 font-semibold hidden sm:inline">Catégorie:</span>
+        <div className="flex items-center gap-2 flex-wrap text-xs">
+          {mode === 'components' && (
+            <div className="flex items-center gap-1">
+              <span className="text-slate-500 font-semibold">Type:</span>
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500"
+                className="px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg font-semibold text-slate-700 focus:outline-none"
               >
-                <option value="ALL">Toutes Catégories</option>
+                <option value="ALL">Toutes matières</option>
                 <option value="MP">MP - Matières Premières</option>
-                <option value="PF">PF - Produits Finis</option>
                 <option value="PD">PD - Pièces Détachées</option>
                 <option value="AUX">AUX - Matériel Auxiliaire</option>
               </select>
             </div>
+          )}
 
-            {/* Trend Filter */}
-            <div className="flex items-center gap-1 text-xs">
-              <span className="text-slate-500 font-semibold hidden sm:inline">Tendance Flux:</span>
-              <select
-                value={selectedTrend}
-                onChange={(e) => setSelectedTrend(e.target.value)}
-                className="px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500"
-              >
-                <option value="ALL">Tous les Flux</option>
-                <option value="SORTIE_PLUS">🔴 Sorties &gt; Entrées (Forte Consommation)</option>
-                <option value="ENTREE_PLUS">🟢 Entrées &gt; Sorties (Appro Dominant)</option>
-              </select>
-            </div>
-
-            {/* Magasin Filter */}
-            {magasinsList.length > 1 && (
-              <div className="flex items-center gap-1 text-xs">
-                <span className="text-slate-500 font-semibold hidden sm:inline">Magasin:</span>
-                <select
-                  value={selectedMagasin}
-                  onChange={(e) => setSelectedMagasin(e.target.value)}
-                  className="px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500"
-                >
-                  <option value="ALL">Tous Magasins</option>
-                  {magasinsList.map((m) => (
-                    <option key={m} value={m}>Magasin {m}</option>
-                  ))}
-                </select>
-              </div>
-            )}
-
-            {/* Page Size */}
+          <div className="flex items-center gap-1">
+            <span className="text-slate-500 font-semibold">Flux MB51:</span>
             <select
-              value={pageSize}
-              onChange={(e) => setPageSize(Number(e.target.value))}
-              className="px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold text-slate-700 focus:outline-none"
+              value={selectedTrend}
+              onChange={(e) => setSelectedTrend(e.target.value)}
+              className="px-2.5 py-1.5 bg-slate-50 border border-slate-200 rounded-lg font-semibold text-slate-700 focus:outline-none"
             >
-              <option value={25}>25 / page</option>
-              <option value={50}>50 / page</option>
-              <option value={100}>100 / page</option>
-              <option value={300}>Tous (300)</option>
+              <option value="ALL">Tous les flux</option>
+              <option value="SORTIE_PLUS">Sorties &gt; Entrées</option>
+              <option value="ENTREE_PLUS">Entrées &gt; Sorties</option>
             </select>
           </div>
-        </div>
 
-        {/* ROW 2: Filter Pills for Fast Switching */}
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 pt-0.5 border-t border-slate-100">
-          <button
-            onClick={() => setActiveTabFilter('PROBLEMS')}
-            className={`px-3 py-1 rounded-lg text-xs font-black transition-all flex items-center gap-1.5 cursor-pointer shrink-0 ${
-              activeTabFilter === 'PROBLEMS'
-                ? 'bg-rose-600 text-white shadow-xs'
-                : 'bg-rose-50 text-rose-700 hover:bg-rose-100 border border-rose-200'
-            }`}
-          >
-            <AlertTriangle size={13} />
-            <span>Tous les Problèmes ({kpis.problems})</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTabFilter('RUPTURE')}
-            className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shrink-0 ${
-              activeTabFilter === 'RUPTURE'
-                ? 'bg-rose-700 text-white shadow-xs'
-                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-            }`}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
-            <span>Ruptures ({kpis.ruptures})</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTabFilter('CRITIQUE')}
-            className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shrink-0 ${
-              activeTabFilter === 'CRITIQUE'
-                ? 'bg-orange-600 text-white shadow-xs'
-                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-            }`}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
-            <span>Critiques &lt; 1m ({kpis.critiques})</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTabFilter('BAS')}
-            className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shrink-0 ${
-              activeTabFilter === 'BAS'
-                ? 'bg-amber-600 text-white shadow-xs'
-                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-            }`}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-            <span>Stock Bas &lt; 2m ({kpis.bas})</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTabFilter('DISPONIBLE')}
-            className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shrink-0 ${
-              activeTabFilter === 'DISPONIBLE'
-                ? 'bg-emerald-600 text-white shadow-xs'
-                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-            }`}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            <span>Disponibles ({kpis.disponibles})</span>
-          </button>
-
-          <button
-            onClick={() => setActiveTabFilter('ALL')}
-            className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shrink-0 ${
-              activeTabFilter === 'ALL'
-                ? 'bg-slate-900 text-white shadow-xs'
-                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-            }`}
-          >
-            <span>Tous les {kpis.total} Articles MB51</span>
-          </button>
-
-          <div className="ml-auto text-xs text-slate-400 font-medium shrink-0">
+          <div className="text-xs font-semibold text-slate-500">
             {filteredItems.length} articles affichés
           </div>
         </div>
       </div>
 
-      {/* FULL HORIZONTAL WIDTH DATA TABLE */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
-        <div className="w-full overflow-x-auto">
-          <table className="w-full text-left border-collapse min-w-[1050px]">
-            <thead>
-              <tr className="bg-slate-50/80 border-b border-slate-200 text-[11px] font-black uppercase text-slate-600 tracking-wider">
-                <th 
-                  onClick={() => handleSort('code_article')} 
-                  className="py-3 px-3 cursor-pointer hover:bg-slate-100 transition-colors w-[130px]"
-                >
-                  <div className="flex items-center gap-1">
-                    <span>Code SAP</span>
-                    <ArrowUpDown size={12} />
-                  </div>
-                </th>
+      {/* =========================================================================
+          SECTION 1 : VRAIES RUPTURES DE SÉRIE (IMPACT DIRECT SUR LA PRODUCTION)
+          ========================================================================= */}
+      <section className="bg-white rounded-2xl border border-rose-200 shadow-xs overflow-hidden">
+        <div 
+          onClick={() => toggleSection('ruptures')}
+          className="p-3.5 bg-gradient-to-r from-rose-50 to-white border-b border-rose-100 flex items-center justify-between cursor-pointer hover:bg-rose-100/40 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-rose-600 text-white rounded-xl shadow-xs">
+              <AlertTriangle size={18} />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h3 className="text-sm font-black text-rose-950 uppercase tracking-wide">
+                  {mode === 'finished_goods' 
+                    ? 'Section 1 : Ruptures Produits Finis (Stock = 0)' 
+                    : 'Section 1 : Vraies Ruptures de Série (Composants de Forte Consommation > 500 à 450 000 / an)'}
+                </h3>
+                <span className="px-2 py-0.5 rounded-full text-[11px] font-black bg-rose-600 text-white shadow-2xs">
+                  {groupedSections.rupturesHigh.length} articles
+                </span>
+              </div>
+              <p className="text-xs text-rose-700 mt-0.5">
+                {mode === 'finished_goods' 
+                  ? 'Compteurs et appareils avec stock physique nul dans MCBA (production à la commande ou expédiée).' 
+                  : 'Composants indispensables à forte rotation en rupture physique : blocage immédiat des lignes de fabrication.'}
+              </p>
+            </div>
+          </div>
+          <button className="text-rose-600 p-1.5 hover:bg-rose-200/50 rounded-lg">
+            {openSections.ruptures ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+          </button>
+        </div>
 
-                <th 
-                  onClick={() => handleSort('designation')} 
-                  className="py-3 px-3 cursor-pointer hover:bg-slate-100 transition-colors min-w-[260px]"
-                >
-                  <div className="flex items-center gap-1">
-                    <span>Désignation Article</span>
-                    <ArrowUpDown size={12} />
-                  </div>
-                </th>
+        {openSections.ruptures && (
+          <div className="p-4">
+            {renderSectionTable(
+              groupedSections.rupturesHigh, 
+              "Aucun article en rupture critique selon les filtres.",
+              <CheckCircle2 size={24} className="text-emerald-500" />
+            )}
+          </div>
+        )}
+      </section>
 
-                <th className="py-3 px-2 text-center w-[90px]">
-                  <span>Cat. / Mag</span>
-                </th>
+      {/* =========================================================================
+          SECTION 1-BIS : BESOINS PONCTUELS & FAIBLE VOLUME (< 500 / AN OU MAINTENANCE)
+          ========================================================================= */}
+      {mode === 'components' && groupedSections.rupturesLow.length > 0 && (
+        <section className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
+          <div 
+            onClick={() => toggleSection('rupturesLow')}
+            className="p-3.5 bg-gradient-to-r from-slate-50 to-white border-b border-slate-100 flex items-center justify-between cursor-pointer hover:bg-slate-100/50 transition-colors"
+          >
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-slate-600 text-white rounded-xl shadow-xs">
+                <Info size={18} />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-sm font-black text-slate-800 uppercase tracking-wide">
+                    Section 1-B : Besoins Ponctuels & Maintenance à Stock 0 (&lt; 500 unités/an ou 25 kg)
+                  </h3>
+                  <span className="px-2 py-0.5 rounded-full text-[11px] font-bold bg-slate-200 text-slate-700">
+                    {groupedSections.rupturesLow.length} articles
+                  </span>
+                </div>
+                <p className="text-xs text-slate-500 mt-0.5">
+                  Articles à faible rotation, consommables d'atelier ou pièces de maintenance (ne bloquent pas la production de série).
+                </p>
+              </div>
+            </div>
+            <button className="text-slate-500 p-1.5 hover:bg-slate-200/50 rounded-lg">
+              {openSections.rupturesLow ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+            </button>
+          </div>
 
-                <th 
-                  onClick={() => handleSort('stock_actuel')} 
-                  className="py-3 px-3 text-right cursor-pointer hover:bg-slate-100 transition-colors w-[130px]"
-                >
-                  <div className="flex items-center justify-end gap-1">
-                    <span>Stock Actuel</span>
-                    <ArrowUpDown size={12} />
-                  </div>
-                </th>
-
-                <th 
-                  onClick={() => handleSort('health_status')} 
-                  className="py-3 px-3 cursor-pointer hover:bg-slate-100 transition-colors w-[190px]"
-                >
-                  <div className="flex items-center gap-1">
-                    <span>Statut & Diagnostic</span>
-                    <ArrowUpDown size={12} />
-                  </div>
-                </th>
-
-                <th 
-                  onClick={() => handleSort('coverage_months')} 
-                  className="py-3 px-3 text-center cursor-pointer hover:bg-slate-100 transition-colors w-[110px]"
-                >
-                  <div className="flex items-center justify-center gap-1">
-                    <span>Couverture</span>
-                    <ArrowUpDown size={12} />
-                  </div>
-                </th>
-
-                <th 
-                  onClick={() => handleSort('avg_monthly_sortie')} 
-                  className="py-3 px-3 text-right cursor-pointer hover:bg-slate-100 transition-colors w-[110px]"
-                >
-                  <div className="flex items-center justify-end gap-1">
-                    <span>Sorties/Mois</span>
-                    <ArrowUpDown size={12} />
-                  </div>
-                </th>
-
-                <th 
-                  onClick={() => handleSort('mb51_frequency')} 
-                  className="py-3 px-3 text-center cursor-pointer hover:bg-slate-100 transition-colors w-[110px]"
-                  title="Nombre de mouvements enregistrés dans MB51 au cours des 2 dernières années"
-                >
-                  <div className="flex items-center justify-center gap-1">
-                    <span>Mvts MB51</span>
-                    <ArrowUpDown size={12} />
-                  </div>
-                </th>
-
-                <th 
-                  onClick={() => handleSort('mb51_total_sorties')} 
-                  className="py-3 px-3 text-right cursor-pointer hover:bg-slate-100 transition-colors w-[130px]"
-                  title="Total des sorties de stock MB51"
-                >
-                  <div className="flex items-center justify-end gap-1">
-                    <span>Sorties MB51</span>
-                    <ArrowUpDown size={12} />
-                  </div>
-                </th>
-
-                <th 
-                  onClick={() => handleSort('mb51_total_entrees')} 
-                  className="py-3 px-3 text-right cursor-pointer hover:bg-slate-100 transition-colors w-[130px]"
-                  title="Total des entrées de stock MB51"
-                >
-                  <div className="flex items-center justify-end gap-1">
-                    <span>Entrées MB51</span>
-                    <ArrowUpDown size={12} />
-                  </div>
-                </th>
-
-                <th className="py-3 px-3 text-center w-[120px]">
-                  <span>Flux MB51</span>
-                </th>
-
-                <th className="py-3 px-2 text-center w-[50px]">
-                  <span>Détail</span>
-                </th>
-              </tr>
-            </thead>
-
-            <tbody className="divide-y divide-slate-100 text-xs text-slate-800">
-              {loading ? (
-                <tr>
-                  <td colSpan={12} className="py-12 text-center text-slate-400">
-                    <div className="flex flex-col items-center justify-center gap-2">
-                      <RefreshCw className="animate-spin text-sky-600" size={24} />
-                      <span className="font-semibold">Chargement de la situation des stocks...</span>
-                    </div>
-                  </td>
-                </tr>
-              ) : paginatedItems.length === 0 ? (
-                <tr>
-                  <td colSpan={12} className="py-12 text-center text-slate-500">
-                    <div className="flex flex-col items-center justify-center gap-2">
-                      <Boxes className="text-slate-300" size={32} />
-                      <span className="font-bold text-slate-700">Aucun article ne correspond à vos filtres.</span>
-                      <span className="text-xs text-slate-400">Essayez de réinitialiser la recherche ou de changer d'onglet.</span>
-                    </div>
-                  </td>
-                </tr>
-              ) : (
-                paginatedItems.map((item) => {
-                  const isRupture = (item.health_status === 'RUPTURE') || (Number(item.stock_actuel) <= 0);
-                  const isCritique = item.health_status === 'CRITIQUE';
-                  const isBas = item.health_status === 'BAS';
-                  const trendIsSortie = item.mb51_trend === 'SORTIE_PLUS' || (Number(item.mb51_total_sorties) > Number(item.mb51_total_entrees));
-
-                  return (
-                    <tr 
-                      key={item.code_article}
-                      onClick={() => setSelectedArticle(item)}
-                      className={`hover:bg-sky-50/50 transition-colors cursor-pointer ${
-                        isRupture 
-                          ? 'bg-rose-50/20' 
-                          : isCritique 
-                            ? 'bg-orange-50/15' 
-                            : ''
-                      }`}
-                    >
-                      {/* Code SAP */}
-                      <td className="py-2.5 px-3 font-mono font-bold text-slate-900 whitespace-nowrap">
-                        <span className="bg-slate-100 px-1.5 py-0.5 rounded-md text-[11px] border border-slate-200">
-                          {item.code_article}
-                        </span>
-                      </td>
-
-                      {/* Désignation */}
-                      <td className="py-2.5 px-3 font-medium text-slate-900">
-                        <div className="font-bold line-clamp-1" title={item.designation}>
-                          {item.designation}
-                        </div>
-                        <div className="text-[10px] text-slate-400 flex items-center gap-1.5 mt-0.5">
-                          <span>{item.type_article || 'ROH'}</span>
-                          <span>•</span>
-                          <span>{item.unite || 'PCE'}</span>
-                          {item.emplacement && (
-                            <>
-                              <span>•</span>
-                              <span>{item.emplacement}</span>
-                            </>
-                          )}
-                        </div>
-                      </td>
-
-                      {/* Catégorie & Magasin */}
-                      <td className="py-2.5 px-2 text-center whitespace-nowrap">
-                        <div className="flex flex-col items-center gap-1">
-                          {renderCategoryBadge(item.categorie as string)}
-                          <span className="text-[10px] text-slate-500 font-medium">Mag {item.magasin || '33'}</span>
-                        </div>
-                      </td>
-
-                      {/* Stock Actuel (Dernier Mois) */}
-                      <td className="py-2.5 px-3 text-right whitespace-nowrap">
-                        <div className={`text-sm font-black font-mono ${
-                          isRupture ? 'text-rose-600' : isCritique ? 'text-orange-600' : isBas ? 'text-amber-700' : 'text-slate-900'
-                        }`}>
-                          {Number(item.stock_actuel || 0).toLocaleString()}
-                        </div>
-                        <div className="text-[10px] font-semibold text-slate-400 flex items-center justify-end gap-1">
-                          <span>{item.unite || 'PCE'}</span>
-                          <span className="px-1 py-0.2 rounded bg-slate-100 text-slate-500 text-[9px] border border-slate-200">
-                            {item.latest_month || kpis.latestMonth}
-                          </span>
-                        </div>
-                      </td>
-
-                      {/* Statut & Diagnostic */}
-                      <td className="py-2.5 px-3 whitespace-nowrap">
-                        {renderHealthBadge(item.health_status || item.statut, item.alert_reason)}
-                      </td>
-
-                      {/* Couverture */}
-                      <td className="py-2.5 px-3 text-center whitespace-nowrap font-mono">
-                        {item.coverage_months !== undefined ? (
-                          item.coverage_months > 99 ? (
-                            <span className="px-2 py-0.5 rounded-md text-[11px] font-bold bg-slate-100 text-slate-600">
-                              &gt; 24 m
-                            </span>
-                          ) : (
-                            <span className={`px-2 py-0.5 rounded-md text-[11px] font-black ${
-                              item.coverage_months <= 0 
-                                ? 'bg-rose-100 text-rose-700 font-extrabold' 
-                                : item.coverage_months < 1 
-                                  ? 'bg-orange-100 text-orange-800' 
-                                  : item.coverage_months < 2 
-                                    ? 'bg-amber-100 text-amber-800' 
-                                    : 'bg-emerald-100 text-emerald-800'
-                            }`}>
-                              {item.coverage_months.toFixed(1)} m
-                            </span>
-                          )
-                        ) : (
-                          <span className="text-slate-400">-</span>
-                        )}
-                      </td>
-
-                      {/* Sorties Moyennes / Mois */}
-                      <td className="py-2.5 px-3 text-right font-mono text-slate-700 whitespace-nowrap">
-                        {item.avg_monthly_sortie ? Number(item.avg_monthly_sortie).toLocaleString() : '0'}
-                      </td>
-
-                      {/* MB51 Mouvements count */}
-                      <td className="py-2.5 px-3 text-center font-mono whitespace-nowrap">
-                        <span className={`px-2 py-0.5 rounded-md text-[11px] font-bold ${
-                          (item.mb51_frequency || 0) > 100 
-                            ? 'bg-indigo-100 text-indigo-800 font-black' 
-                            : (item.mb51_frequency || 0) > 20 
-                              ? 'bg-sky-100 text-sky-800' 
-                              : 'bg-slate-100 text-slate-600'
-                        }`}>
-                          {item.mb51_frequency || 0} mvts
-                        </span>
-                      </td>
-
-                      {/* MB51 Total Sorties */}
-                      <td className="py-2.5 px-3 text-right font-mono text-rose-700 whitespace-nowrap font-semibold">
-                        -{Number(item.mb51_total_sorties || 0).toLocaleString()}
-                      </td>
-
-                      {/* MB51 Total Entrées */}
-                      <td className="py-2.5 px-3 text-right font-mono text-emerald-700 whitespace-nowrap font-semibold">
-                        +{Number(item.mb51_total_entrees || 0).toLocaleString()}
-                      </td>
-
-                      {/* Flux MB51 */}
-                      <td className="py-2.5 px-3 text-center whitespace-nowrap">
-                        {trendIsSortie ? (
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200">
-                            <TrendingDown size={11} />
-                            Sortie &gt; Entrée
-                          </span>
-                        ) : (
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                            <TrendingUp size={11} />
-                            Entrée &gt; Sortie
-                          </span>
-                        )}
-                      </td>
-
-                      {/* Detail Button */}
-                      <td className="py-2.5 px-2 text-center whitespace-nowrap">
-                        <button 
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedArticle(item);
-                          }}
-                          className="p-1.5 rounded-lg text-slate-400 hover:text-sky-600 hover:bg-sky-50 transition-colors"
-                          title="Voir l'historique mensuel MCBA & MB51"
-                        >
-                          <Eye size={15} />
-                        </button>
-                      </td>
-                    </tr>
-                  );
-                })
+          {openSections.rupturesLow && (
+            <div className="p-4">
+              {renderSectionTable(
+                groupedSections.rupturesLow, 
+                "Aucun article ponctuel à stock 0.",
+                <Boxes size={24} className="text-slate-400" />
               )}
-            </tbody>
-          </table>
+            </div>
+          )}
+        </section>
+      )}
+
+      {/* =========================================================================
+          SECTION 2 : STOCKS CRITIQUES (< 1 MOIS OU SOUS POINT DE RUPTURE)
+          ========================================================================= */}
+      <section className="bg-white rounded-2xl border border-orange-200 shadow-xs overflow-hidden">
+        <div 
+          onClick={() => toggleSection('critiques')}
+          className="p-3.5 bg-gradient-to-r from-orange-50 to-white border-b border-orange-100 flex items-center justify-between cursor-pointer hover:bg-orange-100/40 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-orange-600 text-white rounded-xl shadow-xs">
+              <Clock size={18} />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h3 className="text-sm font-black text-orange-950 uppercase tracking-wide">
+                  Section 2 : Alertes Critiques (&lt; 1 Mois de Couverture)
+                </h3>
+                <span className="px-2 py-0.5 rounded-full text-[11px] font-black bg-orange-600 text-white shadow-2xs">
+                  {groupedSections.critiques.length} articles
+                </span>
+              </div>
+              <p className="text-xs text-orange-700 mt-0.5">
+                Articles dont le stock est insuffisant pour couvrir le délai d'approvisionnement normal.
+              </p>
+            </div>
+          </div>
+          <button className="text-orange-600 p-1.5 hover:bg-orange-200/50 rounded-lg">
+            {openSections.critiques ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+          </button>
         </div>
 
-        {/* PAGINATION FOOTER */}
-        <div className="p-3 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
-          <div>
-            Affichage de <strong>{Math.min(filteredItems.length, (currentPage - 1) * pageSize + 1)}</strong> à <strong>{Math.min(filteredItems.length, currentPage * pageSize)}</strong> sur <strong>{filteredItems.length}</strong> articles filtrés ({kpis.total} au total)
+        {openSections.critiques && (
+          <div className="p-4">
+            {renderSectionTable(
+              groupedSections.critiques, 
+              "Aucun article en situation critique selon les filtres.",
+              <CheckCircle2 size={24} className="text-emerald-500" />
+            )}
           </div>
+        )}
+      </section>
 
-          <div className="flex items-center gap-1.5">
-            <button
-              onClick={() => setCurrentPage(1)}
-              disabled={currentPage === 1}
-              className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed font-semibold"
-            >
-              Début
-            </button>
-            <button
-              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              disabled={currentPage === 1}
-              className="p-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              <ChevronLeft size={16} />
-            </button>
-
-            <span className="px-3 py-1 font-bold text-slate-800">
-              Page {currentPage} / {totalPages}
-            </span>
-
-            <button
-              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-              disabled={currentPage === totalPages}
-              className="p-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              <ChevronRight size={16} />
-            </button>
-            <button
-              onClick={() => setCurrentPage(totalPages)}
-              disabled={currentPage === totalPages}
-              className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed font-semibold"
-            >
-              Fin
-            </button>
+      {/* =========================================================================
+          SECTION 3 : STOCKS BAS (1 À 2 MOIS / SOUS POINT DE COMMANDE)
+          ========================================================================= */}
+      <section className="bg-white rounded-2xl border border-amber-200 shadow-xs overflow-hidden">
+        <div 
+          onClick={() => toggleSection('bas')}
+          className="p-3.5 bg-gradient-to-r from-amber-50 to-white border-b border-amber-100 flex items-center justify-between cursor-pointer hover:bg-amber-100/40 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-amber-600 text-white rounded-xl shadow-xs">
+              <TrendingDown size={18} />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h3 className="text-sm font-black text-amber-950 uppercase tracking-wide">
+                  Section 3 : Stocks Bas (1 à 2 Mois de Couverture - Sous Point de Commande)
+                </h3>
+                <span className="px-2 py-0.5 rounded-full text-[11px] font-black bg-amber-600 text-white shadow-2xs">
+                  {groupedSections.bas.length} articles
+                </span>
+              </div>
+              <p className="text-xs text-amber-700 mt-0.5">
+                Articles ayant franchi le point de commande (ROP) : à intégrer dans les prochains bons de commande.
+              </p>
+            </div>
           </div>
+          <button className="text-amber-600 p-1.5 hover:bg-amber-200/50 rounded-lg">
+            {openSections.bas ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+          </button>
         </div>
-      </div>
+
+        {openSections.bas && (
+          <div className="p-4">
+            {renderSectionTable(
+              groupedSections.bas, 
+              "Aucun article en stock bas selon les filtres.",
+              <CheckCircle2 size={24} className="text-emerald-500" />
+            )}
+          </div>
+        )}
+      </section>
+
+      {/* =========================================================================
+          SECTION 4 : STOCKS DISPONIBLES ET CONFORMES (> 2 MOIS)
+          ========================================================================= */}
+      <section className="bg-white rounded-2xl border border-emerald-200 shadow-xs overflow-hidden">
+        <div 
+          onClick={() => toggleSection('disponibles')}
+          className="p-3.5 bg-gradient-to-r from-emerald-50 to-white border-b border-emerald-100 flex items-center justify-between cursor-pointer hover:bg-emerald-100/40 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-emerald-600 text-white rounded-xl shadow-xs">
+              <CheckCircle2 size={18} />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h3 className="text-sm font-black text-emerald-950 uppercase tracking-wide">
+                  Section 4 : Stocks Disponibles & Couverture Saine (&gt; 2 Mois)
+                </h3>
+                <span className="px-2 py-0.5 rounded-full text-[11px] font-black bg-emerald-700 text-white shadow-2xs">
+                  {groupedSections.disponibles.length} articles
+                </span>
+              </div>
+              <p className="text-xs text-emerald-700 mt-0.5">
+                Articles sécurisés avec stock au-dessus du stock de sécurité et du point de commande. Cliquez pour dérouler.
+              </p>
+            </div>
+          </div>
+          <button className="text-emerald-600 p-1.5 hover:bg-emerald-200/50 rounded-lg">
+            {openSections.disponibles ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+          </button>
+        </div>
+
+        {openSections.disponibles && (
+          <div className="p-4">
+            {renderSectionTable(
+              groupedSections.disponibles, 
+              "Aucun article disponible selon les filtres.",
+              <Boxes size={24} className="text-slate-400" />
+            )}
+          </div>
+        )}
+      </section>
 
       {/* ARTICLE MONTHLY DETAIL MODAL */}
       {selectedArticle && (
@@ -1158,6 +1055,59 @@ export const StockSituation: React.FC<StockSituationProps> = ({ onNavigateToAppr
                   <div className="text-[11px] font-bold text-slate-500 uppercase">Statut Santé</div>
                   <div className="mt-1">
                     {renderHealthBadge(selectedArticle.health_status || selectedArticle.statut, selectedArticle.alert_reason)}
+                  </div>
+                </div>
+              </div>
+
+              {/* Specific Supply Chain Thresholds (Point de Rupture, Sécurité, Reorder) */}
+              <div className="p-4 bg-gradient-to-r from-slate-900 to-indigo-950 text-white rounded-2xl shadow-sm space-y-3">
+                <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <span className="text-xs font-black uppercase tracking-wider text-indigo-300 flex items-center gap-1.5">
+                    <ShieldAlert size={15} />
+                    Paramètres de Gestion des Stocks & Seuils Critiques
+                  </span>
+                  <span className="text-[11px] text-slate-300 font-medium">
+                    Délai réapprovisionnement estimé : {selectedArticle.lead_time_months || 1.5} mois
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  <div className="p-3 bg-white/10 rounded-xl border border-white/10">
+                    <div className="text-[10px] uppercase font-bold text-rose-300 flex items-center gap-1">
+                      <AlertTriangle size={12} />
+                      Point de Rupture (Critique)
+                    </div>
+                    <div className="text-xl font-black font-mono text-rose-400 mt-0.5">
+                      {Number(selectedArticle.point_rupture || 0).toLocaleString()} {selectedArticle.unite || 'PCE'}
+                    </div>
+                    <div className="text-[10px] text-slate-300 mt-1">
+                      Seuil de basculement en rupture imminente
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-white/10 rounded-xl border border-white/10">
+                    <div className="text-[10px] uppercase font-bold text-amber-300 flex items-center gap-1">
+                      <Clock size={12} />
+                      Stock de Sécurité
+                    </div>
+                    <div className="text-xl font-black font-mono text-amber-400 mt-0.5">
+                      {Number(selectedArticle.stock_securite || 0).toLocaleString()} {selectedArticle.unite || 'PCE'}
+                    </div>
+                    <div className="text-[10px] text-slate-300 mt-1">
+                      Tampon statistique face aux aléas de conso / délai
+                    </div>
+                  </div>
+
+                  <div className="p-3 bg-white/10 rounded-xl border border-white/10">
+                    <div className="text-[10px] uppercase font-bold text-sky-300 flex items-center gap-1">
+                      <ArrowRight size={12} />
+                      Point de Commande (ROP)
+                    </div>
+                    <div className="text-xl font-black font-mono text-sky-400 mt-0.5">
+                      {Number(selectedArticle.point_reorder || 0).toLocaleString()} {selectedArticle.unite || 'PCE'}
+                    </div>
+                    <div className="text-[10px] text-slate-300 mt-1">
+                      Niveau déclencheur du bon de commande
+                    </div>
                   </div>
                 </div>
               </div>

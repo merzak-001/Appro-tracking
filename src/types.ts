@@ -698,7 +698,12 @@ export interface StockItem {
   is_tracked?: boolean; // Actif sur le tableau de bord
   is_important?: boolean; // Article prioritaire ⭐
   famille?: string;
-  stock_securite?: number;
+  // Thresholds & Inventory Planning
+  point_rupture?: number; // Point de rupture critique (seuil d'urgence)
+  stock_securite?: number; // Stock de sécurité (tampon aléas)
+  point_reorder?: number; // Point de commande (ROP = Consommation Délai + SS)
+  lead_time_months?: number; // Délai d'approvisionnement estimé (en mois)
+
   emplacement?: string;
   prix_unitaire_estime?: number;
   fournisseur_principal?: string;

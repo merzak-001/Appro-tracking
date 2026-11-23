@@ -642,11 +642,40 @@ stockRoutes.post("/stock/upload-mcba", (req, res) => {
         globalLatestMonth = latest.mois;
       }
 
+      const existing = stockMap.get(code) || stockMap.get(code.padStart(8, '0')) || stockMap.get(code.replace(/^0+/, ''));
+
       const totalSorties = records.reduce((sum, rec) => sum + rec.sortie, 0);
       const avgMonthlySortie = records.length > 0 ? totalSorties / records.length : 0;
       const currentStock = latest ? latest.stock : 0;
       const latestMonth = latest ? latest.mois : 'N/A';
       const coverageMonths = avgMonthlySortie > 0 ? (currentStock / avgMonthlySortie) : (currentStock > 0 ? 999 : 0);
+
+      // Variance & StdDev calculation for demand fluctuation
+      const variance = records.reduce((acc, rec) => acc + Math.pow(rec.sortie - avgMonthlySortie, 2), 0) / (records.length || 1);
+      const stdDev = Math.sqrt(variance);
+
+      // Lead time L in months according to category
+      const cat = existing ? existing.categorie : 'MP';
+      let L = 1.5;
+      if (cat === 'PF') L = 0.5;
+      else if (cat === 'PD' || cat === 'AUX') L = 1.0;
+
+      let stockSecurite = 0;
+      let reorderPoint = 0;
+      let pointRupture = 0;
+
+      if (avgMonthlySortie > 0) {
+        // Safety Stock (z = 1.65, 95% service level)
+        const theoreticalSS = 1.65 * stdDev * Math.sqrt(L);
+        const minSS = 0.5 * avgMonthlySortie;
+        stockSecurite = Math.round(Math.max(theoreticalSS, minSS));
+        reorderPoint = Math.round((avgMonthlySortie * L) + stockSecurite);
+        pointRupture = Math.round(Math.max(1, stockSecurite * 0.4, (avgMonthlySortie / 30) * 7));
+      } else {
+        stockSecurite = existing?.stock_securite || 0;
+        reorderPoint = stockSecurite;
+        pointRupture = 0;
+      }
 
       let status: 'RUPTURE' | 'CRITIQUE' | 'BAS' | 'DISPONIBLE' | 'SURSTOCK' = 'DISPONIBLE';
       let alertReason = 'Stock suffisant';
@@ -654,21 +683,20 @@ stockRoutes.post("/stock/upload-mcba", (req, res) => {
       if (currentStock <= 0) {
         status = 'RUPTURE';
         alertReason = 'Stock épuisé (0 en stock)';
-      } else if (avgMonthlySortie > 0 && coverageMonths < 1.0) {
+      } else if (currentStock <= pointRupture || (avgMonthlySortie > 0 && coverageMonths < 0.5)) {
         status = 'CRITIQUE';
-        alertReason = `Critique: couverture < 1 mois (${coverageMonths.toFixed(1)} m)`;
-      } else if (currentStock < 100 && avgMonthlySortie > 50) {
+        alertReason = `Critique: Stock sous le seuil de rupture (${currentStock} ≤ ${pointRupture})`;
+      } else if (currentStock <= stockSecurite || (avgMonthlySortie > 0 && coverageMonths < 1.0)) {
         status = 'CRITIQUE';
-        alertReason = `Stock faible (${currentStock} unités)`;
-      } else if (avgMonthlySortie > 0 && coverageMonths < 2.0) {
+        alertReason = `Critique: Stock sous le stock de sécurité (${currentStock} ≤ ${stockSecurite})`;
+      } else if (currentStock <= reorderPoint || (avgMonthlySortie > 0 && coverageMonths < 2.0)) {
         status = 'BAS';
-        alertReason = `Stock bas: couverture ${coverageMonths.toFixed(1)} mois`;
+        alertReason = `Stock bas: Réapprovisionnement requis (Stock ${currentStock} ≤ ROP ${reorderPoint})`;
       } else {
         status = 'DISPONIBLE';
-        alertReason = `Normal: couverture ${coverageMonths > 99 ? '> 24' : coverageMonths.toFixed(1)} mois`;
+        alertReason = `Normal: Couverture ${coverageMonths > 99 ? '> 24' : coverageMonths.toFixed(1)} mois`;
       }
 
-      const existing = stockMap.get(code) || stockMap.get(code.padStart(8, '0')) || stockMap.get(code.replace(/^0+/, ''));
       if (existing) {
         // REPLACE existing stock
         existing.stock_actuel = currentStock;
@@ -676,6 +704,10 @@ stockRoutes.post("/stock/upload-mcba", (req, res) => {
         existing.latest_month = latestMonth;
         existing.avg_monthly_sortie = Math.round(avgMonthlySortie * 10) / 10;
         existing.coverage_months = Math.round(coverageMonths * 10) / 10;
+        existing.stock_securite = stockSecurite;
+        existing.point_reorder = reorderPoint;
+        existing.point_rupture = pointRupture;
+        existing.lead_time_months = L;
         existing.health_status = status;
         existing.statut = status;
         existing.alert_reason = alertReason;

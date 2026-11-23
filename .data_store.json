@@ -8550,7 +8550,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.894Z",
-      "created_at": "2026-11-22T20:28:44.098Z"
+      "created_at": "2026-11-22T20:28:44.098Z",
+      "point_reorder": 174,
+      "point_rupture": 40
     },
     {
       "id": 2,
@@ -8566,7 +8568,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 33,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -8872,7 +8874,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.894Z",
-      "created_at": "2026-11-22T20:28:44.098Z"
+      "created_at": "2026-11-22T20:28:44.098Z",
+      "point_reorder": 51,
+      "point_rupture": 13
     },
     {
       "id": 3,
@@ -8888,7 +8892,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 116,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -9194,7 +9198,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.098Z"
+      "created_at": "2026-11-22T20:28:44.098Z",
+      "point_reorder": 198,
+      "point_rupture": 46
     },
     {
       "id": 4,
@@ -9210,7 +9216,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 35,
       "type_article": "ROH",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -9516,7 +9522,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.098Z"
+      "created_at": "2026-11-22T20:28:44.098Z",
+      "point_reorder": 49,
+      "point_rupture": 14
     },
     {
       "id": 5,
@@ -9532,7 +9540,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 7,
       "type_article": "ROH",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -9838,7 +9846,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.098Z"
+      "created_at": "2026-11-22T20:28:44.098Z",
+      "point_reorder": 12,
+      "point_rupture": 3
     },
     {
       "id": 6,
@@ -9854,7 +9864,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 116,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -10160,7 +10170,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.098Z"
+      "created_at": "2026-11-22T20:28:44.098Z",
+      "point_reorder": 198,
+      "point_rupture": 46
     },
     {
       "id": 7,
@@ -10176,7 +10188,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 63,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -10482,7 +10494,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.098Z"
+      "created_at": "2026-11-22T20:28:44.098Z",
+      "point_reorder": 105,
+      "point_rupture": 25
     },
     {
       "id": 8,
@@ -10498,7 +10512,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 53,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -10804,7 +10818,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 84,
+      "point_rupture": 21
     },
     {
       "id": 9,
@@ -10820,7 +10836,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 11,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -11126,7 +11142,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 20,
+      "point_rupture": 4
     },
     {
       "id": 10,
@@ -11142,7 +11160,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 116,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -11448,7 +11466,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 198,
+      "point_rupture": 46
     },
     {
       "id": 11,
@@ -11464,7 +11484,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 116,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -11770,7 +11790,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 198,
+      "point_rupture": 46
     },
     {
       "id": 12,
@@ -11786,7 +11808,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 116,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -12092,7 +12114,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 198,
+      "point_rupture": 46
     },
     {
       "id": 13,
@@ -12108,7 +12132,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 114,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -12414,7 +12438,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 198,
+      "point_rupture": 46
     },
     {
       "id": 14,
@@ -12430,7 +12456,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 90,
       "type_article": "ROH",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -12736,7 +12762,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 139,
+      "point_rupture": 36
     },
     {
       "id": 15,
@@ -12752,7 +12780,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 9,
       "type_article": "ROH",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -13058,7 +13086,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 15,
+      "point_rupture": 4
     },
     {
       "id": 16,
@@ -13074,7 +13104,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 64,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -13380,7 +13410,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 118,
+      "point_rupture": 26
     },
     {
       "id": 17,
@@ -13396,7 +13428,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 54,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -13702,7 +13734,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 91,
+      "point_rupture": 22
     },
     {
       "id": 18,
@@ -13718,7 +13752,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 49,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -14024,7 +14058,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 65,
+      "point_rupture": 20
     },
     {
       "id": 19,
@@ -14040,7 +14076,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 18,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -14346,7 +14382,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 34,
+      "point_rupture": 7
     },
     {
       "id": 20,
@@ -14362,7 +14400,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 73,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -14668,7 +14706,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 111,
+      "point_rupture": 29
     },
     {
       "id": 21,
@@ -14684,7 +14724,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 17,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -14990,7 +15030,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 27,
+      "point_rupture": 7
     },
     {
       "id": 22,
@@ -15006,7 +15048,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 116,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -15312,7 +15354,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 198,
+      "point_rupture": 46
     },
     {
       "id": 23,
@@ -15328,7 +15372,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 121,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -15634,7 +15678,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 212,
+      "point_rupture": 48
     },
     {
       "id": 24,
@@ -15650,7 +15696,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 116,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -15956,7 +16002,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.895Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 198,
+      "point_rupture": 46
     },
     {
       "id": 25,
@@ -15972,7 +16020,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 53,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -16278,7 +16326,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 66,
+      "point_rupture": 21
     },
     {
       "id": 26,
@@ -16600,7 +16650,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 27,
@@ -16616,7 +16668,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 116,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -16922,7 +16974,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 198,
+      "point_rupture": 46
     },
     {
       "id": 28,
@@ -16938,7 +16992,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1736,
+      "stock_securite": 5374,
       "type_article": "ROH",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -17530,7 +17584,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.099Z"
+      "created_at": "2026-11-22T20:28:44.099Z",
+      "point_reorder": 6531,
+      "point_rupture": 2150
     },
     {
       "id": 29,
@@ -17546,7 +17602,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 286,
+      "stock_securite": 704,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -17852,7 +17908,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 799,
+      "point_rupture": 282
     },
     {
       "id": 30,
@@ -17868,7 +17926,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 27982,
+      "stock_securite": 12017,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -18174,7 +18232,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 21344,
+      "point_rupture": 4807
     },
     {
       "id": 31,
@@ -18190,7 +18250,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 900,
+      "stock_securite": 627,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -18496,7 +18556,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 927,
+      "point_rupture": 251
     },
     {
       "id": 32,
@@ -18512,7 +18574,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1227,
+      "stock_securite": 835,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -18818,7 +18880,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 1244,
+      "point_rupture": 334
     },
     {
       "id": 33,
@@ -19140,7 +19204,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 34,
@@ -19156,7 +19222,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1364,
+      "stock_securite": 2304,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -19462,7 +19528,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 2759,
+      "point_rupture": 922
     },
     {
       "id": 35,
@@ -19784,7 +19852,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 36,
@@ -19800,7 +19870,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 15118,
+      "stock_securite": 7513,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -20106,7 +20176,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 12552,
+      "point_rupture": 3005
     },
     {
       "id": 37,
@@ -20122,7 +20194,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 137,
+      "stock_securite": 335,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -20428,7 +20500,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 381,
+      "point_rupture": 134
     },
     {
       "id": 38,
@@ -20444,7 +20518,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 132,
+      "stock_securite": 76,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -20750,7 +20824,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 120,
+      "point_rupture": 30
     },
     {
       "id": 39,
@@ -20766,7 +20842,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 157,
+      "stock_securite": 76,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -21072,7 +21148,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 128,
+      "point_rupture": 30
     },
     {
       "id": 40,
@@ -21394,7 +21472,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 41,
@@ -21410,7 +21490,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 32,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -21716,7 +21796,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 42,
+      "point_rupture": 13
     },
     {
       "id": 42,
@@ -21732,7 +21814,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 17,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -22038,7 +22120,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 23,
+      "point_rupture": 7
     },
     {
       "id": 43,
@@ -22054,7 +22138,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 14,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -22360,7 +22444,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 20,
+      "point_rupture": 6
     },
     {
       "id": 44,
@@ -22376,7 +22462,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 4,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -22682,7 +22768,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 6,
+      "point_rupture": 2
     },
     {
       "id": 45,
@@ -22698,7 +22786,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 6,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -23004,7 +23092,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 9,
+      "point_rupture": 2
     },
     {
       "id": 46,
@@ -23020,7 +23110,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 9,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -23326,7 +23416,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.896Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 11,
+      "point_rupture": 4
     },
     {
       "id": 47,
@@ -23342,7 +23434,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 10800,
+      "stock_securite": 12915,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -23648,7 +23740,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 16515,
+      "point_rupture": 5166
     },
     {
       "id": 48,
@@ -23664,7 +23758,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 45983,
+      "stock_securite": 19229,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -23970,7 +24064,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 49884,
+      "point_rupture": 7692
     },
     {
       "id": 49,
@@ -23986,7 +24082,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1037,
+      "stock_securite": 1144,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -24292,7 +24388,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 1836,
+      "point_rupture": 458
     },
     {
       "id": 50,
@@ -24308,7 +24406,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 68873,
+      "stock_securite": 31471,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -24614,7 +24712,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 77386,
+      "point_rupture": 12588
     },
     {
       "id": 51,
@@ -24630,7 +24730,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 67837,
+      "stock_securite": 31980,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -24936,7 +25036,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 77205,
+      "point_rupture": 12792
     },
     {
       "id": 52,
@@ -24952,7 +25054,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 48046,
+      "stock_securite": 16194,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -25258,7 +25360,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 48225,
+      "point_rupture": 7474
     },
     {
       "id": 53,
@@ -25274,7 +25378,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1043,
+      "stock_securite": 1149,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -25580,7 +25684,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 1844,
+      "point_rupture": 460
     },
     {
       "id": 54,
@@ -25596,7 +25702,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1364,
+      "stock_securite": 2250,
       "type_article": "HALB",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -25902,7 +26008,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 2705,
+      "point_rupture": 900
     },
     {
       "id": 55,
@@ -25918,7 +26026,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 134,
+      "stock_securite": 155,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -26224,7 +26332,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 244,
+      "point_rupture": 62
     },
     {
       "id": 56,
@@ -26240,7 +26350,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 161,
+      "stock_securite": 142,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -26546,7 +26656,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 249,
+      "point_rupture": 57
     },
     {
       "id": 57,
@@ -26562,7 +26674,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 28,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -26868,7 +26980,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 44,
+      "point_rupture": 11
     },
     {
       "id": 58,
@@ -26884,7 +26998,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 30,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -27190,7 +27304,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 42,
+      "point_rupture": 12
     },
     {
       "id": 59,
@@ -27206,7 +27322,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 22,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -27512,7 +27628,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 34,
+      "point_rupture": 9
     },
     {
       "id": 60,
@@ -27528,7 +27646,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 6,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -27834,7 +27952,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 9,
+      "point_rupture": 2
     },
     {
       "id": 61,
@@ -27850,7 +27970,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 9,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -28156,7 +28276,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 15,
+      "point_rupture": 4
     },
     {
       "id": 62,
@@ -28172,7 +28294,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 20,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -28478,7 +28600,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 25,
+      "point_rupture": 8
     },
     {
       "id": 63,
@@ -28494,7 +28618,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 1,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -28800,7 +28924,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 1,
+      "point_rupture": 1
     },
     {
       "id": 64,
@@ -28816,7 +28942,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 3,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -29122,7 +29248,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 4,
+      "point_rupture": 1
     },
     {
       "id": 65,
@@ -29138,7 +29266,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 41314,
+      "stock_securite": 52715,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -29730,7 +29858,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.100Z"
+      "created_at": "2026-11-22T20:28:44.100Z",
+      "point_reorder": 80258,
+      "point_rupture": 21086
     },
     {
       "id": 66,
@@ -29746,7 +29876,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1802,
+      "stock_securite": 1773,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -30052,7 +30182,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 2974,
+      "point_rupture": 709
     },
     {
       "id": 67,
@@ -30068,7 +30200,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 41887,
+      "stock_securite": 53154,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -30660,7 +30792,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 81078,
+      "point_rupture": 21262
     },
     {
       "id": 68,
@@ -30676,7 +30810,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1802,
+      "stock_securite": 1773,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -30982,7 +31116,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 2974,
+      "point_rupture": 709
     },
     {
       "id": 69,
@@ -30998,7 +31134,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 87469,
+      "stock_securite": 68657,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -31304,7 +31440,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 156126,
+      "point_rupture": 27463
     },
     {
       "id": 70,
@@ -31320,7 +31458,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 41314,
+      "stock_securite": 52715,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -31912,7 +32050,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 80258,
+      "point_rupture": 21086
     },
     {
       "id": 71,
@@ -31928,7 +32068,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1802,
+      "stock_securite": 1773,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -32234,7 +32374,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 2974,
+      "point_rupture": 709
     },
     {
       "id": 72,
@@ -32250,7 +32392,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 56745,
+      "stock_securite": 63618,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -32556,7 +32698,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 120363,
+      "point_rupture": 25447
     },
     {
       "id": 73,
@@ -32572,7 +32716,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 58109,
+      "stock_securite": 65806,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -32878,7 +33022,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 123915,
+      "point_rupture": 26322
     },
     {
       "id": 74,
@@ -32894,7 +33040,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1364,
+      "stock_securite": 3897,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -33200,7 +33346,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 5261,
+      "point_rupture": 1559
     },
     {
       "id": 75,
@@ -33216,7 +33364,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 68873,
+      "stock_securite": 27590,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -33522,7 +33670,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 73505,
+      "point_rupture": 11036
     },
     {
       "id": 76,
@@ -33538,7 +33688,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 104060,
+      "stock_securite": 45759,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -33844,7 +33994,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 115132,
+      "point_rupture": 18304
     },
     {
       "id": 77,
@@ -33860,7 +34012,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 55367,
+      "stock_securite": 24244,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -34166,7 +34318,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 61155,
+      "point_rupture": 9698
     },
     {
       "id": 78,
@@ -34182,7 +34336,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 56745,
+      "stock_securite": 39967,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -34488,7 +34642,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 77797,
+      "point_rupture": 15987
     },
     {
       "id": 79,
@@ -34504,7 +34660,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 58109,
+      "stock_securite": 39649,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -34810,7 +34966,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 78388,
+      "point_rupture": 15860
     },
     {
       "id": 80,
@@ -34826,7 +34984,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 56745,
+      "stock_securite": 39967,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -35132,7 +35290,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 77797,
+      "point_rupture": 15987
     },
     {
       "id": 81,
@@ -35148,7 +35308,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 56745,
+      "stock_securite": 39967,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -35454,7 +35614,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 77797,
+      "point_rupture": 15987
     },
     {
       "id": 82,
@@ -35470,7 +35632,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 129122,
+      "stock_securite": 43818,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -35776,7 +35938,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 129899,
+      "point_rupture": 20086
     },
     {
       "id": 83,
@@ -35792,7 +35956,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 2085,
+      "stock_securite": 2298,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -36098,7 +36262,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 3688,
+      "point_rupture": 919
     },
     {
       "id": 84,
@@ -36114,7 +36280,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 53432,
+      "stock_securite": 22867,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -36420,7 +36586,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 58489,
+      "point_rupture": 9147
     },
     {
       "id": 85,
@@ -36436,7 +36604,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 54000,
+      "stock_securite": 23962,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -36742,7 +36910,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 59962,
+      "point_rupture": 9585
     },
     {
       "id": 86,
@@ -36758,7 +36928,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 54000,
+      "stock_securite": 23962,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -37064,7 +37234,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 59962,
+      "point_rupture": 9585
     },
     {
       "id": 87,
@@ -37080,7 +37252,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 55367,
+      "stock_securite": 24244,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -37386,7 +37558,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 61155,
+      "point_rupture": 9698
     },
     {
       "id": 88,
@@ -37402,7 +37576,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51412,
+      "stock_securite": 23411,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -37708,7 +37882,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.897Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 57686,
+      "point_rupture": 9364
     },
     {
       "id": 89,
@@ -37724,7 +37900,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 22792,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -38030,7 +38206,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 57274,
+      "point_rupture": 9117
     },
     {
       "id": 90,
@@ -38046,7 +38224,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 55367,
+      "stock_securite": 24249,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -38352,7 +38530,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 61160,
+      "point_rupture": 9700
     },
     {
       "id": 91,
@@ -38368,7 +38548,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 23186,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -38674,7 +38854,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 57668,
+      "point_rupture": 9274
     },
     {
       "id": 92,
@@ -38690,7 +38872,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 67837,
+      "stock_securite": 31071,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -38996,7 +39178,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 76296,
+      "point_rupture": 12428
     },
     {
       "id": 93,
@@ -39012,7 +39196,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 67711,
+      "stock_securite": 29225,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -39318,7 +39502,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 74366,
+      "point_rupture": 11690
     },
     {
       "id": 94,
@@ -39334,7 +39520,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 22792,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -39640,7 +39826,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 57274,
+      "point_rupture": 9117
     },
     {
       "id": 95,
@@ -39656,7 +39844,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 22792,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -39962,7 +40150,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 57274,
+      "point_rupture": 9117
     },
     {
       "id": 96,
@@ -39978,7 +40168,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1364,
+      "stock_securite": 2844,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -40284,7 +40474,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 3753,
+      "point_rupture": 1138
     },
     {
       "id": 97,
@@ -40300,7 +40492,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1364,
+      "stock_securite": 2844,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -40606,7 +40798,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 3753,
+      "point_rupture": 1138
     },
     {
       "id": 98,
@@ -40622,7 +40816,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1364,
+      "stock_securite": 2844,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -40928,7 +41122,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 3753,
+      "point_rupture": 1138
     },
     {
       "id": 99,
@@ -40944,7 +41140,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 70309,
+      "stock_securite": 32805,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -41250,7 +41446,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 79678,
+      "point_rupture": 13122
     },
     {
       "id": 100,
@@ -41266,7 +41464,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 64731,
+      "stock_securite": 22053,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -41572,7 +41770,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 65207,
+      "point_rupture": 10069
     },
     {
       "id": 101,
@@ -41588,7 +41788,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 55129,
+      "stock_securite": 24282,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -41894,7 +42094,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 61035,
+      "point_rupture": 9713
     },
     {
       "id": 102,
@@ -41910,7 +42112,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 66136,
+      "stock_securite": 28375,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -42216,7 +42418,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 72466,
+      "point_rupture": 11350
     },
     {
       "id": 103,
@@ -42232,7 +42436,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 59214,
+      "stock_securite": 19738,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -42538,7 +42742,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 59214,
+      "point_rupture": 9211
     },
     {
       "id": 104,
@@ -42554,7 +42760,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 59214,
+      "stock_securite": 19738,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -42860,7 +43066,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 59214,
+      "point_rupture": 9211
     },
     {
       "id": 105,
@@ -42876,7 +43084,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 23303,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -43182,7 +43390,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 57785,
+      "point_rupture": 9321
     },
     {
       "id": 106,
@@ -43198,7 +43408,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 65699,
+      "stock_securite": 26840,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -43504,7 +43714,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 70639,
+      "point_rupture": 10736
     },
     {
       "id": 107,
@@ -43520,7 +43732,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 69023,
+      "stock_securite": 29037,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -43826,7 +44038,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.101Z"
+      "created_at": "2026-11-22T20:28:44.101Z",
+      "point_reorder": 75052,
+      "point_rupture": 11615
     },
     {
       "id": 108,
@@ -43842,7 +44056,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 267,
+      "stock_securite": 311,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -44148,7 +44362,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 489,
+      "point_rupture": 124
     },
     {
       "id": 109,
@@ -44164,7 +44380,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 111961,
+      "stock_securite": 48510,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -44470,7 +44686,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 123150,
+      "point_rupture": 19404
     },
     {
       "id": 110,
@@ -44486,7 +44704,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 22792,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -44792,7 +45010,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 57274,
+      "point_rupture": 9117
     },
     {
       "id": 111,
@@ -44808,7 +45028,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 22293,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -45114,7 +45334,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 56775,
+      "point_rupture": 8917
     },
     {
       "id": 112,
@@ -45130,7 +45352,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 22792,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -45436,7 +45658,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 57274,
+      "point_rupture": 9117
     },
     {
       "id": 113,
@@ -45452,7 +45676,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 321,
+      "stock_securite": 307,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -45758,7 +45982,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 521,
+      "point_rupture": 123
     },
     {
       "id": 114,
@@ -45774,7 +46000,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 65819,
+      "stock_securite": 22810,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -46080,7 +46306,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 66689,
+      "point_rupture": 10238
     },
     {
       "id": 115,
@@ -46096,7 +46324,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 69300,
+      "stock_securite": 27989,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -46402,7 +46630,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 74189,
+      "point_rupture": 11196
     },
     {
       "id": 116,
@@ -46418,7 +46648,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 206891,
+      "stock_securite": 91168,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -46724,7 +46954,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 229095,
+      "point_rupture": 36467
     },
     {
       "id": 117,
@@ -46740,7 +46972,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 69618,
+      "stock_securite": 29798,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -47046,7 +47278,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 76210,
+      "point_rupture": 11919
     },
     {
       "id": 118,
@@ -47062,7 +47296,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 22880,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -47368,7 +47602,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 57362,
+      "point_rupture": 9152
     },
     {
       "id": 119,
@@ -47384,7 +47620,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 72749,
+      "stock_securite": 32804,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -47690,7 +47926,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 81303,
+      "point_rupture": 13122
     },
     {
       "id": 120,
@@ -47706,7 +47944,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 66501,
+      "stock_securite": 22631,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -48012,7 +48250,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 66965,
+      "point_rupture": 10345
     },
     {
       "id": 121,
@@ -48028,7 +48268,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 50291,
+      "stock_securite": 54687,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -48334,7 +48574,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 88214,
+      "point_rupture": 21875
     },
     {
       "id": 122,
@@ -48350,7 +48592,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51605,
+      "stock_securite": 22130,
       "type_article": "ZHAL",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -48656,7 +48898,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 56533,
+      "point_rupture": 8852
     },
     {
       "id": 123,
@@ -48978,7 +49222,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 124,
@@ -49300,7 +49546,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 125,
@@ -49622,7 +49870,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 126,
@@ -49944,7 +50194,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 127,
@@ -50266,7 +50518,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 128,
@@ -50588,7 +50842,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 129,
@@ -50604,7 +50860,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 19189,
+      "stock_securite": 20460,
       "type_article": "ROH",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -50910,7 +51166,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 33252,
+      "point_rupture": 8184
     },
     {
       "id": 130,
@@ -50926,7 +51184,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 21,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -51232,7 +51490,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 49,
+      "point_rupture": 8
     },
     {
       "id": 131,
@@ -51248,7 +51508,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 95,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -51554,7 +51814,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 113,
+      "point_rupture": 38
     },
     {
       "id": 132,
@@ -51570,7 +51832,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 0,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -51876,7 +52138,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.898Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 0,
+      "point_rupture": 1
     },
     {
       "id": 133,
@@ -52198,7 +52462,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 134,
@@ -52214,7 +52480,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1149,
+      "stock_securite": 471,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -52520,7 +52786,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 1237,
+      "point_rupture": 188
     },
     {
       "id": 135,
@@ -52536,7 +52804,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 2,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -52842,7 +53110,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 2,
+      "point_rupture": 1
     },
     {
       "id": 136,
@@ -52858,7 +53128,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 7,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -53164,7 +53434,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 9,
+      "point_rupture": 3
     },
     {
       "id": 137,
@@ -53180,7 +53452,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 8,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -53486,7 +53758,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 13,
+      "point_rupture": 3
     },
     {
       "id": 138,
@@ -53808,7 +54082,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 139,
@@ -53824,7 +54100,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 1,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -54130,7 +54406,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 2,
+      "point_rupture": 1
     },
     {
       "id": 140,
@@ -54452,7 +54730,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 141,
@@ -54774,7 +55054,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 142,
@@ -55096,7 +55378,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 143,
@@ -55112,7 +55396,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 2182,
+      "stock_securite": 1909,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -55418,7 +55702,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 3364,
+      "point_rupture": 764
     },
     {
       "id": 144,
@@ -55434,7 +55720,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 737,
+      "stock_securite": 2562,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -55740,7 +56026,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 3053,
+      "point_rupture": 1025
     },
     {
       "id": 145,
@@ -55756,7 +56044,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 5,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -56062,7 +56350,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 6,
+      "point_rupture": 2
     },
     {
       "id": 146,
@@ -56078,7 +56368,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 59344,
+      "stock_securite": 19781,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -56384,7 +56674,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 59344,
+      "point_rupture": 9231
     },
     {
       "id": 147,
@@ -56400,7 +56692,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1118,
+      "stock_securite": 2998,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -56706,7 +56998,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 3743,
+      "point_rupture": 1199
     },
     {
       "id": 148,
@@ -56722,7 +57016,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 16123,
+      "stock_securite": 17425,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -57028,7 +57322,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.102Z"
+      "created_at": "2026-11-22T20:28:44.102Z",
+      "point_reorder": 28173,
+      "point_rupture": 6970
     },
     {
       "id": 149,
@@ -57044,7 +57340,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 5942,
+      "stock_securite": 1981,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -57350,7 +57646,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 5942,
+      "point_rupture": 924
     },
     {
       "id": 150,
@@ -57366,7 +57664,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 132,
+      "stock_securite": 459,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -57672,7 +57970,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 547,
+      "point_rupture": 184
     },
     {
       "id": 151,
@@ -57688,7 +57988,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 5,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -57994,7 +58294,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 10,
+      "point_rupture": 2
     },
     {
       "id": 152,
@@ -58010,7 +58312,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 1,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -58316,7 +58618,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 1,
+      "point_rupture": 1
     },
     {
       "id": 153,
@@ -58332,7 +58636,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 134,
+      "stock_securite": 155,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -58638,7 +58942,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 244,
+      "point_rupture": 62
     },
     {
       "id": 154,
@@ -58654,7 +58960,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 161,
+      "stock_securite": 153,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -58960,7 +59266,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 260,
+      "point_rupture": 61
     },
     {
       "id": 155,
@@ -58976,7 +59284,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 84705,
+      "stock_securite": 75026,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -59282,7 +59590,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 131496,
+      "point_rupture": 30010
     },
     {
       "id": 156,
@@ -59298,7 +59608,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 438,
+      "stock_securite": 652,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -59604,7 +59914,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 944,
+      "point_rupture": 261
     },
     {
       "id": 157,
@@ -59926,7 +60238,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 158,
@@ -60248,7 +60562,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 159,
@@ -60570,7 +60886,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 160,
@@ -60892,7 +61210,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 161,
@@ -60908,7 +61228,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 0,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -61214,7 +61534,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 0,
+      "point_rupture": 1
     },
     {
       "id": 162,
@@ -61230,7 +61552,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 0,
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
@@ -61536,7 +61858,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 0,
+      "point_rupture": 1
     },
     {
       "id": 163,
@@ -61552,7 +61876,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 65621,
+      "stock_securite": 21874,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -61858,7 +62182,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 87495,
+      "point_rupture": 10208
     },
     {
       "id": 164,
@@ -61874,7 +62200,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 134,
+      "stock_securite": 190,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -62180,7 +62506,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 324,
+      "point_rupture": 76
     },
     {
       "id": 165,
@@ -62196,7 +62524,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 161,
+      "stock_securite": 188,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -62502,7 +62830,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 349,
+      "point_rupture": 75
     },
     {
       "id": 166,
@@ -62518,7 +62848,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 150,
+      "stock_securite": 311,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -62824,7 +63154,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 461,
+      "point_rupture": 124
     },
     {
       "id": 167,
@@ -62840,7 +63172,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 161,
+      "stock_securite": 188,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -63146,7 +63478,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 349,
+      "point_rupture": 75
     },
     {
       "id": 168,
@@ -63162,7 +63496,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 6750,
+      "stock_securite": 16968,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -63468,7 +63802,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 23718,
+      "point_rupture": 6787
     },
     {
       "id": 169,
@@ -63484,7 +63820,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 8,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -63790,7 +64126,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 20,
+      "point_rupture": 3
     },
     {
       "id": 170,
@@ -63806,7 +64144,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 5,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -64112,7 +64450,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 8,
+      "point_rupture": 2
     },
     {
       "id": 171,
@@ -64128,7 +64468,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 191,
+      "stock_securite": 157,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -64434,7 +64774,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 348,
+      "point_rupture": 63
     },
     {
       "id": 172,
@@ -64756,7 +65098,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 266,
+      "point_rupture": 53
     },
     {
       "id": 173,
@@ -65078,7 +65422,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 174,
@@ -65094,7 +65440,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 426,
+      "stock_securite": 548,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -65400,7 +65746,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 974,
+      "point_rupture": 219
     },
     {
       "id": 175,
@@ -65416,7 +65764,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 5080,
+      "stock_securite": 2419,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -65722,7 +66070,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 7499,
+      "point_rupture": 968
     },
     {
       "id": 176,
@@ -65738,7 +66088,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 3559,
+      "stock_securite": 2610,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -66044,7 +66394,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 6169,
+      "point_rupture": 1044
     },
     {
       "id": 177,
@@ -66060,7 +66412,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 402,
+      "stock_securite": 688,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -66366,7 +66718,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.103Z"
+      "created_at": "2026-11-22T20:28:44.103Z",
+      "point_reorder": 1090,
+      "point_rupture": 275
     },
     {
       "id": 178,
@@ -66382,7 +66736,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1844,
+      "stock_securite": 1261,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -66688,7 +67042,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.107Z"
+      "created_at": "2026-11-22T20:28:44.107Z",
+      "point_reorder": 3105,
+      "point_rupture": 504
     },
     {
       "id": 179,
@@ -66704,7 +67060,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 283,
+      "stock_securite": 193,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -67010,7 +67366,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.107Z"
+      "created_at": "2026-11-22T20:28:44.107Z",
+      "point_reorder": 476,
+      "point_rupture": 77
     },
     {
       "id": 180,
@@ -67026,7 +67384,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 33,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -67332,7 +67690,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.107Z"
+      "created_at": "2026-11-22T20:28:44.107Z",
+      "point_reorder": 50,
+      "point_rupture": 13
     },
     {
       "id": 181,
@@ -67348,7 +67708,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 198,
+      "stock_securite": 239,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -67654,7 +68014,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.899Z",
-      "created_at": "2026-11-22T20:28:44.107Z"
+      "created_at": "2026-11-22T20:28:44.107Z",
+      "point_reorder": 437,
+      "point_rupture": 96
     },
     {
       "id": 182,
@@ -67670,7 +68032,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 955,
+      "stock_securite": 667,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -67976,7 +68338,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.107Z"
+      "created_at": "2026-11-22T20:28:44.107Z",
+      "point_reorder": 1622,
+      "point_rupture": 267
     },
     {
       "id": 183,
@@ -67992,7 +68356,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1333,
+      "stock_securite": 894,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -68298,7 +68662,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.107Z"
+      "created_at": "2026-11-22T20:28:44.107Z",
+      "point_reorder": 2227,
+      "point_rupture": 358
     },
     {
       "id": 184,
@@ -68906,7 +69272,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.108Z"
+      "created_at": "2026-11-22T20:28:44.108Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 185,
@@ -69228,7 +69596,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.108Z"
+      "created_at": "2026-11-22T20:28:44.108Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 186,
@@ -69244,7 +69614,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 56945,
+      "stock_securite": 18982,
       "type_article": "ROH",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -69550,7 +69920,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.108Z"
+      "created_at": "2026-11-22T20:28:44.108Z",
+      "point_reorder": 56945,
+      "point_rupture": 8858
     },
     {
       "id": 187,
@@ -69566,7 +69938,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1043,
+      "stock_securite": 1709,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -69872,7 +70244,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.108Z"
+      "created_at": "2026-11-22T20:28:44.108Z",
+      "point_reorder": 2752,
+      "point_rupture": 684
     },
     {
       "id": 188,
@@ -69888,7 +70262,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 134,
+      "stock_securite": 155,
       "type_article": "ROH",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -70194,7 +70568,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.108Z"
+      "created_at": "2026-11-22T20:28:44.108Z",
+      "point_reorder": 244,
+      "point_rupture": 62
     },
     {
       "id": 189,
@@ -70210,7 +70586,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 161,
+      "stock_securite": 153,
       "type_article": "ROH",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -70516,7 +70892,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.108Z"
+      "created_at": "2026-11-22T20:28:44.108Z",
+      "point_reorder": 260,
+      "point_rupture": 61
     },
     {
       "id": 190,
@@ -70532,7 +70910,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 64754,
+      "stock_securite": 27890,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -70838,7 +71216,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.108Z"
+      "created_at": "2026-11-22T20:28:44.108Z",
+      "point_reorder": 92644,
+      "point_rupture": 11156
     },
     {
       "id": 191,
@@ -70854,7 +71234,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 134,
+      "stock_securite": 190,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -71160,7 +71540,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 324,
+      "point_rupture": 76
     },
     {
       "id": 192,
@@ -71176,7 +71558,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 161,
+      "stock_securite": 188,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -71482,7 +71864,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 349,
+      "point_rupture": 75
     },
     {
       "id": 193,
@@ -71498,7 +71882,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 147,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -71804,7 +72188,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 202,
+      "point_rupture": 59
     },
     {
       "id": 194,
@@ -71820,7 +72206,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 150,
+      "stock_securite": 254,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -72126,7 +72512,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 354,
+      "point_rupture": 102
     },
     {
       "id": 195,
@@ -72142,7 +72530,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 147,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -72448,7 +72836,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 202,
+      "point_rupture": 59
     },
     {
       "id": 196,
@@ -72464,7 +72854,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1039,
+      "stock_securite": 1059,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -72770,7 +73160,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 1751,
+      "point_rupture": 424
     },
     {
       "id": 197,
@@ -72786,7 +73178,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 17382,
+      "stock_securite": 18440,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -73092,7 +73484,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 30028,
+      "point_rupture": 7376
     },
     {
       "id": 198,
@@ -73108,7 +73502,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 150,
+      "stock_securite": 254,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -73414,7 +73808,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 354,
+      "point_rupture": 102
     },
     {
       "id": 199,
@@ -73430,7 +73826,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 114,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -73736,7 +74132,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 141,
+      "point_rupture": 46
     },
     {
       "id": 200,
@@ -73752,7 +74150,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 70309,
+      "stock_securite": 39515,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -74058,7 +74456,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 109824,
+      "point_rupture": 15806
     },
     {
       "id": 201,
@@ -74074,7 +74474,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1211,
+      "stock_securite": 1212,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -74380,7 +74780,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 2019,
+      "point_rupture": 485
     },
     {
       "id": 202,
@@ -74396,7 +74798,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 155,
+      "stock_securite": 269,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -74702,7 +75104,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 373,
+      "point_rupture": 108
     },
     {
       "id": 203,
@@ -74718,7 +75122,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1129,
+      "stock_securite": 1176,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -75024,7 +75428,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 1929,
+      "point_rupture": 470
     },
     {
       "id": 204,
@@ -75040,7 +75446,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 147,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -75346,7 +75752,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 202,
+      "point_rupture": 59
     },
     {
       "id": 205,
@@ -75362,7 +75770,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 155,
+      "stock_securite": 269,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -75668,7 +76076,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 373,
+      "point_rupture": 108
     },
     {
       "id": 206,
@@ -75684,7 +76094,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 6592,
+      "stock_securite": 18508,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -75990,7 +76400,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 22902,
+      "point_rupture": 7403
     },
     {
       "id": 207,
@@ -76006,7 +76418,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 10500,
+      "stock_securite": 31824,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -76312,7 +76724,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 42324,
+      "point_rupture": 12730
     },
     {
       "id": 208,
@@ -76328,7 +76742,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1037,
+      "stock_securite": 1057,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -76634,7 +77048,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 1748,
+      "point_rupture": 423
     },
     {
       "id": 209,
@@ -76650,7 +77066,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 147,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -76956,7 +77372,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 202,
+      "point_rupture": 59
     },
     {
       "id": 210,
@@ -76972,7 +77390,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 55367,
+      "stock_securite": 24244,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -77278,7 +77696,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 61155,
+      "point_rupture": 9698
     },
     {
       "id": 211,
@@ -77294,7 +77714,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 3955,
+      "stock_securite": 9756,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -77600,7 +78020,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 12392,
+      "point_rupture": 3902
     },
     {
       "id": 212,
@@ -77616,7 +78038,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 22792,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -77922,7 +78344,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 57274,
+      "point_rupture": 9117
     },
     {
       "id": 213,
@@ -77938,7 +78362,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 22792,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -78244,7 +78668,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 57274,
+      "point_rupture": 9117
     },
     {
       "id": 214,
@@ -78260,7 +78686,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 53827,
+      "stock_securite": 28734,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -78566,7 +78992,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 82561,
+      "point_rupture": 11494
     },
     {
       "id": 215,
@@ -78582,7 +79010,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1934,
+      "stock_securite": 4955,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -78888,7 +79316,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 6244,
+      "point_rupture": 1982
     },
     {
       "id": 216,
@@ -78904,7 +79334,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 6750,
+      "stock_securite": 13854,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -79210,7 +79640,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 18354,
+      "point_rupture": 5542
     },
     {
       "id": 217,
@@ -79226,7 +79658,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 150,
+      "stock_securite": 254,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -79532,7 +79964,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 354,
+      "point_rupture": 102
     },
     {
       "id": 218,
@@ -79548,7 +79982,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 161,
+      "stock_securite": 188,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -79854,7 +80288,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.109Z"
+      "created_at": "2026-11-22T20:28:44.109Z",
+      "point_reorder": 349,
+      "point_rupture": 75
     },
     {
       "id": 219,
@@ -79870,7 +80306,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 27914,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -80176,7 +80612,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 79637,
+      "point_rupture": 11166
     },
     {
       "id": 220,
@@ -80192,7 +80630,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 134,
+      "stock_securite": 155,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -80498,7 +80936,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 244,
+      "point_rupture": 62
     },
     {
       "id": 221,
@@ -80514,7 +80954,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 71794,
+      "stock_securite": 31320,
       "type_article": "ROH",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -80820,7 +81260,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 79183,
+      "point_rupture": 12528
     },
     {
       "id": 222,
@@ -80836,7 +81278,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 6750,
+      "stock_securite": 13854,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -81142,7 +81584,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 18354,
+      "point_rupture": 5542
     },
     {
       "id": 223,
@@ -81158,7 +81602,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 6750,
+      "stock_securite": 13854,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -81464,7 +81908,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 18354,
+      "point_rupture": 5542
     },
     {
       "id": 224,
@@ -81480,7 +81926,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 134,
+      "stock_securite": 155,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -81786,7 +82232,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 244,
+      "point_rupture": 62
     },
     {
       "id": 225,
@@ -81802,7 +82250,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 206891,
+      "stock_securite": 91168,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -82108,7 +82556,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 229095,
+      "point_rupture": 36467
     },
     {
       "id": 226,
@@ -82124,7 +82574,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 13500,
+      "stock_securite": 33935,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -82430,7 +82880,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 47435,
+      "point_rupture": 13574
     },
     {
       "id": 227,
@@ -82446,7 +82898,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 147,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -82752,7 +83204,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 202,
+      "point_rupture": 59
     },
     {
       "id": 228,
@@ -82768,7 +83222,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 22792,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -83074,7 +83528,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 57274,
+      "point_rupture": 9117
     },
     {
       "id": 229,
@@ -83090,7 +83546,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 17382,
+      "stock_securite": 18440,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -83396,7 +83852,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.900Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 30028,
+      "point_rupture": 7376
     },
     {
       "id": 230,
@@ -83412,7 +83870,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 155,
+      "stock_securite": 267,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -83718,7 +84176,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 370,
+      "point_rupture": 107
     },
     {
       "id": 231,
@@ -83734,7 +84194,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 150,
+      "stock_securite": 254,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -84040,7 +84500,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 354,
+      "point_rupture": 102
     },
     {
       "id": 232,
@@ -84056,7 +84518,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 155,
+      "stock_securite": 267,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -84362,7 +84824,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.110Z"
+      "created_at": "2026-11-22T20:28:44.110Z",
+      "point_reorder": 370,
+      "point_rupture": 107
     },
     {
       "id": 233,
@@ -84378,7 +84842,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 147,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -84684,7 +85148,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 202,
+      "point_rupture": 59
     },
     {
       "id": 234,
@@ -84700,7 +85166,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 118,
+      "stock_securite": 248,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -85006,7 +85472,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 327,
+      "point_rupture": 99
     },
     {
       "id": 235,
@@ -85022,7 +85490,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 6750,
+      "stock_securite": 13854,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -85328,7 +85796,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 18354,
+      "point_rupture": 5542
     },
     {
       "id": 236,
@@ -85344,7 +85814,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 147,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -85650,7 +86120,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 202,
+      "point_rupture": 59
     },
     {
       "id": 237,
@@ -85666,7 +86138,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 155,
+      "stock_securite": 269,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -85972,7 +86444,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 373,
+      "point_rupture": 108
     },
     {
       "id": 238,
@@ -85988,7 +86462,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 1043,
+      "stock_securite": 1407,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -86294,7 +86768,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 2450,
+      "point_rupture": 563
     },
     {
       "id": 239,
@@ -86310,7 +86786,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 6750,
+      "stock_securite": 16968,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -86616,7 +87092,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 23718,
+      "point_rupture": 6787
     },
     {
       "id": 240,
@@ -86632,7 +87110,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 64864,
+      "stock_securite": 22612,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -86938,7 +87416,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 65855,
+      "point_rupture": 10090
     },
     {
       "id": 241,
@@ -86954,7 +87434,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 161,
+      "stock_securite": 188,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -87260,7 +87740,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 349,
+      "point_rupture": 75
     },
     {
       "id": 242,
@@ -87276,7 +87758,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 161,
+      "stock_securite": 188,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -87582,7 +88064,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 349,
+      "point_rupture": 75
     },
     {
       "id": 243,
@@ -87598,7 +88082,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 132,
+      "stock_securite": 107,
       "type_article": "HAWA",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -87904,7 +88388,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 195,
+      "point_rupture": 43
     },
     {
       "id": 244,
@@ -87920,7 +88406,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 362,
+      "stock_securite": 760,
       "type_article": "HAWA",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -88226,7 +88712,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 1001,
+      "point_rupture": 304
     },
     {
       "id": 245,
@@ -88242,7 +88730,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 22792,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -88548,7 +89036,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 57274,
+      "point_rupture": 9117
     },
     {
       "id": 246,
@@ -88564,7 +89054,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 51723,
+      "stock_securite": 27914,
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
@@ -88870,7 +89360,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 79637,
+      "point_rupture": 11166
     },
     {
       "id": 247,
@@ -88886,7 +89378,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 17523,
+      "stock_securite": 14740,
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -89192,7 +89684,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 26422,
+      "point_rupture": 5896
     },
     {
       "id": 248,
@@ -89208,7 +89702,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 95,
       "type_article": "ZHAL",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -89514,7 +90008,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 150,
+      "point_rupture": 38
     },
     {
       "id": 249,
@@ -89530,7 +90026,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 1,
       "type_article": "ZHAL",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -89836,7 +90332,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 1,
+      "point_rupture": 1
     },
     {
       "id": 250,
@@ -89852,7 +90350,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 6,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -90158,7 +90656,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 8,
+      "point_rupture": 2
     },
     {
       "id": 251,
@@ -90174,7 +90674,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 27,
       "type_article": "ZHAL",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -90480,7 +90980,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 43,
+      "point_rupture": 11
     },
     {
       "id": 252,
@@ -90496,7 +90998,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 22,
       "type_article": "ZHAL",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -90802,7 +91304,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 34,
+      "point_rupture": 9
     },
     {
       "id": 253,
@@ -90818,7 +91322,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 20,
       "type_article": "ZHAL",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -91124,7 +91628,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 25,
+      "point_rupture": 8
     },
     {
       "id": 254,
@@ -91140,7 +91646,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 7,
       "type_article": "ZHAL",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -91446,7 +91952,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 12,
+      "point_rupture": 3
     },
     {
       "id": 255,
@@ -91462,7 +91970,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 30,
       "type_article": "ZHAL",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -91768,7 +92276,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 42,
+      "point_rupture": 12
     },
     {
       "id": 256,
@@ -91784,7 +92294,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 7,
       "type_article": "ZHAL",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -92090,7 +92600,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 10,
+      "point_rupture": 3
     },
     {
       "id": 257,
@@ -92106,7 +92618,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 70,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -92412,7 +92924,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 80,
+      "point_rupture": 28
     },
     {
       "id": 258,
@@ -92428,7 +92942,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 87,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -92734,7 +93248,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 99,
+      "point_rupture": 35
     },
     {
       "id": 259,
@@ -92750,7 +93266,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 54,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -93056,7 +93572,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 61,
+      "point_rupture": 22
     },
     {
       "id": 260,
@@ -93072,7 +93590,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 1,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -93378,7 +93896,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 1,
+      "point_rupture": 1
     },
     {
       "id": 261,
@@ -93700,7 +94220,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 262,
@@ -93716,7 +94238,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 54,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -94022,7 +94544,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 61,
+      "point_rupture": 22
     },
     {
       "id": 263,
@@ -94038,7 +94562,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 70,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -94344,7 +94868,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 80,
+      "point_rupture": 28
     },
     {
       "id": 264,
@@ -94360,7 +94886,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 25,
       "type_article": "ZHAL",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
@@ -94666,7 +95192,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 30,
+      "point_rupture": 10
     },
     {
       "id": 265,
@@ -94988,7 +95516,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 266,
@@ -95310,7 +95840,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 267,
@@ -95632,7 +96164,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.111Z"
+      "created_at": "2026-11-22T20:28:44.111Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 268,
@@ -95954,7 +96488,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 269,
@@ -95970,7 +96506,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 0,
       "type_article": "FERT",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -96276,7 +96812,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 0,
+      "point_rupture": 1
     },
     {
       "id": 270,
@@ -96598,7 +97136,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 271,
@@ -96920,7 +97460,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 272,
@@ -97242,7 +97784,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 273,
@@ -97564,7 +98108,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 274,
@@ -97886,7 +98432,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 275,
@@ -97902,7 +98450,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 18,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -98208,7 +98756,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 23,
+      "point_rupture": 7
     },
     {
       "id": 276,
@@ -98530,7 +99080,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.901Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 277,
@@ -98852,7 +99404,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 278,
@@ -98868,7 +99422,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 17,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -99174,7 +99728,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 21,
+      "point_rupture": 7
     },
     {
       "id": 279,
@@ -99496,7 +100052,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 280,
@@ -99818,7 +100376,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 281,
@@ -99834,7 +100394,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 6,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -100140,7 +100700,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.112Z"
+      "created_at": "2026-11-22T20:28:44.112Z",
+      "point_reorder": 8,
+      "point_rupture": 2
     },
     {
       "id": 282,
@@ -100156,7 +100718,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 6,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -100462,7 +101024,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 7,
+      "point_rupture": 2
     },
     {
       "id": 283,
@@ -100784,7 +101348,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 284,
@@ -101106,7 +101672,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 285,
@@ -101428,7 +101996,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 286,
@@ -101444,7 +102014,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 3,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -101750,7 +102320,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 3,
+      "point_rupture": 1
     },
     {
       "id": 287,
@@ -101766,7 +102338,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 5,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -102072,7 +102644,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 7,
+      "point_rupture": 2
     },
     {
       "id": 288,
@@ -102088,7 +102662,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 1,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -102394,7 +102968,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 1,
+      "point_rupture": 1
     },
     {
       "id": 289,
@@ -102410,7 +102986,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 0,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -102716,7 +103292,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 0,
+      "point_rupture": 1
     },
     {
       "id": 290,
@@ -103038,7 +103616,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 291,
@@ -103054,7 +103634,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 4,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -103360,7 +103940,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 5,
+      "point_rupture": 2
     },
     {
       "id": 292,
@@ -103682,7 +104264,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 293,
@@ -104004,7 +104588,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 294,
@@ -104020,7 +104606,7 @@
       "stock_non_libre": 0,
       "stock_transit": 0,
       "valeur_non_libre": 0,
-      "stock_securite": 100,
+      "stock_securite": 0,
       "type_article": "ZFER",
       "categorie": "PF",
       "famille": "Produits Finis (FERT)",
@@ -104326,7 +104912,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 0,
+      "point_rupture": 1
     },
     {
       "id": 295,
@@ -104648,7 +105236,9 @@
         }
       ],
       "updated_at": "2026-11-22T20:44:56.902Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 296,
@@ -104683,7 +105273,9 @@
       "mb51_trend": "ENTREE_PLUS",
       "history_records": [],
       "updated_at": "2026-11-22T20:28:44.113Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 297,
@@ -104718,7 +105310,9 @@
       "mb51_trend": "ENTREE_PLUS",
       "history_records": [],
       "updated_at": "2026-11-22T20:28:44.113Z",
-      "created_at": "2026-11-22T20:28:44.113Z"
+      "created_at": "2026-11-22T20:28:44.113Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     },
     {
       "id": 298,
@@ -104753,7 +105347,9 @@
       "mb51_trend": "ENTREE_PLUS",
       "history_records": [],
       "updated_at": "2026-11-22T20:28:44.114Z",
-      "created_at": "2026-11-22T20:28:44.114Z"
+      "created_at": "2026-11-22T20:28:44.114Z",
+      "point_reorder": 100,
+      "point_rupture": 0
     }
   ],
   "produitsFinis": [
