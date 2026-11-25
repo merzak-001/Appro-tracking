@@ -292,6 +292,13 @@ function AppContent() {
         />
       )}
 
+      {activeTab === 'stock-pieces-achetees' && (
+        <StockSituation 
+          mode="purchased" 
+          onNavigateToAppro={() => setActiveTab('situation-appro')} 
+        />
+      )}
+
       {activeTab === 'situation-appro' && (
         <SituationAppro 
           onNavigateToStock={() => setActiveTab('stock-situation')}

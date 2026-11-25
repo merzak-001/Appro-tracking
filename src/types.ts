@@ -721,6 +721,9 @@ export interface StockItem {
   mb51_total_sorties?: number;
   mb51_net_flow?: number;
   mb51_trend?: 'ENTREE_PLUS' | 'SORTIE_PLUS' | 'EQUILIBRE';
+  is_purchased?: boolean; // Articles achetés externes (Mvt 103 / 105)
+  mb51_movement_codes?: string[];
+  mb51_purchased_count?: number;
   history_records?: { mois: string; stock: number; sortie: number; entree: number }[];
   
   created_at?: string;

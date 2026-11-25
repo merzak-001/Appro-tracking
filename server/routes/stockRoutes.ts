@@ -460,7 +460,8 @@ stockRoutes.post("/stock/bulk-import", async (req, res) => {
       store.stockItems = items.map((item, idx) => {
         const key = `${item.code_article?.trim().toUpperCase()}__${(item.magasin || '').trim()}`;
         const existing = existingTrackingMap.get(key) || existingTrackingMap.get(item.code_article?.trim().toUpperCase());
-        const defaultTracked = Number(item.stock_actuel) > 0;
+        const isSellingCode = (item.code_article || '').trim().toUpperCase().startsWith('78');
+        const defaultTracked = isSellingCode ? false : Number(item.stock_actuel) > 0;
         const isImp = item.is_important !== undefined ? !!item.is_important : (existing?.is_important ?? false);
         return {
           ...item,
@@ -489,10 +490,11 @@ stockRoutes.post("/stock/bulk-import", async (req, res) => {
           const newId = store.stockItems!.length > 0 
             ? Math.max(...store.stockItems!.map((i) => Number(i.id) || 0)) + 1 
             : idx + 1;
+          const isSellingCode = (incoming.code_article || '').trim().toUpperCase().startsWith('78');
           store.stockItems!.push({
             ...incoming,
             id: newId,
-            is_tracked: incoming.is_tracked !== undefined ? incoming.is_tracked : (Number(incoming.stock_actuel) > 0),
+            is_tracked: incoming.is_tracked !== undefined ? incoming.is_tracked : (isSellingCode ? false : Number(incoming.stock_actuel) > 0),
             is_important: incoming.is_important ?? false,
             created_at: new Date().toISOString(),
             updated_at: new Date().toISOString(),
@@ -538,13 +540,15 @@ stockRoutes.get("/stock/situation", (req, res) => {
         })
       : items;
 
+    const activeTracked = trackedItems.filter(i => i.is_tracked !== false);
+
     let ruptures = 0;
     let critiques = 0;
     let bas = 0;
     let disponibles = 0;
     let totalStock = 0;
 
-    trackedItems.forEach(i => {
+    activeTracked.forEach(i => {
       const st = i.health_status || i.statut;
       const s = Number(i.stock_actuel) || 0;
       totalStock += s;
@@ -560,7 +564,7 @@ stockRoutes.get("/stock/situation", (req, res) => {
       success: true,
       items: trackedItems,
       kpis: {
-        total_tracked: trackedItems.length,
+        total_tracked: activeTracked.length,
         ruptures,
         critiques,
         bas,
@@ -717,15 +721,16 @@ stockRoutes.post("/stock/upload-mcba", (req, res) => {
       }
     }
 
+    const activeForSync = store.stockItems.filter(i => i.is_tracked !== false);
     store.stock_last_sync = {
       timestamp: new Date().toISOString(),
       latest_month: globalLatestMonth || store.stock_last_sync?.latest_month || '11.2026',
       source_mcba: fileName || "Upload MCBA",
-      total_tracked: store.stockItems.length,
-      ruptures: store.stockItems.filter(i => i.health_status === 'RUPTURE').length,
-      critiques: store.stockItems.filter(i => i.health_status === 'CRITIQUE').length,
-      bas: store.stockItems.filter(i => i.health_status === 'BAS').length,
-      disponibles: store.stockItems.filter(i => i.health_status === 'DISPONIBLE').length,
+      total_tracked: activeForSync.length,
+      ruptures: activeForSync.filter(i => i.health_status === 'RUPTURE').length,
+      critiques: activeForSync.filter(i => i.health_status === 'CRITIQUE').length,
+      bas: activeForSync.filter(i => i.health_status === 'BAS').length,
+      disponibles: activeForSync.filter(i => i.health_status === 'DISPONIBLE').length,
     };
 
     saveStore(store);

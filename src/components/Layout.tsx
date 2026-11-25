@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  LayoutDashboard, 
-  FileText, 
-  Globe, 
-  Truck, 
-  Ship, 
-  Building2, 
-  Users, 
-  Code2, 
-  LogOut, 
-  ChevronLeft, 
-  ChevronRight, 
-  ChevronDown, 
-  ShieldAlert, 
+import {
+  LayoutDashboard,
+  FileText,
+  Globe,
+  Truck,
+  Ship,
+  Building2,
+  Users,
+  Code2,
+  LogOut,
+  ChevronLeft,
+  ChevronRight,
+  ChevronDown,
+  ShieldAlert,
   UserCheck,
   CheckCircle2,
   Database,
@@ -73,7 +73,7 @@ export const Layout: React.FC<LayoutProps> = ({
       const next = !prev;
       try {
         localStorage.setItem('procurement_sidebar_collapsed', JSON.stringify(next));
-      } catch (e) {}
+      } catch (e) { }
       return next;
     });
   };
@@ -99,7 +99,7 @@ export const Layout: React.FC<LayoutProps> = ({
             setCompanyLogoUrl(data.logo_url);
           }
         })
-        .catch(() => {});
+        .catch(() => { });
     };
 
     loadCompanyInfo();
@@ -110,14 +110,15 @@ export const Layout: React.FC<LayoutProps> = ({
 
   const navItems = [
     { id: 'dashboard', label: t.dashboard, icon: LayoutDashboard, roles: ['Admin', 'Appro', 'Chef Service', 'Visitor'] },
-    { 
-      id: 'stock-menu', 
-      label: 'Situation Stock', 
-      icon: Boxes, 
+    {
+      id: 'stock-menu',
+      label: 'Situation Stock',
+      icon: Boxes,
       roles: ['Admin', 'Appro', 'Chef Service', 'Visitor'],
       subItems: [
         { id: 'stock-situation', label: 'Stock Matières & Pièces (MP / PD)' },
         { id: 'stock-produits-finis', label: 'Stock Produits Finis (PF)' },
+        { id: 'stock-pieces-achetees', label: 'Pièces Achetées (103 / 105)' },
       ]
     },
     { id: 'situation-appro', label: 'Situation Appro (MRP)', icon: Calculator, roles: ['Admin', 'Appro', 'Chef Service', 'Visitor'] },
@@ -276,6 +277,16 @@ export const Layout: React.FC<LayoutProps> = ({
             <span className="font-semibold text-indigo-950">{currentDateTimeStr}</span>
           </div>
         );
+      case 'stock-pieces-achetees':
+        return (
+          <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-50 text-amber-900 border border-amber-300 text-xs font-bold shadow-2xs shrink-0">
+            <Boxes size={13} className="text-amber-600 shrink-0" />
+            <span>Pièces Achetées (103 / 105)</span>
+            <span className="text-amber-300 font-normal">|</span>
+            <Clock size={12} className="text-amber-600 shrink-0" />
+            <span className="font-semibold text-amber-950">{currentDateTimeStr}</span>
+          </div>
+        );
       case 'situation-appro':
         return (
           <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-cyan-50 text-cyan-900 border border-cyan-300 text-xs font-bold shadow-2xs shrink-0">
@@ -343,19 +354,17 @@ export const Layout: React.FC<LayoutProps> = ({
     <div className={`flex h-screen bg-slate-50 text-slate-900 font-sans overflow-hidden ${isRtl ? 'dir-rtl' : ''}`}>
       {/* Mobile Backdrop Overlay */}
       {mobileMenuOpen && (
-        <div 
+        <div
           onClick={() => setMobileMenuOpen(false)}
           className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-40 lg:hidden transition-opacity"
         />
       )}
 
       {/* Sidebar Navigation */}
-      <aside 
-        className={`fixed lg:static inset-y-0 left-0 z-50 ${
-          collapsed ? 'lg:w-16 xl:w-20' : 'lg:w-56 xl:w-64'
-        } ${
-          mobileMenuOpen ? 'translate-x-0 w-72' : '-translate-x-full lg:translate-x-0'
-        } transition-all duration-300 ease-in-out bg-sky-950 text-sky-100 flex flex-col shadow-2xl border-r border-sky-800/40 shrink-0`}
+      <aside
+        className={`fixed lg:static inset-y-0 left-0 z-50 ${collapsed ? 'lg:w-16 xl:w-20' : 'lg:w-56 xl:w-64'
+          } ${mobileMenuOpen ? 'translate-x-0 w-72' : '-translate-x-full lg:translate-x-0'
+          } transition-all duration-300 ease-in-out bg-sky-950 text-sky-100 flex flex-col shadow-2xl border-r border-sky-800/40 shrink-0`}
       >
         {/* Brand Header */}
         <div className="h-14 sm:h-16 flex items-center justify-between px-3.5 border-b border-sky-800/50 bg-sky-950">
@@ -375,7 +384,7 @@ export const Layout: React.FC<LayoutProps> = ({
               <SensusLogo logoUrl={companyLogoUrl} height={24} />
             </div>
           )}
-          
+
           <div className="flex items-center gap-1">
             <button
               onClick={toggleSidebar}
@@ -411,20 +420,19 @@ export const Layout: React.FC<LayoutProps> = ({
                       }
                       setStockMenuOpen(!stockMenuOpen);
                     }}
-                    className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 ${
-                      isActive
-                        ? 'bg-sky-900/60 text-white border border-sky-600/40 font-bold'
-                        : 'text-sky-200 hover:text-white hover:bg-sky-800/40'
-                    }`}
+                    className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 ${isActive
+                      ? 'bg-sky-900/60 text-white border border-sky-600/40 font-bold'
+                      : 'text-sky-200 hover:text-white hover:bg-sky-800/40'
+                      }`}
                     title={collapsed && !mobileMenuOpen ? item.label : undefined}
                   >
                     <Icon size={18} className={`shrink-0 ${isActive ? 'text-sky-300' : 'text-sky-400'}`} />
                     {(!collapsed || mobileMenuOpen) && (
                       <div className="flex items-center justify-between flex-1 min-w-0">
                         <span className="truncate">{item.label}</span>
-                        <ChevronDown 
-                          size={15} 
-                          className={`text-sky-400 transition-transform duration-200 ${stockMenuOpen ? 'rotate-180' : ''}`} 
+                        <ChevronDown
+                          size={15}
+                          className={`text-sky-400 transition-transform duration-200 ${stockMenuOpen ? 'rotate-180' : ''}`}
                         />
                       </div>
                     )}
@@ -439,11 +447,10 @@ export const Layout: React.FC<LayoutProps> = ({
                           <button
                             key={sub.id}
                             onClick={() => handleNavClick(sub.id)}
-                            className={`w-full text-left px-2 py-1.5 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 ${
-                              isCurrent
-                                ? 'bg-sky-600 text-white font-bold shadow-2xs'
-                                : 'text-sky-300 hover:text-white hover:bg-sky-800/30'
-                            }`}
+                            className={`w-full text-left px-2 py-1.5 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 ${isCurrent
+                              ? 'bg-sky-600 text-white font-bold shadow-2xs'
+                              : 'text-sky-300 hover:text-white hover:bg-sky-800/30'
+                              }`}
                           >
                             <span className={`w-1.5 h-1.5 rounded-full ${isCurrent ? 'bg-white' : 'bg-sky-400'}`}></span>
                             <span className="truncate">{sub.label}</span>
@@ -460,11 +467,10 @@ export const Layout: React.FC<LayoutProps> = ({
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 ${
-                  isActive
-                    ? 'bg-sky-600 text-white shadow-sm border border-sky-400/40 font-bold'
-                    : 'text-sky-200 hover:text-white hover:bg-sky-800/40'
-                }`}
+                className={`w-full flex items-center gap-2 px-2.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 ${isActive
+                  ? 'bg-sky-600 text-white shadow-sm border border-sky-400/40 font-bold'
+                  : 'text-sky-200 hover:text-white hover:bg-sky-800/40'
+                  }`}
                 title={collapsed && !mobileMenuOpen ? `${item.label}${item.badge ? ` (${item.badge})` : ''}` : undefined}
               >
                 <Icon size={18} className={`shrink-0 ${isActive ? 'text-white' : 'text-sky-300'}`} />
@@ -555,31 +561,28 @@ export const Layout: React.FC<LayoutProps> = ({
               <Languages size={14} className="text-slate-500 ml-1.5 mr-1 shrink-0" />
               <button
                 onClick={() => setLanguage('fr')}
-                className={`px-2 py-0.5 text-xs font-bold rounded-md transition-all ${
-                  language === 'fr'
-                    ? 'bg-white text-sky-700 shadow-2xs font-extrabold'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
+                className={`px-2 py-0.5 text-xs font-bold rounded-md transition-all ${language === 'fr'
+                  ? 'bg-white text-sky-700 shadow-2xs font-extrabold'
+                  : 'text-slate-600 hover:text-slate-900'
+                  }`}
               >
                 FR
               </button>
               <button
                 onClick={() => setLanguage('en')}
-                className={`px-2 py-0.5 text-xs font-bold rounded-md transition-all ${
-                  language === 'en'
-                    ? 'bg-white text-sky-700 shadow-2xs font-extrabold'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
+                className={`px-2 py-0.5 text-xs font-bold rounded-md transition-all ${language === 'en'
+                  ? 'bg-white text-sky-700 shadow-2xs font-extrabold'
+                  : 'text-slate-600 hover:text-slate-900'
+                  }`}
               >
                 EN
               </button>
               <button
                 onClick={() => setLanguage('ar')}
-                className={`px-2 py-0.5 text-xs font-bold rounded-md transition-all ${
-                  language === 'ar'
-                    ? 'bg-white text-sky-700 shadow-2xs font-extrabold'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
+                className={`px-2 py-0.5 text-xs font-bold rounded-md transition-all ${language === 'ar'
+                  ? 'bg-white text-sky-700 shadow-2xs font-extrabold'
+                  : 'text-slate-600 hover:text-slate-900'
+                  }`}
               >
                 AR
               </button>

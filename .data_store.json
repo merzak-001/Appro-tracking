@@ -8552,7 +8552,18 @@
       "updated_at": "2026-11-22T20:44:56.894Z",
       "created_at": "2026-11-22T20:28:44.098Z",
       "point_reorder": 174,
-      "point_rupture": 40
+      "point_rupture": 40,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 2,
@@ -8876,7 +8887,16 @@
       "updated_at": "2026-11-22T20:44:56.894Z",
       "created_at": "2026-11-22T20:28:44.098Z",
       "point_reorder": 51,
-      "point_rupture": 13
+      "point_rupture": 13,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 3,
@@ -9200,7 +9220,18 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.098Z",
       "point_reorder": 198,
-      "point_rupture": 46
+      "point_rupture": 46,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 7
     },
     {
       "id": 4,
@@ -9524,7 +9555,17 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.098Z",
       "point_reorder": 49,
-      "point_rupture": 14
+      "point_rupture": 14,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 12
     },
     {
       "id": 5,
@@ -9848,7 +9889,16 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.098Z",
       "point_reorder": 12,
-      "point_rupture": 3
+      "point_rupture": 3,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 6,
@@ -10172,7 +10222,17 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.098Z",
       "point_reorder": 198,
-      "point_rupture": 46
+      "point_rupture": 46,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 7,
@@ -10496,7 +10556,17 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.098Z",
       "point_reorder": 105,
-      "point_rupture": 25
+      "point_rupture": 25,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "702"
+      ],
+      "mb51_purchased_count": 10
     },
     {
       "id": 8,
@@ -10820,7 +10890,17 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 84,
-      "point_rupture": 21
+      "point_rupture": 21,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 10
     },
     {
       "id": 9,
@@ -11144,7 +11224,16 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 20,
-      "point_rupture": 4
+      "point_rupture": 4,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 10,
@@ -11468,7 +11557,17 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 198,
-      "point_rupture": 46
+      "point_rupture": 46,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 11,
@@ -11792,7 +11891,18 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 198,
-      "point_rupture": 46
+      "point_rupture": 46,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 12,
@@ -12116,7 +12226,17 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 198,
-      "point_rupture": 46
+      "point_rupture": 46,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 13,
@@ -12440,7 +12560,18 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 198,
-      "point_rupture": 46
+      "point_rupture": 46,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 14,
@@ -12764,7 +12895,18 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 139,
-      "point_rupture": 36
+      "point_rupture": 36,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 19
     },
     {
       "id": 15,
@@ -13088,7 +13230,16 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 15,
-      "point_rupture": 4
+      "point_rupture": 4,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 16,
@@ -13412,7 +13563,17 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 118,
-      "point_rupture": 26
+      "point_rupture": 26,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 17,
@@ -13736,7 +13897,17 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 91,
-      "point_rupture": 22
+      "point_rupture": 22,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 18,
@@ -14060,7 +14231,14 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 65,
-      "point_rupture": 20
+      "point_rupture": 20,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 19,
@@ -14384,7 +14562,16 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 34,
-      "point_rupture": 7
+      "point_rupture": 7,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 20,
@@ -14708,7 +14895,17 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 111,
-      "point_rupture": 29
+      "point_rupture": 29,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 21,
@@ -15032,7 +15229,17 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 27,
-      "point_rupture": 7
+      "point_rupture": 7,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 22,
@@ -15356,7 +15563,17 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 198,
-      "point_rupture": 46
+      "point_rupture": 46,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 23,
@@ -15680,7 +15897,18 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 212,
-      "point_rupture": 48
+      "point_rupture": 48,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 24,
@@ -16004,7 +16232,18 @@
       "updated_at": "2026-11-22T20:44:56.895Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 198,
-      "point_rupture": 46
+      "point_rupture": 46,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 25,
@@ -16328,7 +16567,15 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 66,
-      "point_rupture": 21
+      "point_rupture": 21,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201",
+        "701"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 26,
@@ -16652,7 +16899,12 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 27,
@@ -16976,7 +17228,17 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 198,
-      "point_rupture": 46
+      "point_rupture": 46,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 28,
@@ -17586,7 +17848,14 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.099Z",
       "point_reorder": 6531,
-      "point_rupture": 2150
+      "point_rupture": 2150,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 29,
@@ -17910,7 +18179,13 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 799,
-      "point_rupture": 282
+      "point_rupture": 282,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 30,
@@ -18234,7 +18509,17 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 21344,
-      "point_rupture": 4807
+      "point_rupture": 4807,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "309",
+        "310",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 31,
@@ -18558,7 +18843,14 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 927,
-      "point_rupture": 251
+      "point_rupture": 251,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 32,
@@ -18882,7 +19174,14 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 1244,
-      "point_rupture": 334
+      "point_rupture": 334,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 33,
@@ -19206,7 +19505,13 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 34,
@@ -19530,7 +19835,14 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 2759,
-      "point_rupture": 922
+      "point_rupture": 922,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 35,
@@ -19854,7 +20166,15 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "309",
+        "310",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 36,
@@ -20178,7 +20498,15 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 12552,
-      "point_rupture": 3005
+      "point_rupture": 3005,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 37,
@@ -20502,7 +20830,14 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 381,
-      "point_rupture": 134
+      "point_rupture": 134,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 38,
@@ -20826,7 +21161,15 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 120,
-      "point_rupture": 30
+      "point_rupture": 30,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 39,
@@ -21150,7 +21493,14 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 128,
-      "point_rupture": 30
+      "point_rupture": 30,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 40,
@@ -21474,7 +21824,14 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 41,
@@ -21798,7 +22155,15 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 42,
-      "point_rupture": 13
+      "point_rupture": 13,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 42,
@@ -22122,7 +22487,17 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 23,
-      "point_rupture": 7
+      "point_rupture": 7,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "309",
+        "310",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 43,
@@ -22446,7 +22821,13 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 20,
-      "point_rupture": 6
+      "point_rupture": 6,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 44,
@@ -22770,7 +23151,15 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 6,
-      "point_rupture": 2
+      "point_rupture": 2,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 45,
@@ -23094,7 +23483,13 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 9,
-      "point_rupture": 2
+      "point_rupture": 2,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 46,
@@ -23418,7 +23813,14 @@
       "updated_at": "2026-11-22T20:44:56.896Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 11,
-      "point_rupture": 4
+      "point_rupture": 4,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 47,
@@ -23742,7 +24144,15 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 16515,
-      "point_rupture": 5166
+      "point_rupture": 5166,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 48,
@@ -24066,7 +24476,15 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 49884,
-      "point_rupture": 7692
+      "point_rupture": 7692,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 49,
@@ -24390,7 +24808,14 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 1836,
-      "point_rupture": 458
+      "point_rupture": 458,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 50,
@@ -24714,7 +25139,13 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 77386,
-      "point_rupture": 12588
+      "point_rupture": 12588,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 51,
@@ -25038,7 +25469,13 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 77205,
-      "point_rupture": 12792
+      "point_rupture": 12792,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 52,
@@ -25362,7 +25799,15 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 48225,
-      "point_rupture": 7474
+      "point_rupture": 7474,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 53,
@@ -25686,7 +26131,13 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 1844,
-      "point_rupture": 460
+      "point_rupture": 460,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 54,
@@ -26010,7 +26461,13 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 2705,
-      "point_rupture": 900
+      "point_rupture": 900,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 55,
@@ -26334,7 +26791,13 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 244,
-      "point_rupture": 62
+      "point_rupture": 62,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 56,
@@ -26658,7 +27121,13 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 249,
-      "point_rupture": 57
+      "point_rupture": 57,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 57,
@@ -26982,7 +27451,15 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 44,
-      "point_rupture": 11
+      "point_rupture": 11,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "309"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 58,
@@ -27306,7 +27783,15 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 42,
-      "point_rupture": 12
+      "point_rupture": 12,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "309"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 59,
@@ -27630,7 +28115,16 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 34,
-      "point_rupture": 9
+      "point_rupture": 9,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "262",
+        "309"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 60,
@@ -27954,7 +28448,15 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 9,
-      "point_rupture": 2
+      "point_rupture": 2,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "309"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 61,
@@ -28278,7 +28780,15 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 15,
-      "point_rupture": 4
+      "point_rupture": 4,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "309"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 62,
@@ -28602,7 +29112,13 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 25,
-      "point_rupture": 8
+      "point_rupture": 8,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261",
+        "309"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 63,
@@ -28926,7 +29442,14 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 1,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 64,
@@ -29250,7 +29773,13 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 4,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 65,
@@ -29860,7 +30389,17 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 80258,
-      "point_rupture": 21086
+      "point_rupture": 21086,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 61
     },
     {
       "id": 66,
@@ -30184,7 +30723,16 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 2974,
-      "point_rupture": 709
+      "point_rupture": 709,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "106",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 9
     },
     {
       "id": 67,
@@ -30794,7 +31342,15 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 81078,
-      "point_rupture": 21262
+      "point_rupture": 21262,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 8
     },
     {
       "id": 68,
@@ -31118,7 +31674,16 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 2974,
-      "point_rupture": 709
+      "point_rupture": 709,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "202",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 10
     },
     {
       "id": 69,
@@ -31442,7 +32007,21 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 156126,
-      "point_rupture": 27463
+      "point_rupture": 27463,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262",
+        "309",
+        "601",
+        "702"
+      ],
+      "mb51_purchased_count": 66
     },
     {
       "id": 70,
@@ -32052,7 +32631,17 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 80258,
-      "point_rupture": 21086
+      "point_rupture": 21086,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 60
     },
     {
       "id": 71,
@@ -32376,7 +32965,16 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 2974,
-      "point_rupture": 709
+      "point_rupture": 709,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "106",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 9
     },
     {
       "id": 72,
@@ -32700,7 +33298,16 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 120363,
-      "point_rupture": 25447
+      "point_rupture": 25447,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "261",
+        "702"
+      ],
+      "mb51_purchased_count": 24
     },
     {
       "id": 73,
@@ -33024,7 +33631,16 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 123915,
-      "point_rupture": 26322
+      "point_rupture": 26322,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201",
+        "261",
+        "702"
+      ],
+      "mb51_purchased_count": 8
     },
     {
       "id": 74,
@@ -33348,7 +33964,15 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 5261,
-      "point_rupture": 1559
+      "point_rupture": 1559,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 75,
@@ -33672,7 +34296,17 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 73505,
-      "point_rupture": 11036
+      "point_rupture": 11036,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "201",
+        "202",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 76,
@@ -33996,7 +34630,17 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 115132,
-      "point_rupture": 18304
+      "point_rupture": 18304,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "201",
+        "202",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 77,
@@ -34320,7 +34964,17 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 61155,
-      "point_rupture": 9698
+      "point_rupture": 9698,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "202",
+        "261",
+        "262",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 78,
@@ -34644,7 +35298,14 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 77797,
-      "point_rupture": 15987
+      "point_rupture": 15987,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 79,
@@ -34968,7 +35629,15 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 78388,
-      "point_rupture": 15860
+      "point_rupture": 15860,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "202",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 80,
@@ -35292,7 +35961,14 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 77797,
-      "point_rupture": 15987
+      "point_rupture": 15987,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 81,
@@ -35616,7 +36292,14 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 77797,
-      "point_rupture": 15987
+      "point_rupture": 15987,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 82,
@@ -35940,7 +36623,15 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 129899,
-      "point_rupture": 20086
+      "point_rupture": 20086,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261",
+        "262",
+        "309"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 83,
@@ -36264,7 +36955,14 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 3688,
-      "point_rupture": 919
+      "point_rupture": 919,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 84,
@@ -36588,7 +37286,17 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 58489,
-      "point_rupture": 9147
+      "point_rupture": 9147,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "201",
+        "202",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 85,
@@ -36912,7 +37620,16 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 59962,
-      "point_rupture": 9585
+      "point_rupture": 9585,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 86,
@@ -37236,7 +37953,16 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 59962,
-      "point_rupture": 9585
+      "point_rupture": 9585,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "261",
+        "262",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 87,
@@ -37560,7 +38286,18 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 61155,
-      "point_rupture": 9698
+      "point_rupture": 9698,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "201",
+        "202",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 88,
@@ -37884,7 +38621,17 @@
       "updated_at": "2026-11-22T20:44:56.897Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 57686,
-      "point_rupture": 9364
+      "point_rupture": 9364,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "202",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 89,
@@ -38208,7 +38955,17 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 57274,
-      "point_rupture": 9117
+      "point_rupture": 9117,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "202",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 90,
@@ -38532,7 +39289,17 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 61160,
-      "point_rupture": 9700
+      "point_rupture": 9700,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "202",
+        "261",
+        "262",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 91,
@@ -38856,7 +39623,16 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 57668,
-      "point_rupture": 9274
+      "point_rupture": 9274,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "261",
+        "262",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 92,
@@ -39180,7 +39956,15 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 76296,
-      "point_rupture": 12428
+      "point_rupture": 12428,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261",
+        "262",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 93,
@@ -39504,7 +40288,16 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 74366,
-      "point_rupture": 11690
+      "point_rupture": 11690,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "261",
+        "262",
+        "309"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 94,
@@ -39828,7 +40621,16 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 57274,
-      "point_rupture": 9117
+      "point_rupture": 9117,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "261",
+        "262",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 95,
@@ -40152,7 +40954,15 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 57274,
-      "point_rupture": 9117
+      "point_rupture": 9117,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261",
+        "262",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 96,
@@ -40476,7 +41286,13 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 3753,
-      "point_rupture": 1138
+      "point_rupture": 1138,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 97,
@@ -40800,7 +41616,14 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 3753,
-      "point_rupture": 1138
+      "point_rupture": 1138,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "202",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 98,
@@ -41124,7 +41947,14 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 3753,
-      "point_rupture": 1138
+      "point_rupture": 1138,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "202",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 99,
@@ -41448,7 +42278,15 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 79678,
-      "point_rupture": 13122
+      "point_rupture": 13122,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 100,
@@ -41772,7 +42610,18 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 65207,
-      "point_rupture": 10069
+      "point_rupture": 10069,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "201",
+        "261",
+        "262",
+        "309",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 101,
@@ -42096,7 +42945,17 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 61035,
-      "point_rupture": 9713
+      "point_rupture": 9713,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "202",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 102,
@@ -42420,7 +43279,18 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 72466,
-      "point_rupture": 11350
+      "point_rupture": 11350,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "201",
+        "261",
+        "262",
+        "309",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 103,
@@ -42744,7 +43614,15 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 59214,
-      "point_rupture": 9211
+      "point_rupture": 9211,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 104,
@@ -43068,7 +43946,14 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 59214,
-      "point_rupture": 9211
+      "point_rupture": 9211,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 105,
@@ -43392,7 +44277,15 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 57785,
-      "point_rupture": 9321
+      "point_rupture": 9321,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 106,
@@ -43716,7 +44609,18 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 70639,
-      "point_rupture": 10736
+      "point_rupture": 10736,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "201",
+        "261",
+        "262",
+        "309",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 107,
@@ -44040,7 +44944,16 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 75052,
-      "point_rupture": 11615
+      "point_rupture": 11615,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 108,
@@ -44364,7 +45277,12 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 489,
-      "point_rupture": 124
+      "point_rupture": 124,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 109,
@@ -44688,7 +45606,17 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 123150,
-      "point_rupture": 19404
+      "point_rupture": 19404,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "201",
+        "202",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 110,
@@ -45012,7 +45940,16 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 57274,
-      "point_rupture": 9117
+      "point_rupture": 9117,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "261",
+        "262",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 111,
@@ -45336,7 +46273,15 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 56775,
-      "point_rupture": 8917
+      "point_rupture": 8917,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 112,
@@ -45660,7 +46605,16 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 57274,
-      "point_rupture": 9117
+      "point_rupture": 9117,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "261",
+        "262",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 113,
@@ -45984,7 +46938,12 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 521,
-      "point_rupture": 123
+      "point_rupture": 123,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 114,
@@ -46308,7 +47267,17 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 66689,
-      "point_rupture": 10238
+      "point_rupture": 10238,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "261",
+        "262",
+        "309",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 115,
@@ -46632,7 +47601,17 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 74189,
-      "point_rupture": 11196
+      "point_rupture": 11196,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "201",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 116,
@@ -46956,7 +47935,15 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 229095,
-      "point_rupture": 36467
+      "point_rupture": 36467,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 117,
@@ -47280,7 +48267,16 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 76210,
-      "point_rupture": 11919
+      "point_rupture": 11919,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 118,
@@ -47604,7 +48600,16 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 57362,
-      "point_rupture": 9152
+      "point_rupture": 9152,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "261",
+        "262",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 119,
@@ -47928,7 +48933,17 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 81303,
-      "point_rupture": 13122
+      "point_rupture": 13122,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "202",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 120,
@@ -48252,7 +49267,19 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 66965,
-      "point_rupture": 10345
+      "point_rupture": 10345,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "201",
+        "261",
+        "262",
+        "309",
+        "310",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 121,
@@ -48576,7 +49603,14 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 88214,
-      "point_rupture": 21875
+      "point_rupture": 21875,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 122,
@@ -48900,7 +49934,15 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 56533,
-      "point_rupture": 8852
+      "point_rupture": 8852,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 123,
@@ -49224,7 +50266,13 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 124,
@@ -49548,7 +50596,14 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 125,
@@ -49872,7 +50927,14 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 126,
@@ -50196,7 +51258,13 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 127,
@@ -50520,7 +51588,13 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 128,
@@ -50844,7 +51918,13 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 129,
@@ -51168,7 +52248,19 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 33252,
-      "point_rupture": 8184
+      "point_rupture": 8184,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "106",
+        "202",
+        "261",
+        "262",
+        "309",
+        "601"
+      ],
+      "mb51_purchased_count": 45
     },
     {
       "id": 130,
@@ -51492,7 +52584,15 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 49,
-      "point_rupture": 8
+      "point_rupture": 8,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201",
+        "202"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 131,
@@ -51816,7 +52916,14 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 113,
-      "point_rupture": 38
+      "point_rupture": 38,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 132,
@@ -52140,7 +53247,12 @@
       "updated_at": "2026-11-22T20:44:56.898Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 0,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 133,
@@ -52464,7 +53576,13 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 134,
@@ -52788,7 +53906,17 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 1237,
-      "point_rupture": 188
+      "point_rupture": 188,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201",
+        "202",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 22
     },
     {
       "id": 135,
@@ -53112,7 +54240,14 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 2,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 136,
@@ -53436,7 +54571,15 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 9,
-      "point_rupture": 3
+      "point_rupture": 3,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201",
+        "202"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 137,
@@ -53760,7 +54903,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 13,
-      "point_rupture": 3
+      "point_rupture": 3,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 138,
@@ -54084,7 +55232,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 139,
@@ -54408,7 +55561,13 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 2,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 140,
@@ -54732,7 +55891,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 141,
@@ -55056,7 +56220,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 142,
@@ -55380,7 +56549,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 143,
@@ -55704,7 +56878,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 3364,
-      "point_rupture": 764
+      "point_rupture": 764,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 144,
@@ -56028,7 +57207,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 3053,
-      "point_rupture": 1025
+      "point_rupture": 1025,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 145,
@@ -56352,7 +57536,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 6,
-      "point_rupture": 2
+      "point_rupture": 2,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 146,
@@ -56676,7 +57865,17 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 59344,
-      "point_rupture": 9231
+      "point_rupture": 9231,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "106",
+        "261",
+        "262",
+        "309"
+      ],
+      "mb51_purchased_count": 47
     },
     {
       "id": 147,
@@ -57000,7 +58199,16 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 3743,
-      "point_rupture": 1199
+      "point_rupture": 1199,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 148,
@@ -57324,7 +58532,19 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 28173,
-      "point_rupture": 6970
+      "point_rupture": 6970,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "202",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 10
     },
     {
       "id": 149,
@@ -57648,7 +58868,17 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 5942,
-      "point_rupture": 924
+      "point_rupture": 924,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201",
+        "261",
+        "262",
+        "309"
+      ],
+      "mb51_purchased_count": 38
     },
     {
       "id": 150,
@@ -57972,7 +59202,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 547,
-      "point_rupture": 184
+      "point_rupture": 184,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 151,
@@ -58296,7 +59531,14 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 10,
-      "point_rupture": 2
+      "point_rupture": 2,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 152,
@@ -58620,7 +59862,15 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 1,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201",
+        "202"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 153,
@@ -58944,7 +60194,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 244,
-      "point_rupture": 62
+      "point_rupture": 62,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 154,
@@ -59268,7 +60523,13 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 260,
-      "point_rupture": 61
+      "point_rupture": 61,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 155,
@@ -59592,7 +60853,18 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 131496,
-      "point_rupture": 30010
+      "point_rupture": 30010,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "202",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 14
     },
     {
       "id": 156,
@@ -59916,7 +61188,14 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 944,
-      "point_rupture": 261
+      "point_rupture": 261,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261"
+      ],
+      "mb51_purchased_count": 10
     },
     {
       "id": 157,
@@ -60240,7 +61519,15 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 158,
@@ -60564,7 +61851,15 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 159,
@@ -60888,7 +62183,13 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 160,
@@ -61212,7 +62513,15 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 161,
@@ -61536,7 +62845,14 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 0,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 162,
@@ -61860,7 +63176,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 0,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 163,
@@ -62184,7 +63505,18 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 87495,
-      "point_rupture": 10208
+      "point_rupture": 10208,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 164,
@@ -62508,7 +63840,14 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 324,
-      "point_rupture": 76
+      "point_rupture": 76,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "105",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 1
     },
     {
       "id": 165,
@@ -62832,7 +64171,14 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 349,
-      "point_rupture": 75
+      "point_rupture": 75,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "105",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 166,
@@ -63156,7 +64502,14 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 461,
-      "point_rupture": 124
+      "point_rupture": 124,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 167,
@@ -63480,7 +64833,13 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 349,
-      "point_rupture": 75
+      "point_rupture": 75,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 168,
@@ -63804,7 +65163,14 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 23718,
-      "point_rupture": 6787
+      "point_rupture": 6787,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 169,
@@ -64128,7 +65494,14 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 20,
-      "point_rupture": 3
+      "point_rupture": 3,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 170,
@@ -64452,7 +65825,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 8,
-      "point_rupture": 2
+      "point_rupture": 2,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 171,
@@ -64776,7 +66154,15 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 348,
-      "point_rupture": 63
+      "point_rupture": 63,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 172,
@@ -65100,7 +66486,15 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 266,
-      "point_rupture": 53
+      "point_rupture": 53,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 173,
@@ -65424,7 +66818,14 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 174,
@@ -65748,7 +67149,15 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 974,
-      "point_rupture": 219
+      "point_rupture": 219,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "261"
+      ],
+      "mb51_purchased_count": 5
     },
     {
       "id": 175,
@@ -66072,7 +67481,15 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 7499,
-      "point_rupture": 968
+      "point_rupture": 968,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "261"
+      ],
+      "mb51_purchased_count": 11
     },
     {
       "id": 176,
@@ -66396,7 +67813,15 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 6169,
-      "point_rupture": 1044
+      "point_rupture": 1044,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "261"
+      ],
+      "mb51_purchased_count": 13
     },
     {
       "id": 177,
@@ -66720,7 +68145,15 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 1090,
-      "point_rupture": 275
+      "point_rupture": 275,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 178,
@@ -67044,7 +68477,16 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.107Z",
       "point_reorder": 3105,
-      "point_rupture": 504
+      "point_rupture": 504,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 13
     },
     {
       "id": 179,
@@ -67368,7 +68810,15 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.107Z",
       "point_reorder": 476,
-      "point_rupture": 77
+      "point_rupture": 77,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 180,
@@ -67692,7 +69142,12 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.107Z",
       "point_reorder": 50,
-      "point_rupture": 13
+      "point_rupture": 13,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 181,
@@ -68016,7 +69471,13 @@
       "updated_at": "2026-11-22T20:44:56.899Z",
       "created_at": "2026-11-22T20:28:44.107Z",
       "point_reorder": 437,
-      "point_rupture": 96
+      "point_rupture": 96,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 182,
@@ -68340,7 +69801,16 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.107Z",
       "point_reorder": 1622,
-      "point_rupture": 267
+      "point_rupture": 267,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 11
     },
     {
       "id": 183,
@@ -68664,7 +70134,17 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.107Z",
       "point_reorder": 2227,
-      "point_rupture": 358
+      "point_rupture": 358,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 13
     },
     {
       "id": 184,
@@ -69274,7 +70754,12 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.108Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 185,
@@ -69598,7 +71083,13 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.108Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 186,
@@ -69922,7 +71413,18 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.108Z",
       "point_reorder": 56945,
-      "point_rupture": 8858
+      "point_rupture": 8858,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 233
     },
     {
       "id": 187,
@@ -70246,7 +71748,16 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.108Z",
       "point_reorder": 2752,
-      "point_rupture": 684
+      "point_rupture": 684,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 188,
@@ -70570,7 +72081,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.108Z",
       "point_reorder": 244,
-      "point_rupture": 62
+      "point_rupture": 62,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 189,
@@ -70894,7 +72412,15 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.108Z",
       "point_reorder": 260,
-      "point_rupture": 61
+      "point_rupture": 61,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 190,
@@ -71218,7 +72744,19 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.108Z",
       "point_reorder": 92644,
-      "point_rupture": 11156
+      "point_rupture": 11156,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "201",
+        "261",
+        "262",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 187
     },
     {
       "id": 191,
@@ -71542,7 +73080,16 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 324,
-      "point_rupture": 76
+      "point_rupture": 76,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 192,
@@ -71866,7 +73413,18 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 349,
-      "point_rupture": 75
+      "point_rupture": 75,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 193,
@@ -72190,7 +73748,12 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 202,
-      "point_rupture": 59
+      "point_rupture": 59,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 194,
@@ -72514,7 +74077,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 354,
-      "point_rupture": 102
+      "point_rupture": 102,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 195,
@@ -72838,7 +74408,13 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 202,
-      "point_rupture": 59
+      "point_rupture": 59,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 196,
@@ -73162,7 +74738,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 1751,
-      "point_rupture": 424
+      "point_rupture": 424,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "202",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 197,
@@ -73486,7 +75069,17 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 30028,
-      "point_rupture": 7376
+      "point_rupture": 7376,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 24
     },
     {
       "id": 198,
@@ -73810,7 +75403,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 354,
-      "point_rupture": 102
+      "point_rupture": 102,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "105",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 1
     },
     {
       "id": 199,
@@ -74134,7 +75734,13 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 141,
-      "point_rupture": 46
+      "point_rupture": 46,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 200,
@@ -74458,7 +76064,18 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 109824,
-      "point_rupture": 15806
+      "point_rupture": 15806,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 13
     },
     {
       "id": 201,
@@ -74478,7 +76095,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -74782,7 +76399,15 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 2019,
-      "point_rupture": 485
+      "point_rupture": 485,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "202",
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 202,
@@ -74802,7 +76427,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -75106,7 +76731,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 373,
-      "point_rupture": 108
+      "point_rupture": 108,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 203,
@@ -75126,7 +76758,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -75430,7 +77062,15 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 1929,
-      "point_rupture": 470
+      "point_rupture": 470,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "202",
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 204,
@@ -75450,7 +77090,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -75754,7 +77394,13 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 202,
-      "point_rupture": 59
+      "point_rupture": 59,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 205,
@@ -75774,7 +77420,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -76078,7 +77724,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 373,
-      "point_rupture": 108
+      "point_rupture": 108,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "105",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 206,
@@ -76098,7 +77751,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -76402,7 +78055,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 22902,
-      "point_rupture": 7403
+      "point_rupture": 7403,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 207,
@@ -76422,7 +78082,7 @@
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -76726,7 +78386,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 42324,
-      "point_rupture": 12730
+      "point_rupture": 12730,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 208,
@@ -76746,7 +78413,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -77050,7 +78717,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 1748,
-      "point_rupture": 423
+      "point_rupture": 423,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "202",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 209,
@@ -77070,7 +78744,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -77374,7 +79048,12 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 202,
-      "point_rupture": 59
+      "point_rupture": 59,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 210,
@@ -77394,7 +79073,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -77698,7 +79377,19 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 61155,
-      "point_rupture": 9698
+      "point_rupture": 9698,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "202",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 12
     },
     {
       "id": 211,
@@ -77718,7 +79409,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -78022,7 +79713,13 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 12392,
-      "point_rupture": 3902
+      "point_rupture": 3902,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 212,
@@ -78042,7 +79739,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -78346,7 +80043,15 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 57274,
-      "point_rupture": 9117
+      "point_rupture": 9117,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 8
     },
     {
       "id": 213,
@@ -78366,7 +80071,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -78670,7 +80375,15 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 57274,
-      "point_rupture": 9117
+      "point_rupture": 9117,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 214,
@@ -78690,7 +80403,7 @@
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -78994,7 +80707,19 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 82561,
-      "point_rupture": 11494
+      "point_rupture": 11494,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "202",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 9
     },
     {
       "id": 215,
@@ -79014,7 +80739,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -79318,7 +81043,13 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 6244,
-      "point_rupture": 1982
+      "point_rupture": 1982,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 216,
@@ -79338,7 +81069,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -79642,7 +81373,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 18354,
-      "point_rupture": 5542
+      "point_rupture": 5542,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 217,
@@ -79662,7 +81400,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -79966,7 +81704,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 354,
-      "point_rupture": 102
+      "point_rupture": 102,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "105",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 218,
@@ -79986,7 +81731,7 @@
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -80290,7 +82035,12 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.109Z",
       "point_reorder": 349,
-      "point_rupture": 75
+      "point_rupture": 75,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 219,
@@ -80310,7 +82060,7 @@
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -80614,7 +82364,20 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 79637,
-      "point_rupture": 11166
+      "point_rupture": 11166,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "202",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 7
     },
     {
       "id": 220,
@@ -80634,7 +82397,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -80938,7 +82701,13 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 244,
-      "point_rupture": 62
+      "point_rupture": 62,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 221,
@@ -80958,7 +82727,7 @@
       "type_article": "ROH",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -81262,7 +83031,19 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 79183,
-      "point_rupture": 12528
+      "point_rupture": 12528,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "201",
+        "202",
+        "261",
+        "262",
+        "701"
+      ],
+      "mb51_purchased_count": 7
     },
     {
       "id": 222,
@@ -81282,7 +83063,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -81586,7 +83367,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 18354,
-      "point_rupture": 5542
+      "point_rupture": 5542,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 223,
@@ -81606,7 +83394,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -81910,7 +83698,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 18354,
-      "point_rupture": 5542
+      "point_rupture": 5542,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 224,
@@ -81930,7 +83725,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -82234,7 +84029,13 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 244,
-      "point_rupture": 62
+      "point_rupture": 62,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 225,
@@ -82254,7 +84055,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -82558,7 +84359,19 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 229095,
-      "point_rupture": 36467
+      "point_rupture": 36467,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "262",
+        "309",
+        "701"
+      ],
+      "mb51_purchased_count": 13
     },
     {
       "id": 226,
@@ -82578,7 +84391,7 @@
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -82882,7 +84695,14 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 47435,
-      "point_rupture": 13574
+      "point_rupture": 13574,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 227,
@@ -82902,7 +84722,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -83206,7 +85026,12 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 202,
-      "point_rupture": 59
+      "point_rupture": 59,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 228,
@@ -83226,7 +85051,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -83530,7 +85355,19 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 57274,
-      "point_rupture": 9117
+      "point_rupture": 9117,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262",
+        "309"
+      ],
+      "mb51_purchased_count": 21
     },
     {
       "id": 229,
@@ -83550,7 +85387,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "CRITIQUE",
       "latest_month": "11.2026",
@@ -83854,7 +85691,16 @@
       "updated_at": "2026-11-22T20:44:56.900Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 30028,
-      "point_rupture": 7376
+      "point_rupture": 7376,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261"
+      ],
+      "mb51_purchased_count": 21
     },
     {
       "id": 230,
@@ -83874,7 +85720,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -84178,7 +86024,13 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 370,
-      "point_rupture": 107
+      "point_rupture": 107,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 231,
@@ -84198,7 +86050,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -84502,7 +86354,13 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 354,
-      "point_rupture": 102
+      "point_rupture": 102,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 232,
@@ -84522,7 +86380,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -84826,7 +86684,13 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.110Z",
       "point_reorder": 370,
-      "point_rupture": 107
+      "point_rupture": 107,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 233,
@@ -84846,7 +86710,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -85150,7 +87014,14 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 202,
-      "point_rupture": 59
+      "point_rupture": 59,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "105",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 1
     },
     {
       "id": 234,
@@ -85170,7 +87041,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -85474,7 +87345,12 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 327,
-      "point_rupture": 99
+      "point_rupture": 99,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 235,
@@ -85494,7 +87370,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -85798,7 +87674,14 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 18354,
-      "point_rupture": 5542
+      "point_rupture": 5542,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 236,
@@ -85818,7 +87701,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -86122,7 +88005,14 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 202,
-      "point_rupture": 59
+      "point_rupture": 59,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "201",
+        "261",
+        "702"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 237,
@@ -86142,7 +88032,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -86446,7 +88336,14 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 373,
-      "point_rupture": 108
+      "point_rupture": 108,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "105",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 1
     },
     {
       "id": 238,
@@ -86466,7 +88363,7 @@
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -86770,7 +88667,12 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 2450,
-      "point_rupture": 563
+      "point_rupture": 563,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 239,
@@ -86790,7 +88692,7 @@
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -87094,7 +88996,15 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 23718,
-      "point_rupture": 6787
+      "point_rupture": 6787,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309",
+        "310",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 240,
@@ -87114,7 +89024,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "BAS",
       "latest_month": "11.2026",
@@ -87418,7 +89328,19 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 65855,
-      "point_rupture": 10090
+      "point_rupture": 10090,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "262",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 114
     },
     {
       "id": 241,
@@ -87438,7 +89360,7 @@
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -87742,7 +89664,13 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 349,
-      "point_rupture": 75
+      "point_rupture": 75,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261",
+        "701"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 242,
@@ -87762,7 +89690,7 @@
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": false,
       "statut": "DISPONIBLE",
       "latest_month": "11.2026",
@@ -88066,7 +89994,12 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 349,
-      "point_rupture": 75
+      "point_rupture": 75,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "261"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 243,
@@ -88390,7 +90323,17 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 195,
-      "point_rupture": 43
+      "point_rupture": 43,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 244,
@@ -88714,7 +90657,18 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 1001,
-      "point_rupture": 304
+      "point_rupture": 304,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 245,
@@ -89038,7 +90992,19 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 57274,
-      "point_rupture": 9117
+      "point_rupture": 9117,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 7
     },
     {
       "id": 246,
@@ -89362,7 +91328,19 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 79637,
-      "point_rupture": 11166
+      "point_rupture": 11166,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262",
+        "702"
+      ],
+      "mb51_purchased_count": 7
     },
     {
       "id": 247,
@@ -89686,7 +91664,18 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 26422,
-      "point_rupture": 5896
+      "point_rupture": 5896,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "101",
+        "102",
+        "261",
+        "309",
+        "310",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 248,
@@ -90010,7 +91999,18 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 150,
-      "point_rupture": 38
+      "point_rupture": 38,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 7
     },
     {
       "id": 249,
@@ -90334,7 +92334,13 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 1,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 250,
@@ -90658,7 +92664,12 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 8,
-      "point_rupture": 2
+      "point_rupture": 2,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 251,
@@ -90982,7 +92993,18 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 43,
-      "point_rupture": 11
+      "point_rupture": 11,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "202",
+        "261"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 252,
@@ -91306,7 +93328,17 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 34,
-      "point_rupture": 9
+      "point_rupture": 9,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 253,
@@ -91630,7 +93662,14 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 25,
-      "point_rupture": 8
+      "point_rupture": 8,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "261"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 254,
@@ -91954,7 +93993,16 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 12,
-      "point_rupture": 3
+      "point_rupture": 3,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 255,
@@ -92278,7 +94326,16 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 42,
-      "point_rupture": 12
+      "point_rupture": 12,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 256,
@@ -92602,7 +94659,16 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 10,
-      "point_rupture": 3
+      "point_rupture": 3,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261"
+      ],
+      "mb51_purchased_count": 6
     },
     {
       "id": 257,
@@ -92926,7 +94992,16 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 80,
-      "point_rupture": 28
+      "point_rupture": 28,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "309"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 258,
@@ -93250,7 +95325,16 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 99,
-      "point_rupture": 35
+      "point_rupture": 35,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "309"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 259,
@@ -93574,7 +95658,16 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 61,
-      "point_rupture": 22
+      "point_rupture": 22,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "309"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 260,
@@ -93898,7 +95991,18 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 1,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "309",
+        "310",
+        "601"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 261,
@@ -94222,7 +96326,15 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 262,
@@ -94546,7 +96658,16 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 61,
-      "point_rupture": 22
+      "point_rupture": 22,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "309"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 263,
@@ -94870,7 +96991,14 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 80,
-      "point_rupture": 28
+      "point_rupture": 28,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "309"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 264,
@@ -95194,7 +97322,17 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 30,
-      "point_rupture": 10
+      "point_rupture": 10,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "261",
+        "309"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 265,
@@ -95518,7 +97656,15 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 266,
@@ -95842,7 +97988,15 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 267,
@@ -96166,7 +98320,15 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.111Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 268,
@@ -96490,7 +98652,15 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 269,
@@ -96814,7 +98984,17 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 0,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 270,
@@ -97138,7 +99318,13 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 271,
@@ -97462,7 +99648,12 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 272,
@@ -97786,7 +99977,13 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 273,
@@ -98110,7 +100307,12 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 274,
@@ -98434,7 +100636,12 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 275,
@@ -98758,7 +100965,15 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 23,
-      "point_rupture": 7
+      "point_rupture": 7,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "601"
+      ],
+      "mb51_purchased_count": 5
     },
     {
       "id": 276,
@@ -99082,7 +101297,12 @@
       "updated_at": "2026-11-22T20:44:56.901Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 277,
@@ -99406,7 +101626,12 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 278,
@@ -99730,7 +101955,15 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 21,
-      "point_rupture": 7
+      "point_rupture": 7,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "601"
+      ],
+      "mb51_purchased_count": 5
     },
     {
       "id": 279,
@@ -100054,7 +102287,13 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 280,
@@ -100378,7 +102617,13 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 281,
@@ -100702,7 +102947,15 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.112Z",
       "point_reorder": 8,
-      "point_rupture": 2
+      "point_rupture": 2,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "601"
+      ],
+      "mb51_purchased_count": 5
     },
     {
       "id": 282,
@@ -101026,7 +103279,13 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 7,
-      "point_rupture": 2
+      "point_rupture": 2,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 283,
@@ -101350,7 +103609,13 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309",
+        "310"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 284,
@@ -101674,7 +103939,13 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "309",
+        "310"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 285,
@@ -101998,7 +104269,12 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 286,
@@ -102322,7 +104598,15 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 3,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "309"
+      ],
+      "mb51_purchased_count": 3
     },
     {
       "id": 287,
@@ -102646,7 +104930,15 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 7,
-      "point_rupture": 2
+      "point_rupture": 2,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "105",
+        "309",
+        "601"
+      ],
+      "mb51_purchased_count": 2
     },
     {
       "id": 288,
@@ -102970,7 +105262,13 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 1,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 289,
@@ -103294,7 +105592,12 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 0,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 290,
@@ -103618,7 +105921,13 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 291,
@@ -103942,7 +106251,13 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 5,
-      "point_rupture": 2
+      "point_rupture": 2,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 292,
@@ -104266,7 +106581,13 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 293,
@@ -104590,7 +106911,12 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 294,
@@ -104914,7 +107240,12 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 0,
-      "point_rupture": 1
+      "point_rupture": 1,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 295,
@@ -105238,7 +107569,13 @@
       "updated_at": "2026-11-22T20:44:56.902Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "601",
+        "602"
+      ],
+      "mb51_purchased_count": 0
     },
     {
       "id": 296,
@@ -105275,7 +107612,17 @@
       "updated_at": "2026-11-22T20:28:44.113Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261"
+      ],
+      "mb51_purchased_count": 4
     },
     {
       "id": 297,
@@ -105312,7 +107659,18 @@
       "updated_at": "2026-11-22T20:28:44.113Z",
       "created_at": "2026-11-22T20:28:44.113Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": true,
+      "mb51_movement_codes": [
+        "103",
+        "104",
+        "105",
+        "106",
+        "201",
+        "261",
+        "262"
+      ],
+      "mb51_purchased_count": 14
     },
     {
       "id": 298,
@@ -105349,7 +107707,13 @@
       "updated_at": "2026-11-22T20:28:44.114Z",
       "created_at": "2026-11-22T20:28:44.114Z",
       "point_reorder": 100,
-      "point_rupture": 0
+      "point_rupture": 0,
+      "is_purchased": false,
+      "mb51_movement_codes": [
+        "202",
+        "601"
+      ],
+      "mb51_purchased_count": 0
     }
   ],
   "produitsFinis": [
