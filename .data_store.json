@@ -29799,7 +29799,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -30386,7 +30386,7 @@
           }
         }
       ],
-      "updated_at": "2026-11-22T20:44:56.897Z",
+      "updated_at": "2026-11-25T09:24:24.596Z",
       "created_at": "2026-11-22T20:28:44.100Z",
       "point_reorder": 80258,
       "point_rupture": 21086,
@@ -30752,7 +30752,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -31339,7 +31339,7 @@
           }
         }
       ],
-      "updated_at": "2026-11-22T20:44:56.897Z",
+      "updated_at": "2026-11-25T09:25:15.415Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 81078,
       "point_rupture": 21262,
@@ -32041,7 +32041,7 @@
       "type_article": "HALB",
       "categorie": "PD",
       "famille": "Pièces Détachées & Sous-Ensembles (PD)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -32628,7 +32628,7 @@
           }
         }
       ],
-      "updated_at": "2026-11-22T20:44:56.897Z",
+      "updated_at": "2026-11-25T09:25:14.957Z",
       "created_at": "2026-11-22T20:28:44.101Z",
       "point_reorder": 80258,
       "point_rupture": 21086,
@@ -52612,7 +52612,7 @@
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -52913,7 +52913,7 @@
           }
         }
       ],
-      "updated_at": "2026-11-22T20:44:56.898Z",
+      "updated_at": "2026-11-25T09:55:55.394Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 113,
       "point_rupture": 38,
@@ -53936,7 +53936,7 @@
       "type_article": "HIBE",
       "categorie": "AUX",
       "famille": "Matériel Auxiliaire & Emballage (AUX)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -54237,7 +54237,7 @@
           }
         }
       ],
-      "updated_at": "2026-11-22T20:44:56.899Z",
+      "updated_at": "2026-11-25T09:55:57.882Z",
       "created_at": "2026-11-22T20:28:44.102Z",
       "point_reorder": 2,
       "point_rupture": 1,
@@ -67841,7 +67841,7 @@
       "type_article": "ROH",
       "categorie": "MP",
       "famille": "Matières Premières & Composants (MP)",
-      "is_tracked": true,
+      "is_tracked": false,
       "is_important": true,
       "statut": "RUPTURE",
       "latest_month": "11.2026",
@@ -68142,7 +68142,7 @@
           }
         }
       ],
-      "updated_at": "2026-11-22T20:44:56.899Z",
+      "updated_at": "2026-11-25T09:25:14.267Z",
       "created_at": "2026-11-22T20:28:44.103Z",
       "point_reorder": 1090,
       "point_rupture": 275,
