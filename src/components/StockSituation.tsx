@@ -10,6 +10,8 @@ import {
   X, 
   FileSpreadsheet, 
   ArrowUpDown,
+  ArrowUp,
+  ArrowDown,
   Filter,
   Eye,
   EyeOff,
@@ -44,7 +46,7 @@ interface StockSituationProps {
   onNavigateToAppro?: () => void;
 }
 
-type TabFilter = 'ALL' | 'RUPTURE' | 'CRITIQUE' | 'BAS' | 'DISPONIBLE';
+type TabFilter = 'ALL' | 'RUPTURE' | 'CRITIQUE' | 'BAS' | 'DISPONIBLE' | 'HIDDEN';
 type ViewTab = 'TRACKED' | 'SELLING_CODES';
 
 export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'components', onNavigateToAppro }) => {
@@ -57,8 +59,9 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
   const [sellingSearch, setSellingSearch] = useState('');
   const [sellingStockFilter, setSellingStockFilter] = useState<'ALL' | 'IN_STOCK' | 'ZERO'>('ALL');
   const [togglingId, setTogglingId] = useState<string | null>(null);
+  const [feedbackToast, setFeedbackToast] = useState<{ message: string; type: 'hide' | 'restore' } | null>(null);
 
-  // Tab filter: ALL / RUPTURE / CRITIQUE / BAS / DISPONIBLE
+  // Tab filter: ALL / RUPTURE / CRITIQUE / BAS / DISPONIBLE / HIDDEN
   const [activeTabFilter, setActiveTabFilter] = useState<TabFilter>('ALL');
 
   // Collapsible sections state
@@ -78,9 +81,19 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
   const [selectedTrend, setSelectedTrend] = useState<string>('ALL'); // 'ALL' | 'SORTIE_PLUS' | 'ENTREE_PLUS'
   const [selectedMagasin, setSelectedMagasin] = useState<string>('ALL');
 
-  // Sorting
-  const [sortField, setSortField] = useState<keyof StockItem>('stock_actuel');
+  // Sorting: Default to MB51 frequency descending for purchased mode
+  const [sortField, setSortField] = useState<keyof StockItem>(
+    mode === 'purchased' ? 'mb51_frequency' : 'stock_actuel'
+  );
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
+
+  useEffect(() => {
+    if (mode === 'purchased') {
+      setSortField('mb51_frequency');
+      setSortDirection('desc');
+      setActiveTabFilter('ALL');
+    }
+  }, [mode]);
 
   // Detail Modal for Article History
   const [selectedArticle, setSelectedArticle] = useState<StockItem | null>(null);
@@ -212,10 +225,11 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
     return prodMatch || null;
   };
 
-  // Toggle tracking status (move between Tracked and Hors Suivi / 78... tab)
+  // Toggle tracking status (move between Tracked and Hors Suivi / Masqués)
   const handleToggleTracking = async (item: StockItem, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
     const targetId = item.id ? String(item.id) : item.code_article;
+    const wasTracked = item.is_tracked !== false;
     setTogglingId(item.code_article);
     try {
       const res = await fetch(`/api/stock/${encodeURIComponent(targetId)}/toggle-tracking`, {
@@ -230,6 +244,20 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
               : i
           )
         );
+        if (wasTracked) {
+          setFeedbackToast({
+            message: `Article ${item.code_article} masqué. Retrouvez-le dans l'onglet "Articles Masqués" pour le restaurer à tout moment.`,
+            type: 'hide',
+          });
+        } else {
+          setFeedbackToast({
+            message: `Article ${item.code_article} restauré avec succès dans le suivi actif.`,
+            type: 'restore',
+          });
+        }
+        setTimeout(() => {
+          setFeedbackToast(null);
+        }, 4000);
       }
     } catch (err) {
       console.error('Failed to toggle tracking:', err);
@@ -237,6 +265,51 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
       setTogglingId(null);
     }
   };
+
+  const filteredHiddenItems = useMemo(() => {
+    return untrackedItems
+      .filter((item) => {
+        const q = searchQuery.toLowerCase().trim();
+        const matchesQ =
+          !q ||
+          item.code_article.toLowerCase().includes(q) ||
+          item.designation.toLowerCase().includes(q) ||
+          (item.magasin && String(item.magasin).toLowerCase().includes(q));
+
+        let matchesCategory = true;
+        if (selectedCategory !== 'ALL') {
+          matchesCategory = item.categorie === selectedCategory;
+        }
+
+        return matchesQ && matchesCategory;
+      })
+      .sort((a, b) => {
+        let valA: any = a[sortField];
+        let valB: any = b[sortField];
+
+        if (sortField === 'mb51_frequency') {
+          valA = Number(a.mb51_frequency) || Number(a.mb51_purchased_count) || 0;
+          valB = Number(b.mb51_frequency) || Number(b.mb51_purchased_count) || 0;
+        }
+
+        if (typeof valA === 'number' && typeof valB === 'number') {
+          if (valA !== valB) {
+            return sortDirection === 'asc' ? valA - valB : valB - valA;
+          }
+          if (sortField === 'mb51_frequency') {
+            const stockA = Number(a.stock_actuel) || 0;
+            const stockB = Number(b.stock_actuel) || 0;
+            return stockA - stockB;
+          }
+          const freqA = Number(a.mb51_frequency) || Number(a.mb51_purchased_count) || 0;
+          const freqB = Number(b.mb51_frequency) || Number(b.mb51_purchased_count) || 0;
+          return freqB - freqA;
+        }
+        return sortDirection === 'asc'
+          ? String(valA ?? '').localeCompare(String(valB ?? ''))
+          : String(valB ?? '').localeCompare(String(valA ?? ''));
+      });
+  }, [untrackedItems, searchQuery, selectedCategory, sortField, sortDirection]);
 
   const filteredUntrackedItems = useMemo(() => {
     return untrackedItems
@@ -289,6 +362,7 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
         else if (activeTabFilter === 'CRITIQUE') matchesTab = status === 'CRITIQUE' && Number(item.stock_actuel) > 0;
         else if (activeTabFilter === 'BAS') matchesTab = status === 'BAS' && Number(item.stock_actuel) > 0;
         else if (activeTabFilter === 'DISPONIBLE') matchesTab = status === 'DISPONIBLE' && Number(item.stock_actuel) > 0;
+        else if (activeTabFilter === 'HIDDEN') matchesTab = false; // Hidden items handled separately via filteredHiddenItems
 
         return matchesSearch && matchesCategory && matchesTrend && matchesMagasin && matchesTab;
       })
@@ -296,14 +370,27 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
         let valA: any = a[sortField];
         let valB: any = b[sortField];
 
-        if (sortField === 'health_status' || sortField === 'statut') {
+        if (sortField === 'mb51_frequency') {
+          valA = Number(a.mb51_frequency) || Number(a.mb51_purchased_count) || 0;
+          valB = Number(b.mb51_frequency) || Number(b.mb51_purchased_count) || 0;
+        } else if (sortField === 'health_status' || sortField === 'statut') {
           const rank = { RUPTURE: 0, CRITIQUE: 1, BAS: 2, DISPONIBLE: 3, SURSTOCK: 4 };
           valA = rank[a.health_status || 'DISPONIBLE'] ?? 5;
           valB = rank[b.health_status || 'DISPONIBLE'] ?? 5;
         }
 
         if (typeof valA === 'number' && typeof valB === 'number') {
-          return sortDirection === 'asc' ? valA - valB : valB - valA;
+          if (valA !== valB) {
+            return sortDirection === 'asc' ? valA - valB : valB - valA;
+          }
+          if (sortField === 'mb51_frequency') {
+            const stockA = Number(a.stock_actuel) || 0;
+            const stockB = Number(b.stock_actuel) || 0;
+            return stockA - stockB;
+          }
+          const freqA = Number(a.mb51_frequency) || Number(a.mb51_purchased_count) || 0;
+          const freqB = Number(b.mb51_frequency) || Number(b.mb51_purchased_count) || 0;
+          return freqB - freqA;
         }
         return sortDirection === 'asc'
           ? String(valA ?? '').localeCompare(String(valB ?? ''))
@@ -657,6 +744,412 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
     );
   };
 
+  // Dedicated Single Table View for Purchased Articles (Tabs instead of multiple sections)
+  const renderPurchasedActiveTable = () => {
+    const currentTabName = 
+      activeTabFilter === 'ALL' ? 'Tous les Articles Achetés' :
+      activeTabFilter === 'RUPTURE' ? 'Articles en Rupture (Stock = 0)' :
+      activeTabFilter === 'CRITIQUE' ? 'Articles en Situation Critique (< 1 mois)' :
+      activeTabFilter === 'BAS' ? 'Articles en Stock Bas (Sous Point ROP)' :
+      'Articles Disponibles & Conformes (> 2 mois)';
+
+    if (filteredItems.length === 0) {
+      return (
+        <div className="py-16 text-center text-slate-400 bg-white rounded-2xl border border-dashed border-slate-200">
+          <div className="flex flex-col items-center justify-center gap-2.5 max-w-md mx-auto">
+            <PackageX size={32} className="text-slate-300" />
+            <h4 className="text-sm font-bold text-slate-700">Aucun article dans cette vue</h4>
+            <p className="text-xs text-slate-500">
+              {searchQuery
+                ? `Aucun article ne correspond à votre recherche "${searchQuery}".`
+                : `Aucun article acheté ne se trouve actuellement sous l'onglet "${currentTabName}".`}
+            </p>
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="mt-1 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-lg cursor-pointer transition-colors"
+              >
+                Effacer la recherche
+              </button>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div className="p-3.5 bg-slate-50/80 border-b border-slate-200 flex items-center justify-between gap-3 flex-wrap">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-black text-slate-800 uppercase tracking-wide">
+              {currentTabName}
+            </span>
+            <span className="px-2.5 py-0.5 rounded-full text-xs font-black bg-sky-600 text-white shadow-2xs">
+              {filteredItems.length} article{filteredItems.length > 1 ? 's' : ''}
+            </span>
+            <span className="text-[11px] text-slate-500 font-medium hidden sm:inline">
+              (Triés par fréquence décroissante d'apparition dans MB51)
+            </span>
+          </div>
+          <div className="text-[11px] text-slate-400 font-semibold flex items-center gap-1">
+            <Info size={13} className="text-slate-400" />
+            <span>Cliquez sur l'entête d'une colonne pour modifier le tri</span>
+          </div>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse min-w-[960px]">
+            <thead>
+              <tr className="bg-slate-50/90 border-b border-slate-200 text-[10px] font-black uppercase text-slate-500 tracking-wider select-none">
+                <th onClick={() => handleSort('code_article')} className="py-3 px-3.5 w-[125px] cursor-pointer hover:bg-slate-100 transition-colors">
+                  <div className="flex items-center gap-1">
+                    <span>Code SAP</span>
+                    {sortField === 'code_article' && (sortDirection === 'desc' ? <ArrowDown size={11} className="text-sky-600" /> : <ArrowUp size={11} className="text-sky-600" />)}
+                  </div>
+                </th>
+                <th onClick={() => handleSort('designation')} className="py-3 px-3.5 min-w-[280px] cursor-pointer hover:bg-slate-100 transition-colors">
+                  <div className="flex items-center gap-1">
+                    <span>Désignation Article</span>
+                    {sortField === 'designation' && (sortDirection === 'desc' ? <ArrowDown size={11} className="text-sky-600" /> : <ArrowUp size={11} className="text-sky-600" />)}
+                  </div>
+                </th>
+                <th className="py-3 px-2 text-center w-[90px]">Cat. / Mag</th>
+                <th 
+                  onClick={() => handleSort('mb51_frequency')} 
+                  className={`py-3 px-3 text-center w-[135px] cursor-pointer hover:bg-sky-100/60 transition-colors ${
+                    sortField === 'mb51_frequency' ? 'bg-sky-100/50 text-sky-900 font-extrabold' : 'text-slate-600'
+                  }`}
+                  title="Nombre d'apparitions et de mouvements dans les données SAP MB51 (cliquer pour trier)"
+                >
+                  <div className="flex items-center justify-center gap-1">
+                    <Activity size={12} className={sortField === 'mb51_frequency' ? 'text-sky-700' : 'text-slate-400'} />
+                    <span>Fréq. MB51</span>
+                    {sortField === 'mb51_frequency' && (
+                      sortDirection === 'desc' ? <ArrowDown size={12} className="text-sky-700 font-black" /> : <ArrowUp size={12} className="text-sky-700 font-black" />
+                    )}
+                  </div>
+                </th>
+                <th onClick={() => handleSort('stock_actuel')} className="py-3 px-3.5 text-right w-[125px] cursor-pointer hover:bg-slate-100 transition-colors">
+                  <div className="flex items-center justify-end gap-1">
+                    <span>Stock Actuel</span>
+                    {sortField === 'stock_actuel' && (sortDirection === 'desc' ? <ArrowDown size={11} className="text-sky-600" /> : <ArrowUp size={11} className="text-sky-600" />)}
+                  </div>
+                </th>
+                <th onClick={() => handleSort('avg_monthly_sortie')} className="py-3 px-3 text-right w-[110px] cursor-pointer hover:bg-slate-100 transition-colors">
+                  <div className="flex items-center justify-end gap-1">
+                    <span>Conso / An</span>
+                    {sortField === 'avg_monthly_sortie' && (sortDirection === 'desc' ? <ArrowDown size={11} className="text-sky-600" /> : <ArrowUp size={11} className="text-sky-600" />)}
+                  </div>
+                </th>
+                <th onClick={() => handleSort('coverage_months')} className="py-3 px-3.5 text-center w-[115px] cursor-pointer hover:bg-slate-100 transition-colors">
+                  <div className="flex items-center justify-center gap-1">
+                    <span>Couverture</span>
+                    {sortField === 'coverage_months' && (sortDirection === 'desc' ? <ArrowDown size={11} className="text-sky-600" /> : <ArrowUp size={11} className="text-sky-600" />)}
+                  </div>
+                </th>
+                <th onClick={() => handleSort('point_reorder')} className="py-3 px-3.5 text-right w-[115px] cursor-pointer hover:bg-slate-100 transition-colors">
+                  <div className="flex items-center justify-end gap-1">
+                    <span>Point ROP</span>
+                    {sortField === 'point_reorder' && (sortDirection === 'desc' ? <ArrowDown size={11} className="text-sky-600" /> : <ArrowUp size={11} className="text-sky-600" />)}
+                  </div>
+                </th>
+                <th onClick={() => handleSort('health_status')} className="py-3 px-3.5 min-w-[195px] cursor-pointer hover:bg-slate-100 transition-colors">
+                  <div className="flex items-center gap-1">
+                    <span>Diagnostic & Santé</span>
+                    {sortField === 'health_status' && (sortDirection === 'desc' ? <ArrowDown size={11} className="text-sky-600" /> : <ArrowUp size={11} className="text-sky-600" />)}
+                  </div>
+                </th>
+                <th className="py-3 px-3 text-center w-[75px]">Action</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100 text-xs">
+              {filteredItems.map((item) => {
+                const stockNum = Number(item.stock_actuel) || 0;
+                const isZero = stockNum <= 0;
+                const coverage = item.coverage_months;
+                const freq = Number(item.mb51_frequency) || Number(item.mb51_purchased_count) || 0;
+
+                return (
+                  <tr
+                    key={item.code_article}
+                    onClick={() => setSelectedArticle(item)}
+                    className="hover:bg-sky-50/60 transition-colors cursor-pointer group"
+                  >
+                    <td className="py-2.5 px-3.5 whitespace-nowrap">
+                      <span className="font-mono font-bold text-slate-900 bg-slate-100 group-hover:bg-white group-hover:border-sky-300 px-2 py-1 rounded text-xs border border-slate-200 shadow-2xs transition-colors">
+                        {item.code_article}
+                      </span>
+                    </td>
+
+                    <td className="py-2.5 px-3.5">
+                      <div className="font-bold text-slate-900 line-clamp-1 group-hover:text-sky-700 transition-colors" title={item.designation}>
+                        {item.designation}
+                      </div>
+                      <div className="text-[10px] text-slate-400 flex items-center gap-1.5 mt-0.5">
+                        <span className="font-medium text-slate-500">{item.type_article || 'ROH'}</span>
+                        <span>•</span>
+                        <span>Unité: <strong className="text-slate-600">{item.unite || 'PCE'}</strong></span>
+                        {item.emplacement && (
+                          <>
+                            <span>•</span>
+                            <span>Empl: {item.emplacement}</span>
+                          </>
+                        )}
+                      </div>
+                    </td>
+
+                    <td className="py-2.5 px-2 text-center whitespace-nowrap">
+                      <div className="flex flex-col items-center gap-0.5">
+                        {renderCategoryBadge(item.categorie as string)}
+                        <span className="text-[10px] text-slate-500 font-semibold">Mag {item.magasin || '33'}</span>
+                      </div>
+                    </td>
+
+                    <td className="py-2.5 px-3 text-center whitespace-nowrap bg-sky-50/30">
+                      <div className="inline-flex flex-col items-center">
+                        <span className="font-mono font-black text-xs px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800 border border-sky-200 flex items-center gap-1 shadow-2xs">
+                          <Activity size={11} className="text-sky-600" />
+                          <span>{freq}</span>
+                          <span className="text-[10px] text-sky-600 font-semibold">mvts</span>
+                        </span>
+                        {item.mb51_purchased_count !== undefined && item.mb51_purchased_count > 0 && (
+                          <span className="text-[9px] text-slate-500 font-medium mt-0.5">
+                            {item.mb51_purchased_count} réceptions 103/105
+                          </span>
+                        )}
+                      </div>
+                    </td>
+
+                    <td className="py-2.5 px-3.5 text-right whitespace-nowrap font-mono">
+                      <span className={`text-sm font-black ${isZero ? 'text-rose-600' : 'text-slate-900'}`}>
+                        {stockNum.toLocaleString()}
+                      </span>
+                      <span className="text-[10px] text-slate-400 font-semibold ml-1">{item.unite || 'PCE'}</span>
+                    </td>
+
+                    <td className="py-2.5 px-3 text-right whitespace-nowrap font-mono">
+                      <span className="font-semibold text-slate-700">
+                        {Math.round((item.avg_monthly_sortie || 0) * 12).toLocaleString()}
+                      </span>
+                      <span className="text-[10px] text-slate-400 ml-1">{item.unite || 'PCE'}</span>
+                    </td>
+
+                    <td className="py-2.5 px-3.5 text-center whitespace-nowrap font-mono">
+                      {coverage !== undefined ? (
+                        coverage > 99 ? (
+                          <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-600 border border-slate-200">
+                            &gt; 24 m
+                          </span>
+                        ) : (
+                          <span className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-black ${
+                            coverage <= 0
+                              ? 'bg-rose-100 text-rose-800 border border-rose-200'
+                              : coverage < 1
+                                ? 'bg-amber-100 text-amber-800 border border-amber-200'
+                                : coverage < 2
+                                  ? 'bg-yellow-100 text-yellow-800 border border-yellow-200'
+                                  : 'bg-emerald-100 text-emerald-800 border border-emerald-200'
+                          }`}>
+                            {coverage.toFixed(1)} m
+                          </span>
+                        )
+                      ) : (
+                        <span className="text-slate-400">-</span>
+                      )}
+                    </td>
+
+                    <td className="py-2.5 px-3.5 text-right whitespace-nowrap font-mono">
+                      <span className="bg-indigo-50 border border-indigo-100/80 text-indigo-800 font-bold px-2 py-0.5 rounded text-xs">
+                        {item.point_reorder !== undefined ? Number(item.point_reorder).toLocaleString() : '-'}
+                      </span>
+                    </td>
+
+                    <td className="py-2.5 px-3.5">
+                      {renderHealthBadge(item.health_status || item.statut, item.alert_reason)}
+                    </td>
+
+                    <td className="py-2.5 px-3 text-center whitespace-nowrap">
+                      <div className="inline-flex items-center gap-1">
+                        <button
+                          onClick={(e) => handleToggleTracking(item, e)}
+                          disabled={togglingId === item.code_article}
+                          className="p-1.5 rounded-lg text-slate-400 hover:text-amber-600 hover:bg-amber-50 transition-colors inline-flex items-center justify-center cursor-pointer disabled:opacity-40"
+                          title="Masquer cet article (déplacer vers l'onglet Articles Masqués)"
+                        >
+                          <EyeOff size={14} />
+                        </button>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedArticle(item);
+                          }}
+                          className="p-1.5 rounded-lg text-slate-400 group-hover:text-sky-600 group-hover:bg-sky-100 transition-colors inline-flex items-center justify-center cursor-pointer"
+                          title="Ouvrir la fiche d'analyse complète"
+                        >
+                          <ArrowUpRight size={16} />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  };
+
+  // Dedicated Table View for Hidden Purchased Articles (with Restore Action)
+  const renderHiddenItemsTable = () => {
+    if (filteredHiddenItems.length === 0) {
+      return (
+        <div className="py-16 text-center text-slate-400 bg-white rounded-2xl border border-dashed border-slate-200">
+          <div className="flex flex-col items-center justify-center gap-2 max-w-md mx-auto">
+            <Eye size={32} className="text-slate-300" />
+            <h4 className="text-sm font-bold text-slate-700">Aucun article masqué</h4>
+            <p className="text-xs text-slate-500">
+              {searchQuery
+                ? `Aucun article masqué ne correspond à "${searchQuery}".`
+                : "Tous les articles achetés sont actuellement actifs dans le suivi. Pour masquer un article, cliquez sur l'icône œil barré dans l'un des onglets actifs."}
+            </p>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div className="p-4 bg-gradient-to-r from-slate-100 via-slate-50 to-white border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 bg-slate-800 text-white rounded-xl shadow-xs">
+              <EyeOff size={18} />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h3 className="text-sm font-black text-slate-900 uppercase tracking-wide">
+                  Articles Masqués / Retirés du Suivi
+                </h3>
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-black bg-slate-700 text-white shadow-2xs">
+                  {filteredHiddenItems.length} article{filteredHiddenItems.length > 1 ? 's' : ''}
+                </span>
+              </div>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Ces articles ont été masqués et n'apparaissent plus dans les onglets de suivi actif. Vous pouvez les réintégrer à tout moment en cliquant sur "Restaurer".
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse min-w-[920px]">
+            <thead>
+              <tr className="bg-slate-50 border-b border-slate-200 text-[10px] font-black uppercase text-slate-500 tracking-wider select-none">
+                <th onClick={() => handleSort('code_article')} className="py-3 px-3.5 w-[130px] cursor-pointer hover:bg-slate-100 transition-colors">
+                  <div className="flex items-center gap-1">
+                    <span>Code SAP</span>
+                    {sortField === 'code_article' && (sortDirection === 'desc' ? <ArrowDown size={11} className="text-sky-600" /> : <ArrowUp size={11} className="text-sky-600" />)}
+                  </div>
+                </th>
+                <th onClick={() => handleSort('designation')} className="py-3 px-3.5 min-w-[280px] cursor-pointer hover:bg-slate-100 transition-colors">
+                  <div className="flex items-center gap-1">
+                    <span>Désignation Article</span>
+                    {sortField === 'designation' && (sortDirection === 'desc' ? <ArrowDown size={11} className="text-sky-600" /> : <ArrowUp size={11} className="text-sky-600" />)}
+                  </div>
+                </th>
+                <th className="py-3 px-2 text-center w-[90px]">Cat. / Mag</th>
+                <th 
+                  onClick={() => handleSort('mb51_frequency')} 
+                  className="py-3 px-3 text-center w-[130px] cursor-pointer hover:bg-slate-100 transition-colors"
+                >
+                  <div className="flex items-center justify-center gap-1">
+                    <Activity size={12} className="text-sky-600" />
+                    <span>Fréq. MB51</span>
+                    {sortField === 'mb51_frequency' && (sortDirection === 'desc' ? <ArrowDown size={12} className="text-sky-600" /> : <ArrowUp size={12} className="text-sky-600" />)}
+                  </div>
+                </th>
+                <th onClick={() => handleSort('stock_actuel')} className="py-3 px-3.5 text-right w-[120px] cursor-pointer hover:bg-slate-100 transition-colors">
+                  <div className="flex items-center justify-end gap-1">
+                    <span>Stock Actuel</span>
+                    {sortField === 'stock_actuel' && (sortDirection === 'desc' ? <ArrowDown size={11} className="text-sky-600" /> : <ArrowUp size={11} className="text-sky-600" />)}
+                  </div>
+                </th>
+                <th className="py-3 px-3 text-right w-[110px]">Conso / An</th>
+                <th className="py-3 px-3.5 min-w-[190px]">Dernier Diagnostic</th>
+                <th className="py-3 px-4 text-center w-[140px]">Action</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100 text-xs">
+              {filteredHiddenItems.map((item) => {
+                const stockNum = Number(item.stock_actuel) || 0;
+                const freq = Number(item.mb51_frequency) || Number(item.mb51_purchased_count) || 0;
+
+                return (
+                  <tr
+                    key={item.code_article}
+                    className="hover:bg-slate-50 transition-colors"
+                  >
+                    <td className="py-2.5 px-3.5 whitespace-nowrap">
+                      <span className="font-mono font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded text-xs border border-slate-200">
+                        {item.code_article}
+                      </span>
+                    </td>
+
+                    <td className="py-2.5 px-3.5">
+                      <div className="font-bold text-slate-700 line-clamp-1" title={item.designation}>
+                        {item.designation}
+                      </div>
+                      <div className="text-[10px] text-slate-400 mt-0.5">
+                        {item.type_article || 'ROH'} • Unité: {item.unite || 'PCE'}
+                      </div>
+                    </td>
+
+                    <td className="py-2.5 px-2 text-center whitespace-nowrap">
+                      <div className="flex flex-col items-center gap-0.5">
+                        {renderCategoryBadge(item.categorie as string)}
+                        <span className="text-[10px] text-slate-500 font-semibold">Mag {item.magasin || '33'}</span>
+                      </div>
+                    </td>
+
+                    <td className="py-2.5 px-3 text-center whitespace-nowrap">
+                      <span className="font-mono font-bold text-xs px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                        {freq} mvts
+                      </span>
+                    </td>
+
+                    <td className="py-2.5 px-3.5 text-right whitespace-nowrap font-mono font-bold text-slate-700">
+                      {stockNum.toLocaleString()} {item.unite || 'PCE'}
+                    </td>
+
+                    <td className="py-2.5 px-3 text-right whitespace-nowrap font-mono text-slate-500">
+                      {Math.round((item.avg_monthly_sortie || 0) * 12).toLocaleString()}
+                    </td>
+
+                    <td className="py-2.5 px-3.5">
+                      {renderHealthBadge(item.health_status || item.statut, item.alert_reason)}
+                    </td>
+
+                    <td className="py-2.5 px-4 text-center whitespace-nowrap">
+                      <button
+                        onClick={(e) => handleToggleTracking(item, e)}
+                        disabled={togglingId === item.code_article}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-all shadow-xs cursor-pointer disabled:opacity-50"
+                        title="Restaurer cet article dans le suivi actif"
+                      >
+                        <Eye size={13} />
+                        <span>Restaurer</span>
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="w-full max-w-none space-y-4">
       {/* HIDDEN FILE INPUT FOR MCBA UPLOAD */}
@@ -792,47 +1285,77 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
         </div>
       )}
 
-      {/* TOP-LEVEL VIEW SWITCHER: PRODUCTION TRACKING vs SELLING CODES (78...) */}
-      <div className="bg-white p-1.5 rounded-2xl border border-slate-200 shadow-xs inline-flex items-center gap-1.5 flex-wrap">
-        <button
-          onClick={() => setViewTab('TRACKED')}
-          className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-2 cursor-pointer ${
-            viewTab === 'TRACKED'
-              ? 'bg-slate-900 text-white shadow-sm'
-              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-          }`}
-        >
-          <Boxes size={15} className={viewTab === 'TRACKED' ? 'text-sky-400' : 'text-slate-500'} />
-          <span>Suivi Production (Actifs)</span>
-          <span className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
-            viewTab === 'TRACKED' ? 'bg-sky-500/20 text-sky-300' : 'bg-slate-200 text-slate-700'
-          }`}>
-            {activeTrackedItems.length}
-          </span>
-        </button>
+      {/* FEEDBACK TOAST NOTIFICATION (HIDE / RESTORE ACTION) */}
+      {feedbackToast && (
+        <div className={`p-4 rounded-2xl border shadow-sm flex items-center justify-between gap-3 text-xs font-bold animate-in fade-in slide-in-from-top duration-200 ${
+          feedbackToast.type === 'hide'
+            ? 'bg-amber-50 border-amber-300 text-amber-900'
+            : 'bg-emerald-50 border-emerald-300 text-emerald-900'
+        }`}>
+          <div className="flex items-center gap-2.5">
+            {feedbackToast.type === 'hide' ? (
+              <div className="p-2 bg-amber-500 text-white rounded-xl shadow-2xs">
+                <EyeOff size={16} />
+              </div>
+            ) : (
+              <div className="p-2 bg-emerald-600 text-white rounded-xl shadow-2xs">
+                <Eye size={16} />
+              </div>
+            )}
+            <span className="text-sm">{feedbackToast.message}</span>
+          </div>
+          <button
+            onClick={() => setFeedbackToast(null)}
+            className="p-1.5 hover:bg-black/5 rounded-lg text-slate-500 cursor-pointer"
+          >
+            <X size={16} />
+          </button>
+        </div>
+      )}
 
-        <button
-          onClick={() => setViewTab('SELLING_CODES')}
-          className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-2 cursor-pointer ${
-            viewTab === 'SELLING_CODES'
-              ? 'bg-violet-950 text-white shadow-sm'
-              : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-          }`}
-        >
-          <Tag size={15} className={viewTab === 'SELLING_CODES' ? 'text-violet-300' : 'text-violet-600'} />
-          <span>Codes Vente (78...) / Hors Suivi</span>
-          <span className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
-            viewTab === 'SELLING_CODES' ? 'bg-violet-500/30 text-violet-200' : 'bg-violet-100 text-violet-700'
-          }`}>
-            {untrackedItems.length}
-          </span>
-        </button>
-      </div>
+      {/* TOP-LEVEL VIEW SWITCHER: PRODUCTION TRACKING vs SELLING CODES (78...) (ONLY FOR COMPONENTS / FINISHED GOODS) */}
+      {mode !== 'purchased' && (
+        <div className="bg-white p-1.5 rounded-2xl border border-slate-200 shadow-xs inline-flex items-center gap-1.5 flex-wrap">
+          <button
+            onClick={() => setViewTab('TRACKED')}
+            className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-2 cursor-pointer ${
+              viewTab === 'TRACKED'
+                ? 'bg-slate-900 text-white shadow-sm'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+            }`}
+          >
+            <Boxes size={15} className={viewTab === 'TRACKED' ? 'text-sky-400' : 'text-slate-500'} />
+            <span>Suivi Production (Actifs)</span>
+            <span className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+              viewTab === 'TRACKED' ? 'bg-sky-500/20 text-sky-300' : 'bg-slate-200 text-slate-700'
+            }`}>
+              {activeTrackedItems.length}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setViewTab('SELLING_CODES')}
+            className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-2 cursor-pointer ${
+              viewTab === 'SELLING_CODES'
+                ? 'bg-violet-950 text-white shadow-sm'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+            }`}
+          >
+            <Tag size={15} className={viewTab === 'SELLING_CODES' ? 'text-violet-300' : 'text-violet-600'} />
+            <span>Codes Vente (78...) / Hors Suivi</span>
+            <span className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+              viewTab === 'SELLING_CODES' ? 'bg-violet-500/30 text-violet-200' : 'bg-violet-100 text-violet-700'
+            }`}>
+              {untrackedItems.length}
+            </span>
+          </button>
+        </div>
+      )}
 
       {viewTab === 'TRACKED' ? (
         <>
       {/* PRO MAX KPI CARDS WITH PROGRESS & INTERACTIVE TABS */}
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+      <div className={`grid grid-cols-2 ${mode === 'purchased' ? 'sm:grid-cols-3 lg:grid-cols-6' : 'lg:grid-cols-5'} gap-3`}>
         {/* TOTAL ARTICLE / SANTE GLOBALE */}
         <div 
           onClick={() => setActiveTabFilter('ALL')}
@@ -863,7 +1386,7 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
         <div 
           onClick={() => {
             setActiveTabFilter(activeTabFilter === 'RUPTURE' ? 'ALL' : 'RUPTURE');
-            toggleSection('ruptures');
+            if (mode !== 'purchased') toggleSection('ruptures');
           }}
           className={`p-4 rounded-2xl border transition-all cursor-pointer relative overflow-hidden ${
             activeTabFilter === 'RUPTURE'
@@ -898,7 +1421,7 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
         <div 
           onClick={() => {
             setActiveTabFilter(activeTabFilter === 'CRITIQUE' ? 'ALL' : 'CRITIQUE');
-            toggleSection('critiques');
+            if (mode !== 'purchased') toggleSection('critiques');
           }}
           className={`p-4 rounded-2xl border transition-all cursor-pointer relative overflow-hidden ${
             activeTabFilter === 'CRITIQUE'
@@ -933,7 +1456,7 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
         <div 
           onClick={() => {
             setActiveTabFilter(activeTabFilter === 'BAS' ? 'ALL' : 'BAS');
-            toggleSection('bas');
+            if (mode !== 'purchased') toggleSection('bas');
           }}
           className={`p-4 rounded-2xl border transition-all cursor-pointer relative overflow-hidden ${
             activeTabFilter === 'BAS'
@@ -968,7 +1491,7 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
         <div 
           onClick={() => {
             setActiveTabFilter(activeTabFilter === 'DISPONIBLE' ? 'ALL' : 'DISPONIBLE');
-            toggleSection('disponibles');
+            if (mode !== 'purchased') toggleSection('disponibles');
           }}
           className={`p-4 rounded-2xl border transition-all cursor-pointer relative overflow-hidden ${
             activeTabFilter === 'DISPONIBLE'
@@ -998,7 +1521,151 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
             &gt; 2 mois de couverture
           </div>
         </div>
+
+        {/* CARD 6 FOR PURCHASED: ARTICLES MASQUÉS */}
+        {mode === 'purchased' && (
+          <div 
+            onClick={() => setActiveTabFilter(activeTabFilter === 'HIDDEN' ? 'ALL' : 'HIDDEN')}
+            className={`p-4 rounded-2xl border transition-all cursor-pointer relative overflow-hidden ${
+              activeTabFilter === 'HIDDEN'
+                ? 'bg-slate-800 text-white border-slate-700 shadow-md ring-2 ring-amber-400/50'
+                : 'bg-slate-50 hover:bg-slate-100/80 border-slate-200 shadow-xs'
+            }`}
+          >
+            <div className="flex items-center justify-between">
+              <span className={`text-[11px] font-black uppercase tracking-wider flex items-center gap-1.5 ${
+                activeTabFilter === 'HIDDEN' ? 'text-amber-300' : 'text-slate-600'
+              }`}>
+                <EyeOff size={13} />
+                Articles Masqués
+              </span>
+              <div className={`p-2 rounded-xl ${activeTabFilter === 'HIDDEN' ? 'bg-slate-700 text-amber-300' : 'bg-slate-200 text-slate-700'}`}>
+                <EyeOff size={16} />
+              </div>
+            </div>
+            <div className={`text-2xl sm:text-3xl font-black mt-2 font-mono ${
+              activeTabFilter === 'HIDDEN' ? 'text-white' : 'text-slate-800'
+            }`}>
+              {untrackedItems.length}
+            </div>
+            <div className={`mt-2 text-[11px] font-medium ${
+              activeTabFilter === 'HIDDEN' ? 'text-amber-300' : 'text-slate-500'
+            }`}>
+              Restaurables à tout moment
+            </div>
+          </div>
+        )}
       </div>
+
+      {/* TABS NAVIGATION BAR FOR PURCHASED PARTS */}
+      {mode === 'purchased' && (
+        <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-xs flex items-center gap-1.5 overflow-x-auto">
+          <button
+            onClick={() => setActiveTabFilter('ALL')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+              activeTabFilter === 'ALL'
+                ? 'bg-slate-900 text-white shadow-sm ring-2 ring-slate-900/20'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+            }`}
+          >
+            <Boxes size={15} />
+            <span>Tous les Articles</span>
+            <span className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+              activeTabFilter === 'ALL' ? 'bg-sky-500/20 text-sky-300' : 'bg-slate-100 text-slate-600'
+            }`}>
+              {activeTrackedItems.length}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setActiveTabFilter('RUPTURE')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+              activeTabFilter === 'RUPTURE'
+                ? 'bg-rose-600 text-white shadow-sm ring-2 ring-rose-600/20'
+                : 'text-rose-700 hover:bg-rose-50'
+            }`}
+          >
+            <span className="w-2 h-2 rounded-full bg-rose-600 animate-pulse"></span>
+            <span>Ruptures</span>
+            <span className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+              activeTabFilter === 'RUPTURE' ? 'bg-rose-800 text-white' : 'bg-rose-100 text-rose-700'
+            }`}>
+              {groupedSections.rupturesHigh.length + groupedSections.rupturesLow.length}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setActiveTabFilter('CRITIQUE')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+              activeTabFilter === 'CRITIQUE'
+                ? 'bg-amber-600 text-white shadow-sm ring-2 ring-amber-600/20'
+                : 'text-amber-700 hover:bg-amber-50'
+            }`}
+          >
+            <Clock size={14} />
+            <span>Critiques</span>
+            <span className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+              activeTabFilter === 'CRITIQUE' ? 'bg-amber-800 text-white' : 'bg-amber-100 text-amber-700'
+            }`}>
+              {groupedSections.critiques.length}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setActiveTabFilter('BAS')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+              activeTabFilter === 'BAS'
+                ? 'bg-yellow-600 text-white shadow-sm ring-2 ring-yellow-600/20'
+                : 'text-yellow-800 hover:bg-yellow-50'
+            }`}
+          >
+            <TrendingDown size={14} />
+            <span>Stocks Bas</span>
+            <span className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+              activeTabFilter === 'BAS' ? 'bg-yellow-800 text-white' : 'bg-yellow-100 text-yellow-800'
+            }`}>
+              {groupedSections.bas.length}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setActiveTabFilter('DISPONIBLE')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+              activeTabFilter === 'DISPONIBLE'
+                ? 'bg-emerald-600 text-white shadow-sm ring-2 ring-emerald-600/20'
+                : 'text-emerald-700 hover:bg-emerald-50'
+            }`}
+          >
+            <CheckCircle2 size={14} />
+            <span>Disponibles</span>
+            <span className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+              activeTabFilter === 'DISPONIBLE' ? 'bg-emerald-800 text-white' : 'bg-emerald-100 text-emerald-700'
+            }`}>
+              {groupedSections.disponibles.length}
+            </span>
+          </button>
+
+          <div className="h-6 w-px bg-slate-200 mx-1"></div>
+
+          <button
+            onClick={() => setActiveTabFilter('HIDDEN')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ml-auto ${
+              activeTabFilter === 'HIDDEN'
+                ? 'bg-slate-800 text-white shadow-sm ring-2 ring-slate-800/30'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+            }`}
+            title="Articles masqués du suivi (cliquer pour consulter ou restaurer)"
+          >
+            <EyeOff size={15} className={activeTabFilter === 'HIDDEN' ? 'text-amber-400' : 'text-slate-400'} />
+            <span>Articles Masqués</span>
+            <span className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+              activeTabFilter === 'HIDDEN' ? 'bg-slate-700 text-amber-300' : 'bg-slate-100 text-slate-700'
+            }`}>
+              {untrackedItems.length}
+            </span>
+          </button>
+        </div>
+      )}
 
       {/* CONTROL & FILTER BAR (UI/UX PRO MAX) */}
       <div className="bg-white p-3.5 sm:p-4 rounded-2xl border border-slate-200 shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
@@ -1069,11 +1736,18 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
           )}
 
           <div className="px-3 py-1.5 bg-slate-100 rounded-xl text-slate-600 font-bold text-xs">
-            {filteredItems.length} article{filteredItems.length > 1 ? 's' : ''}
+            {activeTabFilter === 'HIDDEN' ? filteredHiddenItems.length : filteredItems.length} article{(activeTabFilter === 'HIDDEN' ? filteredHiddenItems.length : filteredItems.length) > 1 ? 's' : ''}
           </div>
         </div>
       </div>
 
+      {/* RENDER BY TAB FOR PURCHASED PARTS vs ACCORDION SECTIONS FOR COMPONENTS / FINISHED GOODS */}
+      {mode === 'purchased' ? (
+        <div className="space-y-4">
+          {activeTabFilter === 'HIDDEN' ? renderHiddenItemsTable() : renderPurchasedActiveTable()}
+        </div>
+      ) : (
+        <>
       {/* =========================================================================
           SECTION 1 : VRAIES RUPTURES DE SÉRIE (IMPACT DIRECT SUR LA PRODUCTION)
           ========================================================================= */}
@@ -1296,6 +1970,8 @@ export const StockSituation: React.FC<StockSituationProps> = ({ mode = 'componen
             </div>
           )}
         </section>
+      )}
+        </>
       )}
         </>
       ) : (
